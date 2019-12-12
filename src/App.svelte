@@ -17,7 +17,7 @@
   // const tasksNumber = () => document.querySelectorAll('.task').length;
   // const tasks = new Array(tasksNumber()).fill(0);
 
-  export let items = JSON.parse(localStorage.getItem(LOCAL_STORAGE_ITEMS_KEY)) || [0, 0, 0];
+  export let items = JSON.parse(localStorage.getItem(LOCAL_STORAGE_ITEMS_KEY)) || [0, 0, 0, 0];
   let taskPercentage = parseFloat((100 / items.length).toFixed(2));
   let completedPercentage = JSON.parse(localStorage.getItem(LOCAL_STORAGE_COMPLETED_KEY)) || 0;
 
@@ -114,7 +114,7 @@
               </label>
             </div>
 
-            <div class="task">
+            <div class="task mb-2">
               <label class="{items[2] ? 'line-through' : ''} inline-flex items-center">
                 <input
                   type="checkbox"
@@ -122,6 +122,22 @@
                   on:click="{() => handleClick(2)}"
                   checked="{items[2] ? true : false}" />
                 <span class="{items[2] ? 'opacity-50' : ''} ml-2">
+                  <span class="font-light">🏃Ver</span>
+                  <TaskLink
+                    name="{'How to Use __dirname in Node.js'}"
+                    src="{'https://alligator.io/nodejs/how-to-use__dirname/'}" />
+                </span>
+              </label>
+            </div>
+
+            <div class="task">
+              <label class="{items[3] ? 'line-through' : ''} inline-flex items-center">
+                <input
+                  type="checkbox"
+                  class="form-checkbox text-cyan-us transition-all-4"
+                  on:click="{() => handleClick(3)}"
+                  checked="{items[3] ? true : false}" />
+                <span class="{items[3] ? 'opacity-50' : ''} ml-2">
                   <span class="font-light">📚🏃Ver</span>
                   <TaskLink
                     name="{'Notas sobre ExpressJS'}"

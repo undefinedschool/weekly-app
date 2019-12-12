@@ -696,9 +696,9 @@ var app = (function () {
     			attr_dev(a, "href", "https://trello.com/b/mUf0huXz/undefined-school");
     			attr_dev(a, "target", "_blank");
     			attr_dev(a, "rel", "noopener");
-    			add_location(a, file$3, 5, 2, 133);
+    			add_location(a, file$3, 1, 2, 79);
     			attr_dev(p, "class", "font-light text-sm text-right -mt-1 -mr-1 mb-4 text-gray-us link");
-    			add_location(p, file$3, 4, 0, 54);
+    			add_location(p, file$3, 0, 0, 0);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -726,33 +726,10 @@ var app = (function () {
     	return block;
     }
 
-    function instance$2($$self, $$props, $$invalidate) {
-    	let { completedPercentage } = $$props;
-    	const writable_props = ["completedPercentage"];
-
-    	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<FullCalendarLink> was created with unknown prop '${key}'`);
-    	});
-
-    	$$self.$set = $$props => {
-    		if ("completedPercentage" in $$props) $$invalidate(0, completedPercentage = $$props.completedPercentage);
-    	};
-
-    	$$self.$capture_state = () => {
-    		return { completedPercentage };
-    	};
-
-    	$$self.$inject_state = $$props => {
-    		if ("completedPercentage" in $$props) $$invalidate(0, completedPercentage = $$props.completedPercentage);
-    	};
-
-    	return [completedPercentage];
-    }
-
     class FullCalendarLink extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$2, create_fragment$3, safe_not_equal, { completedPercentage: 0 });
+    		init(this, options, null, create_fragment$3, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -760,21 +737,6 @@ var app = (function () {
     			options,
     			id: create_fragment$3.name
     		});
-
-    		const { ctx } = this.$$;
-    		const props = options.props || ({});
-
-    		if (/*completedPercentage*/ ctx[0] === undefined && !("completedPercentage" in props)) {
-    			console.warn("<FullCalendarLink> was created without expected prop 'completedPercentage'");
-    		}
-    	}
-
-    	get completedPercentage() {
-    		throw new Error("<FullCalendarLink>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set completedPercentage(value) {
-    		throw new Error("<FullCalendarLink>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
 
@@ -854,7 +816,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$3($$self, $$props, $$invalidate) {
+    function instance$2($$self, $$props, $$invalidate) {
     	let { week } = $$props;
     	let { weekNumber } = $$props;
     	const writable_props = ["week", "weekNumber"];
@@ -883,7 +845,7 @@ var app = (function () {
     class WeekInfo extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$3, create_fragment$4, safe_not_equal, { week: 0, weekNumber: 1 });
+    		init(this, options, instance$2, create_fragment$4, safe_not_equal, { week: 0, weekNumber: 1 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -993,7 +955,7 @@ var app = (function () {
 
     const func = item => item;
 
-    function instance$4($$self, $$props, $$invalidate) {
+    function instance$3($$self, $$props, $$invalidate) {
     	let { items } = $$props;
     	let { completedPercentage } = $$props;
     	const writable_props = ["items", "completedPercentage"];
@@ -1022,7 +984,7 @@ var app = (function () {
     class CompletedTasks extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$4, create_fragment$5, safe_not_equal, { items: 0, completedPercentage: 1 });
+    		init(this, options, instance$3, create_fragment$5, safe_not_equal, { items: 0, completedPercentage: 1 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -1110,7 +1072,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$5($$self, $$props, $$invalidate) {
+    function instance$4($$self, $$props, $$invalidate) {
     	let { name } = $$props;
     	let { src } = $$props;
     	const writable_props = ["name", "src"];
@@ -1139,7 +1101,7 @@ var app = (function () {
     class TaskLink extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$5, create_fragment$6, safe_not_equal, { name: 0, src: 1 });
+    		init(this, options, instance$4, create_fragment$6, safe_not_equal, { name: 0, src: 1 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -1226,7 +1188,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$6($$self, $$props, $$invalidate) {
+    function instance$5($$self, $$props, $$invalidate) {
     	let { mr } = $$props;
     	const writable_props = ["mr"];
 
@@ -1252,7 +1214,7 @@ var app = (function () {
     class NodeTag extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$6, create_fragment$7, safe_not_equal, { mr: 0 });
+    		init(this, options, instance$5, create_fragment$7, safe_not_equal, { mr: 0 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -1343,18 +1305,18 @@ var app = (function () {
     	let main;
     	let t0;
     	let t1;
-    	let div8;
+    	let div9;
     	let t2;
-    	let div7;
+    	let div8;
     	let t3;
     	let t4;
     	let t5;
+    	let div7;
     	let div6;
-    	let div5;
     	let div0;
     	let t6;
     	let t7;
-    	let div4;
+    	let div5;
     	let div1;
     	let label0;
     	let input0;
@@ -1387,6 +1349,17 @@ var app = (function () {
     	let t18;
     	let span5_class_value;
     	let label2_class_value;
+    	let t19;
+    	let div4;
+    	let label3;
+    	let input3;
+    	let input3_checked_value;
+    	let t20;
+    	let span7;
+    	let span6;
+    	let t22;
+    	let span7_class_value;
+    	let label3_class_value;
     	let current;
     	let dispose;
     	const navbar = new Navbar({ $$inline: true });
@@ -1450,6 +1423,14 @@ var app = (function () {
 
     	const tasklink2 = new TaskLink({
     			props: {
+    				name: "How to Use __dirname in Node.js",
+    				src: "https://alligator.io/nodejs/how-to-use__dirname/"
+    			},
+    			$$inline: true
+    		});
+
+    	const tasklink3 = new TaskLink({
+    			props: {
     				name: "Notas sobre ExpressJS",
     				src: "https://github.com/undefinedschool/notes-expressjs/"
     			},
@@ -1463,24 +1444,24 @@ var app = (function () {
     			t0 = space();
     			create_component(title.$$.fragment);
     			t1 = space();
-    			div8 = element("div");
+    			div9 = element("div");
     			create_component(fullcalendarlink.$$.fragment);
     			t2 = space();
-    			div7 = element("div");
+    			div8 = element("div");
     			create_component(weekinfo.$$.fragment);
     			t3 = space();
     			create_component(progressbar.$$.fragment);
     			t4 = space();
     			create_component(completedtasks.$$.fragment);
     			t5 = space();
+    			div7 = element("div");
     			div6 = element("div");
-    			div5 = element("div");
     			div0 = element("div");
     			create_component(nodetag.$$.fragment);
     			t6 = space();
     			create_component(expresstag.$$.fragment);
     			t7 = space();
-    			div4 = element("div");
+    			div5 = element("div");
     			div1 = element("div");
     			label0 = element("label");
     			input0 = element("input");
@@ -1507,63 +1488,86 @@ var app = (function () {
     			t16 = space();
     			span5 = element("span");
     			span4 = element("span");
-    			span4.textContent = "📚🏃Ver";
+    			span4.textContent = "🏃Ver";
     			t18 = space();
     			create_component(tasklink2.$$.fragment);
+    			t19 = space();
+    			div4 = element("div");
+    			label3 = element("label");
+    			input3 = element("input");
+    			t20 = space();
+    			span7 = element("span");
+    			span6 = element("span");
+    			span6.textContent = "📚🏃Ver";
+    			t22 = space();
+    			create_component(tasklink3.$$.fragment);
     			attr_dev(div0, "class", "flex justify-end");
-    			add_location(div0, file$9, 77, 10, 2702);
+    			add_location(div0, file$9, 77, 10, 2705);
     			attr_dev(input0, "type", "checkbox");
     			attr_dev(input0, "class", "form-checkbox text-cyan-us transition-all-4");
     			input0.checked = input0_checked_value = /*items*/ ctx[0][0] ? true : false;
-    			add_location(input0, file$9, 86, 16, 3012);
+    			add_location(input0, file$9, 86, 16, 3015);
     			attr_dev(span0, "class", "font-light");
-    			add_location(span0, file$9, 92, 18, 3317);
+    			add_location(span0, file$9, 92, 18, 3320);
     			attr_dev(span1, "class", span1_class_value = "" + ((/*items*/ ctx[0][0] ? "opacity-50" : "") + " ml-2"));
-    			add_location(span1, file$9, 91, 16, 3248);
+    			add_location(span1, file$9, 91, 16, 3251);
     			attr_dev(label0, "class", label0_class_value = "" + ((/*items*/ ctx[0][0] ? "line-through" : "") + " inline-flex items-center"));
-    			add_location(label0, file$9, 85, 14, 2922);
+    			add_location(label0, file$9, 85, 14, 2925);
     			attr_dev(div1, "class", "task mb-2");
-    			add_location(div1, file$9, 84, 12, 2884);
+    			add_location(div1, file$9, 84, 12, 2887);
     			attr_dev(input1, "type", "checkbox");
     			attr_dev(input1, "class", "form-checkbox text-cyan-us transition-all-4");
     			input1.checked = input1_checked_value = /*items*/ ctx[0][1] ? true : false;
-    			add_location(input1, file$9, 102, 16, 3787);
+    			add_location(input1, file$9, 102, 16, 3790);
     			attr_dev(span2, "class", "font-light");
-    			add_location(span2, file$9, 108, 18, 4092);
+    			add_location(span2, file$9, 108, 18, 4095);
     			attr_dev(span3, "class", span3_class_value = "" + ((/*items*/ ctx[0][1] ? "opacity-50" : "") + " ml-2"));
-    			add_location(span3, file$9, 107, 16, 4023);
+    			add_location(span3, file$9, 107, 16, 4026);
     			attr_dev(label1, "class", label1_class_value = "" + ((/*items*/ ctx[0][1] ? "line-through" : "") + " inline-flex items-center"));
-    			add_location(label1, file$9, 101, 14, 3697);
+    			add_location(label1, file$9, 101, 14, 3700);
     			attr_dev(div2, "class", "task mb-2");
-    			add_location(div2, file$9, 100, 12, 3659);
+    			add_location(div2, file$9, 100, 12, 3662);
     			attr_dev(input2, "type", "checkbox");
     			attr_dev(input2, "class", "form-checkbox text-cyan-us transition-all-4");
     			input2.checked = input2_checked_value = /*items*/ ctx[0][2] ? true : false;
-    			add_location(input2, file$9, 118, 16, 4537);
+    			add_location(input2, file$9, 118, 16, 4545);
     			attr_dev(span4, "class", "font-light");
-    			add_location(span4, file$9, 124, 18, 4842);
+    			add_location(span4, file$9, 124, 18, 4850);
     			attr_dev(span5, "class", span5_class_value = "" + ((/*items*/ ctx[0][2] ? "opacity-50" : "") + " ml-2"));
-    			add_location(span5, file$9, 123, 16, 4773);
+    			add_location(span5, file$9, 123, 16, 4781);
     			attr_dev(label2, "class", label2_class_value = "" + ((/*items*/ ctx[0][2] ? "line-through" : "") + " inline-flex items-center"));
-    			add_location(label2, file$9, 117, 14, 4447);
-    			attr_dev(div3, "class", "task");
-    			add_location(div3, file$9, 116, 12, 4414);
-    			attr_dev(div4, "class", "sm: leading-snug leading-tight");
-    			add_location(div4, file$9, 82, 10, 2826);
-    			attr_dev(div5, "class", "border-1 rounded p-3");
-    			add_location(div5, file$9, 72, 8, 2515);
-    			attr_dev(div6, "class", "sm:h-64 h-auto overflow-scroll");
-    			add_location(div6, file$9, 71, 6, 2462);
-    			add_location(div7, file$9, 64, 4, 2309);
-    			attr_dev(div8, "class", "shadow-md border-2 border-solid border-blue-us rounded h-auto max-w-2xl p-4 bg-white-us");
-    			add_location(div8, file$9, 60, 2, 2154);
+    			add_location(label2, file$9, 117, 14, 4455);
+    			attr_dev(div3, "class", "task mb-2");
+    			add_location(div3, file$9, 116, 12, 4417);
+    			attr_dev(input3, "type", "checkbox");
+    			attr_dev(input3, "class", "form-checkbox text-cyan-us transition-all-4");
+    			input3.checked = input3_checked_value = /*items*/ ctx[0][3] ? true : false;
+    			add_location(input3, file$9, 134, 16, 5263);
+    			attr_dev(span6, "class", "font-light");
+    			add_location(span6, file$9, 140, 18, 5568);
+    			attr_dev(span7, "class", span7_class_value = "" + ((/*items*/ ctx[0][3] ? "opacity-50" : "") + " ml-2"));
+    			add_location(span7, file$9, 139, 16, 5499);
+    			attr_dev(label3, "class", label3_class_value = "" + ((/*items*/ ctx[0][3] ? "line-through" : "") + " inline-flex items-center"));
+    			add_location(label3, file$9, 133, 14, 5173);
+    			attr_dev(div4, "class", "task");
+    			add_location(div4, file$9, 132, 12, 5140);
+    			attr_dev(div5, "class", "sm: leading-snug leading-tight");
+    			add_location(div5, file$9, 82, 10, 2829);
+    			attr_dev(div6, "class", "border-1 rounded p-3");
+    			add_location(div6, file$9, 72, 8, 2518);
+    			attr_dev(div7, "class", "sm:h-64 h-auto overflow-scroll");
+    			add_location(div7, file$9, 71, 6, 2465);
+    			add_location(div8, file$9, 64, 4, 2312);
+    			attr_dev(div9, "class", "shadow-md border-2 border-solid border-blue-us rounded h-auto max-w-2xl p-4 bg-white-us");
+    			add_location(div9, file$9, 60, 2, 2157);
     			attr_dev(main, "class", "flex flex-col h-screen justify-center items-center p-3 bg-black-us");
-    			add_location(main, file$9, 54, 0, 1989);
+    			add_location(main, file$9, 54, 0, 1992);
 
     			dispose = [
     				listen_dev(input0, "click", /*click_handler*/ ctx[9], false, false, false),
     				listen_dev(input1, "click", /*click_handler_1*/ ctx[10], false, false, false),
-    				listen_dev(input2, "click", /*click_handler_2*/ ctx[11], false, false, false)
+    				listen_dev(input2, "click", /*click_handler_2*/ ctx[11], false, false, false),
+    				listen_dev(input3, "click", /*click_handler_3*/ ctx[12], false, false, false)
     			];
     		},
     		l: function claim(nodes) {
@@ -1575,25 +1579,25 @@ var app = (function () {
     			append_dev(main, t0);
     			mount_component(title, main, null);
     			append_dev(main, t1);
-    			append_dev(main, div8);
-    			mount_component(fullcalendarlink, div8, null);
-    			append_dev(div8, t2);
+    			append_dev(main, div9);
+    			mount_component(fullcalendarlink, div9, null);
+    			append_dev(div9, t2);
+    			append_dev(div9, div8);
+    			mount_component(weekinfo, div8, null);
+    			append_dev(div8, t3);
+    			mount_component(progressbar, div8, null);
+    			append_dev(div8, t4);
+    			mount_component(completedtasks, div8, null);
+    			append_dev(div8, t5);
     			append_dev(div8, div7);
-    			mount_component(weekinfo, div7, null);
-    			append_dev(div7, t3);
-    			mount_component(progressbar, div7, null);
-    			append_dev(div7, t4);
-    			mount_component(completedtasks, div7, null);
-    			append_dev(div7, t5);
     			append_dev(div7, div6);
-    			append_dev(div6, div5);
-    			append_dev(div5, div0);
+    			append_dev(div6, div0);
     			mount_component(nodetag, div0, null);
     			append_dev(div0, t6);
     			mount_component(expresstag, div0, null);
-    			append_dev(div5, t7);
-    			append_dev(div5, div4);
-    			append_dev(div4, div1);
+    			append_dev(div6, t7);
+    			append_dev(div6, div5);
+    			append_dev(div5, div1);
     			append_dev(div1, label0);
     			append_dev(label0, input0);
     			append_dev(label0, t8);
@@ -1601,8 +1605,8 @@ var app = (function () {
     			append_dev(span1, span0);
     			append_dev(span1, t10);
     			mount_component(tasklink0, span1, null);
-    			append_dev(div4, t11);
-    			append_dev(div4, div2);
+    			append_dev(div5, t11);
+    			append_dev(div5, div2);
     			append_dev(div2, label1);
     			append_dev(label1, input1);
     			append_dev(label1, t12);
@@ -1610,8 +1614,8 @@ var app = (function () {
     			append_dev(span3, span2);
     			append_dev(span3, t14);
     			mount_component(tasklink1, span3, null);
-    			append_dev(div4, t15);
-    			append_dev(div4, div3);
+    			append_dev(div5, t15);
+    			append_dev(div5, div3);
     			append_dev(div3, label2);
     			append_dev(label2, input2);
     			append_dev(label2, t16);
@@ -1619,6 +1623,15 @@ var app = (function () {
     			append_dev(span5, span4);
     			append_dev(span5, t18);
     			mount_component(tasklink2, span5, null);
+    			append_dev(div5, t19);
+    			append_dev(div5, div4);
+    			append_dev(div4, label3);
+    			append_dev(label3, input3);
+    			append_dev(label3, t20);
+    			append_dev(label3, span7);
+    			append_dev(span7, span6);
+    			append_dev(span7, t22);
+    			mount_component(tasklink3, span7, null);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
@@ -1672,6 +1685,18 @@ var app = (function () {
     			if (!current || dirty[0] & /*items*/ 1 && label2_class_value !== (label2_class_value = "" + ((/*items*/ ctx[0][2] ? "line-through" : "") + " inline-flex items-center"))) {
     				attr_dev(label2, "class", label2_class_value);
     			}
+
+    			if (!current || dirty[0] & /*items*/ 1 && input3_checked_value !== (input3_checked_value = /*items*/ ctx[0][3] ? true : false)) {
+    				prop_dev(input3, "checked", input3_checked_value);
+    			}
+
+    			if (!current || dirty[0] & /*items*/ 1 && span7_class_value !== (span7_class_value = "" + ((/*items*/ ctx[0][3] ? "opacity-50" : "") + " ml-2"))) {
+    				attr_dev(span7, "class", span7_class_value);
+    			}
+
+    			if (!current || dirty[0] & /*items*/ 1 && label3_class_value !== (label3_class_value = "" + ((/*items*/ ctx[0][3] ? "line-through" : "") + " inline-flex items-center"))) {
+    				attr_dev(label3, "class", label3_class_value);
+    			}
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -1686,6 +1711,7 @@ var app = (function () {
     			transition_in(tasklink0.$$.fragment, local);
     			transition_in(tasklink1.$$.fragment, local);
     			transition_in(tasklink2.$$.fragment, local);
+    			transition_in(tasklink3.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
@@ -1700,6 +1726,7 @@ var app = (function () {
     			transition_out(tasklink0.$$.fragment, local);
     			transition_out(tasklink1.$$.fragment, local);
     			transition_out(tasklink2.$$.fragment, local);
+    			transition_out(tasklink3.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -1715,6 +1742,7 @@ var app = (function () {
     			destroy_component(tasklink0);
     			destroy_component(tasklink1);
     			destroy_component(tasklink2);
+    			destroy_component(tasklink3);
     			run_all(dispose);
     		}
     	};
@@ -1733,10 +1761,10 @@ var app = (function () {
     const LOCAL_STORAGE_ITEMS_KEY = "items";
     const LOCAL_STORAGE_COMPLETED_KEY = "completed";
 
-    function instance$7($$self, $$props, $$invalidate) {
+    function instance$6($$self, $$props, $$invalidate) {
     	let { week } = $$props;
     	let { weekNumber } = $$props;
-    	let { items = JSON.parse(localStorage.getItem(LOCAL_STORAGE_ITEMS_KEY)) || [0, 0, 0] } = $$props;
+    	let { items = JSON.parse(localStorage.getItem(LOCAL_STORAGE_ITEMS_KEY)) || [0, 0, 0, 0] } = $$props;
     	let taskPercentage = parseFloat((100 / items.length).toFixed(2));
     	let completedPercentage = JSON.parse(localStorage.getItem(LOCAL_STORAGE_COMPLETED_KEY)) || 0;
 
@@ -1773,6 +1801,7 @@ var app = (function () {
     	const click_handler = () => handleClick(0);
     	const click_handler_1 = () => handleClick(1);
     	const click_handler_2 = () => handleClick(2);
+    	const click_handler_3 = () => handleClick(3);
 
     	$$self.$set = $$props => {
     		if ("week" in $$props) $$invalidate(1, week = $$props.week);
@@ -1810,7 +1839,8 @@ var app = (function () {
     		substractCompletedPercentage,
     		click_handler,
     		click_handler_1,
-    		click_handler_2
+    		click_handler_2,
+    		click_handler_3
     	];
     }
 
@@ -1818,7 +1848,7 @@ var app = (function () {
     	constructor(options) {
     		super(options);
 
-    		init(this, options, instance$7, create_fragment$9, safe_not_equal, {
+    		init(this, options, instance$6, create_fragment$9, safe_not_equal, {
     			week: 1,
     			weekNumber: 2,
     			items: 0,
