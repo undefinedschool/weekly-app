@@ -1415,8 +1415,8 @@ var app = (function () {
 
     	const tasklink1 = new TaskLink({
     			props: {
-    				name: "Create a Web Server",
-    				src: "https://github.com/thejsway/thejsway/blob/master/manuscript/chapter25.md"
+    				name: "Serving JSON with Express.js",
+    				src: "https://www.rithmschool.com/courses/node-express-fundamentals/json-with-express"
     			},
     			$$inline: true
     		});
@@ -1530,27 +1530,27 @@ var app = (function () {
     			attr_dev(input2, "type", "checkbox");
     			attr_dev(input2, "class", "form-checkbox text-cyan-us transition-all-4");
     			input2.checked = input2_checked_value = /*items*/ ctx[0][2] ? true : false;
-    			add_location(input2, file$9, 118, 16, 4545);
+    			add_location(input2, file$9, 118, 16, 4561);
     			attr_dev(span4, "class", "font-light");
-    			add_location(span4, file$9, 124, 18, 4850);
+    			add_location(span4, file$9, 124, 18, 4866);
     			attr_dev(span5, "class", span5_class_value = "" + ((/*items*/ ctx[0][2] ? "opacity-50" : "") + " ml-2"));
-    			add_location(span5, file$9, 123, 16, 4781);
+    			add_location(span5, file$9, 123, 16, 4797);
     			attr_dev(label2, "class", label2_class_value = "" + ((/*items*/ ctx[0][2] ? "line-through" : "") + " inline-flex items-center"));
-    			add_location(label2, file$9, 117, 14, 4455);
+    			add_location(label2, file$9, 117, 14, 4471);
     			attr_dev(div3, "class", "task mb-2");
-    			add_location(div3, file$9, 116, 12, 4417);
+    			add_location(div3, file$9, 116, 12, 4433);
     			attr_dev(input3, "type", "checkbox");
     			attr_dev(input3, "class", "form-checkbox text-cyan-us transition-all-4");
     			input3.checked = input3_checked_value = /*items*/ ctx[0][3] ? true : false;
-    			add_location(input3, file$9, 134, 16, 5263);
+    			add_location(input3, file$9, 134, 16, 5279);
     			attr_dev(span6, "class", "font-light");
-    			add_location(span6, file$9, 140, 18, 5568);
+    			add_location(span6, file$9, 140, 18, 5584);
     			attr_dev(span7, "class", span7_class_value = "" + ((/*items*/ ctx[0][3] ? "opacity-50" : "") + " ml-2"));
-    			add_location(span7, file$9, 139, 16, 5499);
+    			add_location(span7, file$9, 139, 16, 5515);
     			attr_dev(label3, "class", label3_class_value = "" + ((/*items*/ ctx[0][3] ? "line-through" : "") + " inline-flex items-center"));
-    			add_location(label3, file$9, 133, 14, 5173);
+    			add_location(label3, file$9, 133, 14, 5189);
     			attr_dev(div4, "class", "task");
-    			add_location(div4, file$9, 132, 12, 5140);
+    			add_location(div4, file$9, 132, 12, 5156);
     			attr_dev(div5, "class", "sm: leading-snug leading-tight");
     			add_location(div5, file$9, 82, 10, 2829);
     			attr_dev(div6, "class", "border-1 rounded p-3");

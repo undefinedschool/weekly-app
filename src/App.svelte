@@ -108,8 +108,8 @@
                 <span class="{items[1] ? 'opacity-50' : ''} ml-2">
                   <span class="font-light">📚🏃Completar el capítulo</span>
                   <TaskLink
-                    name="{'Create a Web Server'}"
-                    src="{'https://github.com/thejsway/thejsway/blob/master/manuscript/chapter25.md'}" />
+                    name="{'Serving JSON with Express.js'}"
+                    src="{'https://www.rithmschool.com/courses/node-express-fundamentals/json-with-express'}" />
                 </span>
               </label>
             </div>
