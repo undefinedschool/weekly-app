@@ -67,7 +67,7 @@
     class="shadow-md border-2 border-solid border-blue-us rounded h-auto
     max-w-2xl p-4 bg-white-us">
 
-    <FullCalendarLink />
+    <FullCalendarLink {completedPercentage} />
 
     <div>
       <WeekInfo {weekNumber} {week} />

@@ -363,7 +363,7 @@ var app = (function () {
 
     			add_location(div0, file, 7, 2, 193);
 
-    			attr_dev(div1, "class", div1_class_value = "bg-gray-200 mt-4 mb-4 text-3xl " + (Math.round(/*completedPercentage*/ ctx[0]) === 100
+    			attr_dev(div1, "class", div1_class_value = "bg-gray-200 mt-4 mb-5 text-3xl " + (Math.round(/*completedPercentage*/ ctx[0]) === 100
     			? "font-semibold"
     			: "") + "\n  text-center rounded-lg");
 
@@ -402,7 +402,7 @@ var app = (function () {
     				attr_dev(div0, "class", div0_class_value);
     			}
 
-    			if (dirty[0] & /*completedPercentage*/ 1 && div1_class_value !== (div1_class_value = "bg-gray-200 mt-4 mb-4 text-3xl " + (Math.round(/*completedPercentage*/ ctx[0]) === 100
+    			if (dirty[0] & /*completedPercentage*/ 1 && div1_class_value !== (div1_class_value = "bg-gray-200 mt-4 mb-5 text-3xl " + (Math.round(/*completedPercentage*/ ctx[0]) === 100
     			? "font-semibold"
     			: "") + "\n  text-center rounded-lg")) {
     				attr_dev(div1, "class", div1_class_value);
@@ -688,15 +688,25 @@ var app = (function () {
     	let p;
     	let a;
 
+    	let t0_value = (Math.round(/*completedPercentage*/ ctx[0]) === 100
+    	? "✨"
+    	: "") + "";
+
+    	let t0;
+    	let t1;
+
     	const block = {
     		c: function create() {
     			p = element("p");
     			a = element("a");
-    			a.textContent = "Ver calendario completo";
+    			t0 = text(t0_value);
+    			t1 = text(" Ver calendario\n    completo");
     			attr_dev(a, "href", "https://trello.com/b/mUf0huXz/undefined-school");
-    			add_location(a, file$3, 1, 2, 79);
+    			attr_dev(a, "target", "_blank");
+    			attr_dev(a, "rel", "noopener");
+    			add_location(a, file$3, 5, 2, 133);
     			attr_dev(p, "class", "font-light text-sm text-right -mt-1 -mr-1 mb-4 text-gray-us link");
-    			add_location(p, file$3, 0, 0, 0);
+    			add_location(p, file$3, 4, 0, 54);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -704,8 +714,14 @@ var app = (function () {
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
     			append_dev(p, a);
+    			append_dev(a, t0);
+    			append_dev(a, t1);
     		},
-    		p: noop,
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*completedPercentage*/ 1 && t0_value !== (t0_value = (Math.round(/*completedPercentage*/ ctx[0]) === 100
+    			? "✨"
+    			: "") + "")) set_data_dev(t0, t0_value);
+    		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
@@ -724,10 +740,33 @@ var app = (function () {
     	return block;
     }
 
+    function instance$2($$self, $$props, $$invalidate) {
+    	let { completedPercentage } = $$props;
+    	const writable_props = ["completedPercentage"];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<FullCalendarLink> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ("completedPercentage" in $$props) $$invalidate(0, completedPercentage = $$props.completedPercentage);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { completedPercentage };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ("completedPercentage" in $$props) $$invalidate(0, completedPercentage = $$props.completedPercentage);
+    	};
+
+    	return [completedPercentage];
+    }
+
     class FullCalendarLink extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, null, create_fragment$3, safe_not_equal, {});
+    		init(this, options, instance$2, create_fragment$3, safe_not_equal, { completedPercentage: 0 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -735,6 +774,21 @@ var app = (function () {
     			options,
     			id: create_fragment$3.name
     		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || ({});
+
+    		if (/*completedPercentage*/ ctx[0] === undefined && !("completedPercentage" in props)) {
+    			console.warn("<FullCalendarLink> was created without expected prop 'completedPercentage'");
+    		}
+    	}
+
+    	get completedPercentage() {
+    		throw new Error("<FullCalendarLink>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set completedPercentage(value) {
+    		throw new Error("<FullCalendarLink>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
 
@@ -771,7 +825,7 @@ var app = (function () {
     			t7 = text(")");
     			attr_dev(span, "class", "text-gray-700 font-semibold text-xl");
     			add_location(span, file$4, 6, 2, 85);
-    			attr_dev(p, "class", "text-light-gray-us font-light");
+    			attr_dev(p, "class", "text-light-gray-us font-light text-sm");
     			add_location(p, file$4, 7, 2, 164);
     			attr_dev(div, "class", "mb-4");
     			add_location(div, file$4, 5, 0, 64);
@@ -814,7 +868,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$2($$self, $$props, $$invalidate) {
+    function instance$3($$self, $$props, $$invalidate) {
     	let { week } = $$props;
     	let { weekNumber } = $$props;
     	const writable_props = ["week", "weekNumber"];
@@ -843,7 +897,7 @@ var app = (function () {
     class WeekInfo extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$2, create_fragment$4, safe_not_equal, { week: 0, weekNumber: 1 });
+    		init(this, options, instance$3, create_fragment$4, safe_not_equal, { week: 0, weekNumber: 1 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -931,7 +985,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$3($$self, $$props, $$invalidate) {
+    function instance$4($$self, $$props, $$invalidate) {
     	let { name } = $$props;
     	let { src } = $$props;
     	const writable_props = ["name", "src"];
@@ -960,7 +1014,7 @@ var app = (function () {
     class TaskLink extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$3, create_fragment$5, safe_not_equal, { name: 0, src: 1 });
+    		init(this, options, instance$4, create_fragment$5, safe_not_equal, { name: 0, src: 1 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -1011,7 +1065,7 @@ var app = (function () {
     			div = element("div");
     			span = element("span");
     			span.textContent = "Node";
-    			attr_dev(span, "class", "inline-block border-1 border-green-700 rounded px-2 py-1 text-xs\n    text-green-700 bg-green-400 font-semibold");
+    			attr_dev(span, "class", "inline-block border-1 border-green-700 rounded px-2 py-1 text-xs\n    text-green-700 bg-green-300 font-semibold opacity-75");
     			add_location(span, file$6, 1, 2, 50);
     			attr_dev(div, "class", "flex justify-end -mt-1 -mr-1 mb-4");
     			add_location(div, file$6, 0, 0, 0);
@@ -1069,7 +1123,7 @@ var app = (function () {
     			div = element("div");
     			span = element("span");
     			span.textContent = "CSS";
-    			attr_dev(span, "class", "inline-block border-1 border-blue-500 rounded px-2 py-1 text-xs\n    text-blue-500 bg-blue-200 font-semibold");
+    			attr_dev(span, "class", "inline-block border-1 border-blue-500 rounded px-2 py-1 text-xs\n    text-blue-500 bg-blue-200 font-semibold opacity-75");
     			add_location(span, file$7, 1, 2, 50);
     			attr_dev(div, "class", "flex justify-end -mt-1 -mr-1 mb-4");
     			add_location(div, file$7, 0, 0, 0);
@@ -1181,7 +1235,12 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	const fullcalendarlink = new FullCalendarLink({ $$inline: true });
+    	const fullcalendarlink = new FullCalendarLink({
+    			props: {
+    				completedPercentage: /*completedPercentage*/ ctx[3]
+    			},
+    			$$inline: true
+    		});
 
     	const weekinfo = new WeekInfo({
     			props: {
@@ -1287,53 +1346,53 @@ var app = (function () {
     			attr_dev(input0, "type", "checkbox");
     			attr_dev(input0, "class", "form-checkbox text-cyan-us transition-all-4");
     			input0.checked = input0_checked_value = /*items*/ ctx[2][0] ? true : false;
-    			add_location(input0, file$8, 84, 16, 2373);
+    			add_location(input0, file$8, 84, 16, 2395);
     			attr_dev(span0, "class", "font-light");
-    			add_location(span0, file$8, 90, 18, 2674);
+    			add_location(span0, file$8, 90, 18, 2696);
     			attr_dev(span1, "class", span1_class_value = "" + ((/*items*/ ctx[2][0] ? "opacity-50" : "") + " ml-2"));
-    			add_location(span1, file$8, 89, 16, 2605);
+    			add_location(span1, file$8, 89, 16, 2627);
     			attr_dev(label0, "class", label0_class_value = "" + ((/*items*/ ctx[2][0] ? "line-through" : "") + " inline-flex items-center"));
-    			add_location(label0, file$8, 82, 14, 2267);
+    			add_location(label0, file$8, 82, 14, 2289);
     			attr_dev(div0, "class", "mb-2");
-    			add_location(div0, file$8, 81, 12, 2234);
+    			add_location(div0, file$8, 81, 12, 2256);
     			attr_dev(input1, "type", "checkbox");
     			attr_dev(input1, "class", "form-checkbox text-cyan-us transition-all-4");
     			input1.checked = input1_checked_value = /*items*/ ctx[2][1] ? true : false;
-    			add_location(input1, file$8, 101, 16, 3126);
+    			add_location(input1, file$8, 101, 16, 3148);
     			attr_dev(span2, "class", "font-light");
-    			add_location(span2, file$8, 107, 18, 3427);
+    			add_location(span2, file$8, 107, 18, 3449);
     			attr_dev(span3, "class", span3_class_value = "" + ((/*items*/ ctx[2][1] ? "opacity-50" : "") + " ml-2"));
-    			add_location(span3, file$8, 106, 16, 3358);
+    			add_location(span3, file$8, 106, 16, 3380);
     			attr_dev(label1, "class", label1_class_value = "" + ((/*items*/ ctx[2][1] ? "line-through" : "") + " inline-flex items-center"));
-    			add_location(label1, file$8, 99, 14, 3020);
-    			add_location(div1, file$8, 98, 12, 3000);
+    			add_location(label1, file$8, 99, 14, 3042);
+    			add_location(div1, file$8, 98, 12, 3022);
     			attr_dev(div2, "class", "sm: leading-snug leading-tight");
-    			add_location(div2, file$8, 80, 10, 2177);
+    			add_location(div2, file$8, 80, 10, 2199);
     			attr_dev(div3, "class", "border-1 rounded p-3");
-    			add_location(div3, file$8, 77, 8, 2109);
+    			add_location(div3, file$8, 77, 8, 2131);
     			attr_dev(input2, "type", "checkbox");
     			attr_dev(input2, "class", "form-checkbox text-cyan-us transition-all-4");
     			input2.checked = input2_checked_value = /*items*/ ctx[2][2] ? true : false;
-    			add_location(input2, file$8, 124, 16, 4005);
+    			add_location(input2, file$8, 124, 16, 4027);
     			attr_dev(span4, "class", "font-light");
-    			add_location(span4, file$8, 130, 18, 4306);
+    			add_location(span4, file$8, 130, 18, 4328);
     			attr_dev(em, "class", "font-normal");
-    			add_location(em, file$8, 136, 20, 4613);
+    			add_location(em, file$8, 136, 20, 4635);
     			attr_dev(span5, "class", "font-light");
-    			add_location(span5, file$8, 134, 18, 4544);
+    			add_location(span5, file$8, 134, 18, 4566);
     			attr_dev(span6, "class", span6_class_value = "" + ((/*items*/ ctx[2][2] ? "opacity-50" : "") + " ml-2"));
-    			add_location(span6, file$8, 129, 16, 4237);
+    			add_location(span6, file$8, 129, 16, 4259);
     			attr_dev(label2, "class", label2_class_value = "" + ((/*items*/ ctx[2][2] ? "line-through" : "") + " inline-flex items-center"));
-    			add_location(label2, file$8, 122, 14, 3899);
+    			add_location(label2, file$8, 122, 14, 3921);
     			attr_dev(div4, "class", "mb-2");
-    			add_location(div4, file$8, 121, 12, 3866);
+    			add_location(div4, file$8, 121, 12, 3888);
     			attr_dev(div5, "class", "sm: leading-snug leading-tight");
-    			add_location(div5, file$8, 120, 10, 3809);
+    			add_location(div5, file$8, 120, 10, 3831);
     			attr_dev(div6, "class", "mt-1 border-1 rounded p-3");
-    			add_location(div6, file$8, 117, 8, 3737);
+    			add_location(div6, file$8, 117, 8, 3759);
     			attr_dev(div7, "class", "sm:h-64 h-auto overflow-scroll");
-    			add_location(div7, file$8, 76, 6, 2056);
-    			add_location(div8, file$8, 71, 4, 1959);
+    			add_location(div7, file$8, 76, 6, 2078);
+    			add_location(div8, file$8, 71, 4, 1981);
     			attr_dev(div9, "class", "shadow-md border-2 border-solid border-blue-us rounded h-auto\n    max-w-2xl p-4 bg-white-us");
     			add_location(div9, file$8, 65, 2, 1818);
     			attr_dev(main, "class", "flex flex-col h-screen justify-center items-center p-3 bg-black-us");
@@ -1404,6 +1463,9 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
+    			const fullcalendarlink_changes = {};
+    			if (dirty[0] & /*completedPercentage*/ 8) fullcalendarlink_changes.completedPercentage = /*completedPercentage*/ ctx[3];
+    			fullcalendarlink.$set(fullcalendarlink_changes);
     			const weekinfo_changes = {};
     			if (dirty[0] & /*weekNumber*/ 2) weekinfo_changes.weekNumber = /*weekNumber*/ ctx[1];
     			if (dirty[0] & /*week*/ 1) weekinfo_changes.week = /*week*/ ctx[0];
@@ -1505,7 +1567,7 @@ var app = (function () {
     const LOCAL_STORAGE_ITEMS_KEY = "items";
     const LOCAL_STORAGE_COMPLETED_KEY = "completed";
 
-    function instance$4($$self, $$props, $$invalidate) {
+    function instance$5($$self, $$props, $$invalidate) {
     	let { week } = $$props;
     	let { weekNumber } = $$props;
     	let items = JSON.parse(localStorage.getItem(LOCAL_STORAGE_ITEMS_KEY)) || [0, 0, 0];
@@ -1591,7 +1653,7 @@ var app = (function () {
     class App extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$4, create_fragment$8, safe_not_equal, { week: 0, weekNumber: 1 });
+    		init(this, options, instance$5, create_fragment$8, safe_not_equal, { week: 0, weekNumber: 1 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -1633,8 +1695,8 @@ var app = (function () {
       target: document.body,
       props: {
         week: '16 al 23 de Diciembre',
-        weekNumber: 42
-      }
+        weekNumber: 42,
+      },
     });
 
     return app;
