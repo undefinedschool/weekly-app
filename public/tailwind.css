@@ -1,0 +1,22 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/utilities';
+@import 'tailwindcss/components';
+
+@import './utilities.css';
+/* @import './components.css';  */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.blink {
+  color: #00c6b3;
+  font-weight: 400;
+  animation: blinker 0.95s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
