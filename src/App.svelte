@@ -4,17 +4,20 @@
   import Title from './components/Title.svelte';
   import FullCalendarLink from './components/FullCalendarLink.svelte';
   import WeekInfo from './components/WeekInfo.svelte';
+  import CompletedTasks from './components/CompletedTasks.svelte';
   import TaskLink from './components/TaskLink.svelte';
   import NodeTag from './components/Tags/NodeTag.svelte';
-  import CSSTag from './components/Tags/CSSTag.svelte';
+  import ExpressTag from './components/Tags/ExpressTag.svelte';
 
   export let week;
   export let weekNumber;
 
   const LOCAL_STORAGE_ITEMS_KEY = 'items';
   const LOCAL_STORAGE_COMPLETED_KEY = 'completed';
-  let items = JSON.parse(localStorage.getItem(LOCAL_STORAGE_ITEMS_KEY)) || [0, 0, 0];
+  // const tasksNumber = () => document.querySelectorAll('.task').length;
+  // const tasks = new Array(tasksNumber()).fill(0);
 
+  export let items = JSON.parse(localStorage.getItem(LOCAL_STORAGE_ITEMS_KEY)) || [0, 0, 0];
   let taskPercentage = parseFloat((100 / items.length).toFixed(2));
   let completedPercentage = JSON.parse(localStorage.getItem(LOCAL_STORAGE_COMPLETED_KEY)) || 0;
 
@@ -34,7 +37,7 @@
     localStorage.setItem(LOCAL_STORAGE_COMPLETED_KEY, JSON.stringify(completedPercentage));
   }
 
-  function handleClick(index) {
+  export function handleClick(index) {
     updateItems(index);
     items[index] ? addCompletedPercentage() : substractCompletedPercentage();
   }
@@ -64,20 +67,22 @@
 
       <ProgressBar {completedPercentage} />
 
-      <p class="text-light-gray-us font-light text-sm mb-2">
-        Tareas completadas: {items.filter(item => item).length} de {items.length}
-      </p>
+      <CompletedTasks {items} {completedPercentage} />
 
-      <div id="node-tasks" class="task sm:h-64 h-auto overflow-scroll">
+      <div class="sm:h-64 h-auto overflow-scroll">
         <div class="border-1 rounded p-3">
           <!-- <button on:click="{() => showOnly('node-tasks')}" style="display: flex; jus">
             <NodeTag />
           </button> -->
 
-          <NodeTag />
+          <div class="flex justify-end">
+            <NodeTag mr="{'mr-1'}" />
+            <ExpressTag />
+          </div>
 
           <div class="sm: leading-snug leading-tight">
-            <div class="mb-2">
+
+            <div class="task mb-2">
               <label class="{items[0] ? 'line-through' : ''} inline-flex items-center">
                 <input
                   type="checkbox"
@@ -87,13 +92,13 @@
                 <span class="{items[0] ? 'opacity-50' : ''} ml-2">
                   <span class="font-light">📚🏃Completar el capítulo</span>
                   <TaskLink
-                    name="{'Core Node.js Modules'}"
-                    src="{'https://www.rithmschool.com/courses/node-express-fundamentals/core-node-modules'}" />
+                    name="{'Introduction to Express.js'}"
+                    src="{'https://www.rithmschool.com/courses/node-express-fundamentals/introduction-to-express'}" />
                 </span>
               </label>
             </div>
 
-            <div>
+            <div class="task mb-2">
               <label class="{items[1] ? 'line-through' : ''} inline-flex items-center">
                 <input
                   type="checkbox"
@@ -101,42 +106,30 @@
                   on:click="{() => handleClick(1)}"
                   checked="{items[1] ? true : false}" />
                 <span class="{items[1] ? 'opacity-50' : ''} ml-2">
-                  <span class="font-light">📚🏃Completar el workshop</span>
-                  <TaskLink name="{'learnyounode'}" src="{'https://github.com/workshopper/learnyounode'}" />
+                  <span class="font-light">📚🏃Completar el capítulo</span>
+                  <TaskLink
+                    name="{'Create a Web Server'}"
+                    src="{'https://github.com/thejsway/thejsway/blob/master/manuscript/chapter25.md'}" />
                 </span>
               </label>
             </div>
-          </div>
-        </div>
 
-        <div id="css-tasks" class="task mt-1 border-1 rounded p-3">
-
-          <!-- <button on:click="{() => showOnly('css-tasks')}" style="display: flex; jus">
-            <CSSTag />
-          </button> -->
-
-          <CSSTag />
-
-          <div class="sm: leading-snug leading-tight">
-            <div class="mb-2">
-              <label class="{items[2] ? 'line-through' : ''} inline-flex items-center; justify-content: end">
+            <div class="task">
+              <label class="{items[2] ? 'line-through' : ''} inline-flex items-center">
                 <input
                   type="checkbox"
                   class="form-checkbox text-cyan-us transition-all-4"
                   on:click="{() => handleClick(2)}"
                   checked="{items[2] ? true : false}" />
                 <span class="{items[2] ? 'opacity-50' : ''} ml-2">
-                  <span class="font-light">📚🏃Completar el capítulo</span>
+                  <span class="font-light">📚🏃Ver</span>
                   <TaskLink
-                    name="{'Web Typography'}"
-                    src="{'https://internetingishard.com/html-and-css/web-typography/'}" />
-                  <span class="font-light">
-                    de
-                    <em class="font-normal">Interneting is Hard</em>
-                  </span>
+                    name="{'Notas sobre ExpressJS'}"
+                    src="{'https://github.com/undefinedschool/notes-expressjs/'}" />
                 </span>
               </label>
             </div>
+
           </div>
         </div>
       </div>

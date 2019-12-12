@@ -16,6 +16,10 @@
   color: #6e7378;
 }
 
+.text-gray-444 {
+  color: #444;
+}
+
 .text-cyan-us {
   color: #00c6b3;
 }
@@ -29,6 +33,10 @@
   background-color: #fafafa;
 }
 
+.bg-gray-eee {
+  background-color: #eee;
+}
+
 .bg-black-us {
   background-color: #1f2327;
 }
@@ -40,6 +48,10 @@
 
 .border-blue-us {
   border-color: #2f4252;
+}
+
+.border-gray-ddd {
+  border-color: #ddd;
 }
 
 /* hover */
