@@ -9,7 +9,8 @@
   import NodeTag from './components/Tags/NodeTag.svelte';
   import ExpressTag from './components/Tags/ExpressTag.svelte';
 
-  export let week;
+  export let today;
+  export let nextWeek;
   export let weekNumber;
 
   const LOCAL_STORAGE_ITEMS_KEY = 'items';
@@ -41,15 +42,6 @@
     updateItems(index);
     items[index] ? addCompletedPercentage() : substractCompletedPercentage();
   }
-
-  // function showOnly(id) {
-  //   const tasks = document.querySelectorAll('.task');
-  //   tasks.forEach(task => {
-  //     if (task.id !== id) {
-  //       task.style.display = 'none';
-  //     }
-  //   });
-  // }
 </script>
 
 <main class="flex flex-col h-screen justify-center items-center p-3 bg-black-us">
@@ -63,7 +55,7 @@
     <FullCalendarLink {completedPercentage} />
 
     <div>
-      <WeekInfo {weekNumber} {week} />
+      <WeekInfo {weekNumber} {today} {nextWeek} />
 
       <ProgressBar {completedPercentage} />
 
@@ -71,9 +63,6 @@
 
       <div class="sm:h-64 h-auto overflow-scroll">
         <div class="border-1 rounded p-3">
-          <!-- <button on:click="{() => showOnly('node-tasks')}" style="display: flex; jus">
-            <NodeTag />
-          </button> -->
 
           <div class="flex justify-end">
             <NodeTag mr="{'mr-1'}" />
@@ -124,7 +113,7 @@
                 <span class="{items[2] ? 'opacity-50' : ''} ml-2">
                   <span class="font-light">🏃Ver</span>
                   <TaskLink
-                    name="{'How to Use __dirname in Node.js'}"
+                    name="{`How to Use __dirname in Node.js`}"
                     src="{'https://alligator.io/nodejs/how-to-use__dirname/'}" />
                 </span>
               </label>

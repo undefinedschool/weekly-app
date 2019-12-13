@@ -363,9 +363,9 @@ var app = (function () {
 
     			add_location(div0, file, 7, 2, 193);
 
-    			attr_dev(div1, "class", div1_class_value = "bg-gray-200 mt-4 mb-5 text-3xl " + (Math.round(/*completedPercentage*/ ctx[0]) === 100
+    			attr_dev(div1, "class", div1_class_value = "bg-gray-200 mt-4 mb-8 text-3xl " + (Math.round(/*completedPercentage*/ ctx[0]) === 100
     			? "font-semibold"
-    			: "") + "\n  text-center rounded-lg");
+    			: "") + " text-center\n  rounded-lg");
 
     			add_location(div1, file, 4, 0, 54);
     		},
@@ -402,9 +402,9 @@ var app = (function () {
     				attr_dev(div0, "class", div0_class_value);
     			}
 
-    			if (dirty[0] & /*completedPercentage*/ 1 && div1_class_value !== (div1_class_value = "bg-gray-200 mt-4 mb-5 text-3xl " + (Math.round(/*completedPercentage*/ ctx[0]) === 100
+    			if (dirty[0] & /*completedPercentage*/ 1 && div1_class_value !== (div1_class_value = "bg-gray-200 mt-4 mb-8 text-3xl " + (Math.round(/*completedPercentage*/ ctx[0]) === 100
     			? "font-semibold"
-    			: "") + "\n  text-center rounded-lg")) {
+    			: "") + " text-center\n  rounded-lg")) {
     				attr_dev(div1, "class", div1_class_value);
     			}
     		},
@@ -744,6 +744,226 @@ var app = (function () {
 
     const file$4 = "src/components/WeekInfo.svelte";
 
+    // (22:4) {:else}
+    function create_else_block(ctx) {
+    	let t0;
+    	let t1;
+    	let span;
+    	let t3;
+    	let t4;
+
+    	function select_block_type_1(ctx, dirty) {
+    		if (/*daysRemaining*/ ctx[1] > 1) return create_if_block_2;
+    		return create_else_block_2;
+    	}
+
+    	let current_block_type = select_block_type_1(ctx);
+    	let if_block0 = current_block_type(ctx);
+
+    	function select_block_type_2(ctx, dirty) {
+    		if (/*daysRemaining*/ ctx[1] > 1) return create_if_block_1;
+    		return create_else_block_1;
+    	}
+
+    	let current_block_type_1 = select_block_type_2(ctx);
+    	let if_block1 = current_block_type_1(ctx);
+
+    	const block = {
+    		c: function create() {
+    			t0 = text("⏳\n      ");
+    			if_block0.c();
+    			t1 = space();
+    			span = element("span");
+    			span.textContent = `${/*daysRemaining*/ ctx[1]}`;
+    			t3 = space();
+    			if_block1.c();
+    			t4 = text("\n      para la próxima semana.");
+    			attr_dev(span, "class", "font-medium");
+    			add_location(span, file$4, 24, 6, 733);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t0, anchor);
+    			if_block0.m(target, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, span, anchor);
+    			insert_dev(target, t3, anchor);
+    			if_block1.m(target, anchor);
+    			insert_dev(target, t4, anchor);
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t0);
+    			if_block0.d(detaching);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(span);
+    			if (detaching) detach_dev(t3);
+    			if_block1.d(detaching);
+    			if (detaching) detach_dev(t4);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block.name,
+    		type: "else",
+    		source: "(22:4) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (19:4) {#if daysRemaining === 0}
+    function create_if_block(ctx) {
+    	let t0;
+    	let span;
+    	let t1_value = /*weekNumber*/ ctx[0] + 1 + "";
+    	let t1;
+    	let t2;
+
+    	const block = {
+    		c: function create() {
+    			t0 = text("⌛️ Ya estamos en la semana\n      ");
+    			span = element("span");
+    			t1 = text(t1_value);
+    			t2 = text(".");
+    			attr_dev(span, "class", "font-medium");
+    			add_location(span, file$4, 20, 6, 598);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, span, anchor);
+    			append_dev(span, t1);
+    			append_dev(span, t2);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*weekNumber*/ 1 && t1_value !== (t1_value = /*weekNumber*/ ctx[0] + 1 + "")) set_data_dev(t1, t1_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t0);
+    			if (detaching) detach_dev(span);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block.name,
+    		type: "if",
+    		source: "(19:4) {#if daysRemaining === 0}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (24:35) {:else}
+    function create_else_block_2(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Sólo falta");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block_2.name,
+    		type: "else",
+    		source: "(24:35) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (24:6) {#if daysRemaining > 1}
+    function create_if_block_2(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Faltan");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_2.name,
+    		type: "if",
+    		source: "(24:6) {#if daysRemaining > 1}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (26:33) {:else}
+    function create_else_block_1(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("día");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block_1.name,
+    		type: "else",
+    		source: "(26:33) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (26:6) {#if daysRemaining > 1}
+    function create_if_block_1(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("días");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1.name,
+    		type: "if",
+    		source: "(26:6) {#if daysRemaining > 1}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
     function create_fragment$4(ctx) {
     	let div;
     	let span;
@@ -751,32 +971,30 @@ var app = (function () {
     	let t1;
     	let t2;
     	let p;
-    	let t3;
-    	let t4;
-    	let t5;
-    	let t6_value = new Date().getFullYear() + "";
-    	let t6;
-    	let t7;
+
+    	function select_block_type(ctx, dirty) {
+    		if (/*daysRemaining*/ ctx[1] === 0) return create_if_block;
+    		return create_else_block;
+    	}
+
+    	let current_block_type = select_block_type(ctx);
+    	let if_block = current_block_type(ctx);
 
     	const block = {
     		c: function create() {
     			div = element("div");
     			span = element("span");
     			t0 = text("Semana ");
-    			t1 = text(/*weekNumber*/ ctx[1]);
+    			t1 = text(/*weekNumber*/ ctx[0]);
     			t2 = space();
     			p = element("p");
-    			t3 = text("(");
-    			t4 = text(/*week*/ ctx[0]);
-    			t5 = text(" de ");
-    			t6 = text(t6_value);
-    			t7 = text(")");
-    			attr_dev(span, "class", "text-gray-700 font-semibold text-xl");
-    			add_location(span, file$4, 6, 2, 85);
-    			attr_dev(p, "class", "text-light-gray-us font-light text-sm");
-    			add_location(p, file$4, 7, 2, 164);
+    			if_block.c();
+    			attr_dev(span, "class", "block text-gray-700 font-semibold text-xl -mb-1");
+    			add_location(span, file$4, 16, 2, 388);
+    			attr_dev(p, "class", "font-light text-sm text-light-gray-us");
+    			add_location(p, file$4, 17, 2, 479);
     			attr_dev(div, "class", "mb-4");
-    			add_location(div, file$4, 5, 0, 64);
+    			add_location(div, file$4, 15, 0, 367);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -788,20 +1006,17 @@ var app = (function () {
     			append_dev(span, t1);
     			append_dev(div, t2);
     			append_dev(div, p);
-    			append_dev(p, t3);
-    			append_dev(p, t4);
-    			append_dev(p, t5);
-    			append_dev(p, t6);
-    			append_dev(p, t7);
+    			if_block.m(p, null);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*weekNumber*/ 2) set_data_dev(t1, /*weekNumber*/ ctx[1]);
-    			if (dirty[0] & /*week*/ 1) set_data_dev(t4, /*week*/ ctx[0]);
+    			if (dirty[0] & /*weekNumber*/ 1) set_data_dev(t1, /*weekNumber*/ ctx[0]);
+    			if_block.p(ctx, dirty);
     		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
+    			if_block.d();
     		}
     	};
 
@@ -816,36 +1031,46 @@ var app = (function () {
     	return block;
     }
 
+    function getDaysRemainingToNextWeek(today, nextWeek) {
+    	const diffTime = Math.abs(today - nextWeek);
+    	const remainingDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    	return remainingDays;
+    }
+
     function instance$2($$self, $$props, $$invalidate) {
-    	let { week } = $$props;
+    	let { today } = $$props;
+    	let { nextWeek } = $$props;
     	let { weekNumber } = $$props;
-    	const writable_props = ["week", "weekNumber"];
+    	const daysRemaining = getDaysRemainingToNextWeek(today, nextWeek);
+    	const writable_props = ["today", "nextWeek", "weekNumber"];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<WeekInfo> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$set = $$props => {
-    		if ("week" in $$props) $$invalidate(0, week = $$props.week);
-    		if ("weekNumber" in $$props) $$invalidate(1, weekNumber = $$props.weekNumber);
+    		if ("today" in $$props) $$invalidate(2, today = $$props.today);
+    		if ("nextWeek" in $$props) $$invalidate(3, nextWeek = $$props.nextWeek);
+    		if ("weekNumber" in $$props) $$invalidate(0, weekNumber = $$props.weekNumber);
     	};
 
     	$$self.$capture_state = () => {
-    		return { week, weekNumber };
+    		return { today, nextWeek, weekNumber };
     	};
 
     	$$self.$inject_state = $$props => {
-    		if ("week" in $$props) $$invalidate(0, week = $$props.week);
-    		if ("weekNumber" in $$props) $$invalidate(1, weekNumber = $$props.weekNumber);
+    		if ("today" in $$props) $$invalidate(2, today = $$props.today);
+    		if ("nextWeek" in $$props) $$invalidate(3, nextWeek = $$props.nextWeek);
+    		if ("weekNumber" in $$props) $$invalidate(0, weekNumber = $$props.weekNumber);
     	};
 
-    	return [week, weekNumber];
+    	return [weekNumber, daysRemaining, today, nextWeek];
     }
 
     class WeekInfo extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$2, create_fragment$4, safe_not_equal, { week: 0, weekNumber: 1 });
+    		init(this, options, instance$2, create_fragment$4, safe_not_equal, { today: 2, nextWeek: 3, weekNumber: 0 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -857,20 +1082,32 @@ var app = (function () {
     		const { ctx } = this.$$;
     		const props = options.props || ({});
 
-    		if (/*week*/ ctx[0] === undefined && !("week" in props)) {
-    			console.warn("<WeekInfo> was created without expected prop 'week'");
+    		if (/*today*/ ctx[2] === undefined && !("today" in props)) {
+    			console.warn("<WeekInfo> was created without expected prop 'today'");
     		}
 
-    		if (/*weekNumber*/ ctx[1] === undefined && !("weekNumber" in props)) {
+    		if (/*nextWeek*/ ctx[3] === undefined && !("nextWeek" in props)) {
+    			console.warn("<WeekInfo> was created without expected prop 'nextWeek'");
+    		}
+
+    		if (/*weekNumber*/ ctx[0] === undefined && !("weekNumber" in props)) {
     			console.warn("<WeekInfo> was created without expected prop 'weekNumber'");
     		}
     	}
 
-    	get week() {
+    	get today() {
     		throw new Error("<WeekInfo>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
-    	set week(value) {
+    	set today(value) {
+    		throw new Error("<WeekInfo>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get nextWeek() {
+    		throw new Error("<WeekInfo>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set nextWeek(value) {
     		throw new Error("<WeekInfo>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
@@ -1374,22 +1611,23 @@ var app = (function () {
 
     	const fullcalendarlink = new FullCalendarLink({
     			props: {
-    				completedPercentage: /*completedPercentage*/ ctx[4]
+    				completedPercentage: /*completedPercentage*/ ctx[5]
     			},
     			$$inline: true
     		});
 
     	const weekinfo = new WeekInfo({
     			props: {
-    				weekNumber: /*weekNumber*/ ctx[2],
-    				week: /*week*/ ctx[1]
+    				weekNumber: /*weekNumber*/ ctx[3],
+    				today: /*today*/ ctx[1],
+    				nextWeek: /*nextWeek*/ ctx[2]
     			},
     			$$inline: true
     		});
 
     	const progressbar = new ProgressBar({
     			props: {
-    				completedPercentage: /*completedPercentage*/ ctx[4]
+    				completedPercentage: /*completedPercentage*/ ctx[5]
     			},
     			$$inline: true
     		});
@@ -1397,7 +1635,7 @@ var app = (function () {
     	const completedtasks = new CompletedTasks({
     			props: {
     				items: /*items*/ ctx[0],
-    				completedPercentage: /*completedPercentage*/ ctx[4]
+    				completedPercentage: /*completedPercentage*/ ctx[5]
     			},
     			$$inline: true
     		});
@@ -1423,7 +1661,7 @@ var app = (function () {
 
     	const tasklink2 = new TaskLink({
     			props: {
-    				name: "How to Use __dirname in Node.js",
+    				name: `How to Use __dirname in Node.js`,
     				src: "https://alligator.io/nodejs/how-to-use__dirname/"
     			},
     			$$inline: true
@@ -1502,72 +1740,72 @@ var app = (function () {
     			t22 = space();
     			create_component(tasklink3.$$.fragment);
     			attr_dev(div0, "class", "flex justify-end");
-    			add_location(div0, file$9, 77, 10, 2705);
+    			add_location(div0, file$9, 66, 10, 2382);
     			attr_dev(input0, "type", "checkbox");
     			attr_dev(input0, "class", "form-checkbox text-cyan-us transition-all-4");
     			input0.checked = input0_checked_value = /*items*/ ctx[0][0] ? true : false;
-    			add_location(input0, file$9, 86, 16, 3015);
+    			add_location(input0, file$9, 75, 16, 2692);
     			attr_dev(span0, "class", "font-light");
-    			add_location(span0, file$9, 92, 18, 3320);
+    			add_location(span0, file$9, 81, 18, 2997);
     			attr_dev(span1, "class", span1_class_value = "" + ((/*items*/ ctx[0][0] ? "opacity-50" : "") + " ml-2"));
-    			add_location(span1, file$9, 91, 16, 3251);
+    			add_location(span1, file$9, 80, 16, 2928);
     			attr_dev(label0, "class", label0_class_value = "" + ((/*items*/ ctx[0][0] ? "line-through" : "") + " inline-flex items-center"));
-    			add_location(label0, file$9, 85, 14, 2925);
+    			add_location(label0, file$9, 74, 14, 2602);
     			attr_dev(div1, "class", "task mb-2");
-    			add_location(div1, file$9, 84, 12, 2887);
+    			add_location(div1, file$9, 73, 12, 2564);
     			attr_dev(input1, "type", "checkbox");
     			attr_dev(input1, "class", "form-checkbox text-cyan-us transition-all-4");
     			input1.checked = input1_checked_value = /*items*/ ctx[0][1] ? true : false;
-    			add_location(input1, file$9, 102, 16, 3790);
+    			add_location(input1, file$9, 91, 16, 3467);
     			attr_dev(span2, "class", "font-light");
-    			add_location(span2, file$9, 108, 18, 4095);
+    			add_location(span2, file$9, 97, 18, 3772);
     			attr_dev(span3, "class", span3_class_value = "" + ((/*items*/ ctx[0][1] ? "opacity-50" : "") + " ml-2"));
-    			add_location(span3, file$9, 107, 16, 4026);
+    			add_location(span3, file$9, 96, 16, 3703);
     			attr_dev(label1, "class", label1_class_value = "" + ((/*items*/ ctx[0][1] ? "line-through" : "") + " inline-flex items-center"));
-    			add_location(label1, file$9, 101, 14, 3700);
+    			add_location(label1, file$9, 90, 14, 3377);
     			attr_dev(div2, "class", "task mb-2");
-    			add_location(div2, file$9, 100, 12, 3662);
+    			add_location(div2, file$9, 89, 12, 3339);
     			attr_dev(input2, "type", "checkbox");
     			attr_dev(input2, "class", "form-checkbox text-cyan-us transition-all-4");
     			input2.checked = input2_checked_value = /*items*/ ctx[0][2] ? true : false;
-    			add_location(input2, file$9, 118, 16, 4561);
+    			add_location(input2, file$9, 107, 16, 4238);
     			attr_dev(span4, "class", "font-light");
-    			add_location(span4, file$9, 124, 18, 4866);
+    			add_location(span4, file$9, 113, 18, 4543);
     			attr_dev(span5, "class", span5_class_value = "" + ((/*items*/ ctx[0][2] ? "opacity-50" : "") + " ml-2"));
-    			add_location(span5, file$9, 123, 16, 4797);
+    			add_location(span5, file$9, 112, 16, 4474);
     			attr_dev(label2, "class", label2_class_value = "" + ((/*items*/ ctx[0][2] ? "line-through" : "") + " inline-flex items-center"));
-    			add_location(label2, file$9, 117, 14, 4471);
+    			add_location(label2, file$9, 106, 14, 4148);
     			attr_dev(div3, "class", "task mb-2");
-    			add_location(div3, file$9, 116, 12, 4433);
+    			add_location(div3, file$9, 105, 12, 4110);
     			attr_dev(input3, "type", "checkbox");
     			attr_dev(input3, "class", "form-checkbox text-cyan-us transition-all-4");
     			input3.checked = input3_checked_value = /*items*/ ctx[0][3] ? true : false;
-    			add_location(input3, file$9, 134, 16, 5279);
+    			add_location(input3, file$9, 123, 16, 4956);
     			attr_dev(span6, "class", "font-light");
-    			add_location(span6, file$9, 140, 18, 5584);
+    			add_location(span6, file$9, 129, 18, 5261);
     			attr_dev(span7, "class", span7_class_value = "" + ((/*items*/ ctx[0][3] ? "opacity-50" : "") + " ml-2"));
-    			add_location(span7, file$9, 139, 16, 5515);
+    			add_location(span7, file$9, 128, 16, 5192);
     			attr_dev(label3, "class", label3_class_value = "" + ((/*items*/ ctx[0][3] ? "line-through" : "") + " inline-flex items-center"));
-    			add_location(label3, file$9, 133, 14, 5189);
+    			add_location(label3, file$9, 122, 14, 4866);
     			attr_dev(div4, "class", "task");
-    			add_location(div4, file$9, 132, 12, 5156);
+    			add_location(div4, file$9, 121, 12, 4833);
     			attr_dev(div5, "class", "sm: leading-snug leading-tight");
-    			add_location(div5, file$9, 82, 10, 2829);
+    			add_location(div5, file$9, 71, 10, 2506);
     			attr_dev(div6, "class", "border-1 rounded p-3");
-    			add_location(div6, file$9, 72, 8, 2518);
+    			add_location(div6, file$9, 64, 8, 2336);
     			attr_dev(div7, "class", "sm:h-64 h-auto overflow-scroll");
-    			add_location(div7, file$9, 71, 6, 2465);
-    			add_location(div8, file$9, 64, 4, 2312);
+    			add_location(div7, file$9, 63, 6, 2283);
+    			add_location(div8, file$9, 56, 4, 2118);
     			attr_dev(div9, "class", "shadow-md border-2 border-solid border-blue-us rounded h-auto max-w-2xl p-4 bg-white-us");
-    			add_location(div9, file$9, 60, 2, 2157);
+    			add_location(div9, file$9, 52, 2, 1963);
     			attr_dev(main, "class", "flex flex-col h-screen justify-center items-center p-3 bg-black-us");
-    			add_location(main, file$9, 54, 0, 1992);
+    			add_location(main, file$9, 46, 0, 1798);
 
     			dispose = [
-    				listen_dev(input0, "click", /*click_handler*/ ctx[9], false, false, false),
-    				listen_dev(input1, "click", /*click_handler_1*/ ctx[10], false, false, false),
-    				listen_dev(input2, "click", /*click_handler_2*/ ctx[11], false, false, false),
-    				listen_dev(input3, "click", /*click_handler_3*/ ctx[12], false, false, false)
+    				listen_dev(input0, "click", /*click_handler*/ ctx[10], false, false, false),
+    				listen_dev(input1, "click", /*click_handler_1*/ ctx[11], false, false, false),
+    				listen_dev(input2, "click", /*click_handler_2*/ ctx[12], false, false, false),
+    				listen_dev(input3, "click", /*click_handler_3*/ ctx[13], false, false, false)
     			];
     		},
     		l: function claim(nodes) {
@@ -1636,18 +1874,19 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const fullcalendarlink_changes = {};
-    			if (dirty[0] & /*completedPercentage*/ 16) fullcalendarlink_changes.completedPercentage = /*completedPercentage*/ ctx[4];
+    			if (dirty[0] & /*completedPercentage*/ 32) fullcalendarlink_changes.completedPercentage = /*completedPercentage*/ ctx[5];
     			fullcalendarlink.$set(fullcalendarlink_changes);
     			const weekinfo_changes = {};
-    			if (dirty[0] & /*weekNumber*/ 4) weekinfo_changes.weekNumber = /*weekNumber*/ ctx[2];
-    			if (dirty[0] & /*week*/ 2) weekinfo_changes.week = /*week*/ ctx[1];
+    			if (dirty[0] & /*weekNumber*/ 8) weekinfo_changes.weekNumber = /*weekNumber*/ ctx[3];
+    			if (dirty[0] & /*today*/ 2) weekinfo_changes.today = /*today*/ ctx[1];
+    			if (dirty[0] & /*nextWeek*/ 4) weekinfo_changes.nextWeek = /*nextWeek*/ ctx[2];
     			weekinfo.$set(weekinfo_changes);
     			const progressbar_changes = {};
-    			if (dirty[0] & /*completedPercentage*/ 16) progressbar_changes.completedPercentage = /*completedPercentage*/ ctx[4];
+    			if (dirty[0] & /*completedPercentage*/ 32) progressbar_changes.completedPercentage = /*completedPercentage*/ ctx[5];
     			progressbar.$set(progressbar_changes);
     			const completedtasks_changes = {};
     			if (dirty[0] & /*items*/ 1) completedtasks_changes.items = /*items*/ ctx[0];
-    			if (dirty[0] & /*completedPercentage*/ 16) completedtasks_changes.completedPercentage = /*completedPercentage*/ ctx[4];
+    			if (dirty[0] & /*completedPercentage*/ 32) completedtasks_changes.completedPercentage = /*completedPercentage*/ ctx[5];
     			completedtasks.$set(completedtasks_changes);
 
     			if (!current || dirty[0] & /*items*/ 1 && input0_checked_value !== (input0_checked_value = /*items*/ ctx[0][0] ? true : false)) {
@@ -1762,7 +2001,8 @@ var app = (function () {
     const LOCAL_STORAGE_COMPLETED_KEY = "completed";
 
     function instance$6($$self, $$props, $$invalidate) {
-    	let { week } = $$props;
+    	let { today } = $$props;
+    	let { nextWeek } = $$props;
     	let { weekNumber } = $$props;
     	let { items = JSON.parse(localStorage.getItem(LOCAL_STORAGE_ITEMS_KEY)) || [0, 0, 0, 0] } = $$props;
     	let taskPercentage = parseFloat((100 / items.length).toFixed(2));
@@ -1775,12 +2015,12 @@ var app = (function () {
     	}
 
     	function addCompletedPercentage() {
-    		$$invalidate(4, completedPercentage += taskPercentage);
+    		$$invalidate(5, completedPercentage += taskPercentage);
     		localStorage.setItem(LOCAL_STORAGE_COMPLETED_KEY, JSON.stringify(completedPercentage));
     	}
 
     	function substractCompletedPercentage() {
-    		$$invalidate(4, completedPercentage -= taskPercentage);
+    		$$invalidate(5, completedPercentage -= taskPercentage);
     		localStorage.setItem(LOCAL_STORAGE_COMPLETED_KEY, JSON.stringify(completedPercentage));
     	}
 
@@ -1792,7 +2032,7 @@ var app = (function () {
     		: substractCompletedPercentage();
     	}
 
-    	const writable_props = ["week", "weekNumber", "items"];
+    	const writable_props = ["today", "nextWeek", "weekNumber", "items"];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<App> was created with unknown prop '${key}'`);
@@ -1804,14 +2044,16 @@ var app = (function () {
     	const click_handler_3 = () => handleClick(3);
 
     	$$self.$set = $$props => {
-    		if ("week" in $$props) $$invalidate(1, week = $$props.week);
-    		if ("weekNumber" in $$props) $$invalidate(2, weekNumber = $$props.weekNumber);
+    		if ("today" in $$props) $$invalidate(1, today = $$props.today);
+    		if ("nextWeek" in $$props) $$invalidate(2, nextWeek = $$props.nextWeek);
+    		if ("weekNumber" in $$props) $$invalidate(3, weekNumber = $$props.weekNumber);
     		if ("items" in $$props) $$invalidate(0, items = $$props.items);
     	};
 
     	$$self.$capture_state = () => {
     		return {
-    			week,
+    			today,
+    			nextWeek,
     			weekNumber,
     			items,
     			taskPercentage,
@@ -1820,16 +2062,18 @@ var app = (function () {
     	};
 
     	$$self.$inject_state = $$props => {
-    		if ("week" in $$props) $$invalidate(1, week = $$props.week);
-    		if ("weekNumber" in $$props) $$invalidate(2, weekNumber = $$props.weekNumber);
+    		if ("today" in $$props) $$invalidate(1, today = $$props.today);
+    		if ("nextWeek" in $$props) $$invalidate(2, nextWeek = $$props.nextWeek);
+    		if ("weekNumber" in $$props) $$invalidate(3, weekNumber = $$props.weekNumber);
     		if ("items" in $$props) $$invalidate(0, items = $$props.items);
     		if ("taskPercentage" in $$props) taskPercentage = $$props.taskPercentage;
-    		if ("completedPercentage" in $$props) $$invalidate(4, completedPercentage = $$props.completedPercentage);
+    		if ("completedPercentage" in $$props) $$invalidate(5, completedPercentage = $$props.completedPercentage);
     	};
 
     	return [
     		items,
-    		week,
+    		today,
+    		nextWeek,
     		weekNumber,
     		handleClick,
     		completedPercentage,
@@ -1849,10 +2093,11 @@ var app = (function () {
     		super(options);
 
     		init(this, options, instance$6, create_fragment$9, safe_not_equal, {
-    			week: 1,
-    			weekNumber: 2,
+    			today: 1,
+    			nextWeek: 2,
+    			weekNumber: 3,
     			items: 0,
-    			handleClick: 3
+    			handleClick: 4
     		});
 
     		dispatch_dev("SvelteRegisterComponent", {
@@ -1865,20 +2110,32 @@ var app = (function () {
     		const { ctx } = this.$$;
     		const props = options.props || ({});
 
-    		if (/*week*/ ctx[1] === undefined && !("week" in props)) {
-    			console.warn("<App> was created without expected prop 'week'");
+    		if (/*today*/ ctx[1] === undefined && !("today" in props)) {
+    			console.warn("<App> was created without expected prop 'today'");
     		}
 
-    		if (/*weekNumber*/ ctx[2] === undefined && !("weekNumber" in props)) {
+    		if (/*nextWeek*/ ctx[2] === undefined && !("nextWeek" in props)) {
+    			console.warn("<App> was created without expected prop 'nextWeek'");
+    		}
+
+    		if (/*weekNumber*/ ctx[3] === undefined && !("weekNumber" in props)) {
     			console.warn("<App> was created without expected prop 'weekNumber'");
     		}
     	}
 
-    	get week() {
+    	get today() {
     		throw new Error("<App>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
-    	set week(value) {
+    	set today(value) {
+    		throw new Error("<App>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get nextWeek() {
+    		throw new Error("<App>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set nextWeek(value) {
     		throw new Error("<App>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
@@ -1899,7 +2156,7 @@ var app = (function () {
     	}
 
     	get handleClick() {
-    		return this.$$.ctx[3];
+    		return this.$$.ctx[4];
     	}
 
     	set handleClick(value) {
@@ -1910,7 +2167,8 @@ var app = (function () {
     const app = new App({
       target: document.body,
       props: {
-        week: '16 al 23 de Diciembre',
+        today: new Date('12/16/2019, 18:00'),
+        nextWeek: new Date('12/23/2019, 18:00'),
         weekNumber: 42,
       },
     });

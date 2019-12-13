@@ -3,8 +3,8 @@
 </script>
 
 <div
-  class="bg-gray-200 mt-4 mb-5 text-3xl {Math.round(completedPercentage) === 100 ? 'font-semibold' : ''}
-  text-center rounded-lg">
+  class="bg-gray-200 mt-4 mb-8 text-3xl {Math.round(completedPercentage) === 100 ? 'font-semibold' : ''} text-center
+  rounded-lg">
   <div
     style="width:{Math.round(completedPercentage)}%"
     class="transition-all-4 {completedPercentage > 67 ? 'bg-green-200' : completedPercentage > 34 ? 'bg-yellow-200' : 'bg-red-200'}
