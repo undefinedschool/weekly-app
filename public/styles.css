@@ -11724,8 +11724,8 @@ video {
 /* transition */
 
 .transition-all-4 {
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 /* margin */
