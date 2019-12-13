@@ -9,6 +9,8 @@
   import NodeTag from './components/Tags/NodeTag.svelte';
   import ExpressTag from './components/Tags/ExpressTag.svelte';
 
+  import References from './components/References.svelte';
+
   export let today;
   export let nextWeek;
   export let weekNumber;
@@ -48,9 +50,11 @@
 
   <Navbar />
 
+  <References />
+
   <Title firstPart="{'Calendario'}" secondPart="{'semanal.'}" />
 
-  <div class="shadow-md border-2 border-solid border-blue-us rounded h-auto max-w-2xl p-4 bg-white-us">
+  <div class="shadow-md border-2 border-solid border-blue-us rounded h-auto max-w-3xl p-4 bg-white-us">
 
     <FullCalendarLink {completedPercentage} />
 
@@ -78,7 +82,7 @@
                   class="form-checkbox text-cyan-us transition-all-4"
                   on:click="{() => handleClick(0)}"
                   checked="{items[0] ? true : false}" />
-                <span class="{items[0] ? 'opacity-50' : ''} ml-2">
+                <span class="{items[0] ? 'opacity-50' : ''} ml-2 text-sm">
                   <span class="font-light">📚🏃Completar el capítulo</span>
                   <TaskLink
                     name="{'Introduction to Express.js'}"
@@ -94,7 +98,7 @@
                   class="form-checkbox text-cyan-us transition-all-4"
                   on:click="{() => handleClick(1)}"
                   checked="{items[1] ? true : false}" />
-                <span class="{items[1] ? 'opacity-50' : ''} ml-2">
+                <span class="{items[1] ? 'opacity-50' : ''} ml-2 text-sm">
                   <span class="font-light">📚🏃Completar el capítulo</span>
                   <TaskLink
                     name="{'Serving JSON with Express.js'}"
@@ -110,7 +114,7 @@
                   class="form-checkbox text-cyan-us transition-all-4"
                   on:click="{() => handleClick(2)}"
                   checked="{items[2] ? true : false}" />
-                <span class="{items[2] ? 'opacity-50' : ''} ml-2">
+                <span class="{items[2] ? 'opacity-50' : ''} ml-2 text-sm">
                   <span class="font-light">🏃Ver</span>
                   <TaskLink
                     name="{`How to Use __dirname in Node.js`}"
@@ -126,7 +130,7 @@
                   class="form-checkbox text-cyan-us transition-all-4"
                   on:click="{() => handleClick(3)}"
                   checked="{items[3] ? true : false}" />
-                <span class="{items[3] ? 'opacity-50' : ''} ml-2">
+                <span class="{items[3] ? 'opacity-50' : ''} ml-2 text-sm">
                   <span class="font-light">📚🏃Ver</span>
                   <TaskLink
                     name="{'Notas sobre ExpressJS'}"
