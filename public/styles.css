@@ -11756,6 +11756,12 @@ video {
   left: 50%;
 }
 
+/* width */
+
+.w-128 {
+  width: 32rem;
+}
+
 /* @import './components.css';  */
 
 html {

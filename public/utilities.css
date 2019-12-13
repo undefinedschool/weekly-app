@@ -98,3 +98,8 @@
 .left-50 {
   left: 50%;
 }
+
+/* width */
+.w-128 {
+  width: 32rem;
+}

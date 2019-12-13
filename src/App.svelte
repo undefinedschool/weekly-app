@@ -52,7 +52,7 @@
 
   <Title firstPart="{'Calendario'}" secondPart="{'semanal.'}" />
 
-  <div class="max-w-3xl">
+  <div class="max-w-lg">
     <div class="shadow-md border-2 border-solid border-blue-us rounded p-3 bg-white-us">
 
       <FullCalendarLink {completedPercentage} />
