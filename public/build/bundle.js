@@ -577,8 +577,8 @@ var app = (function () {
     			span = element("span");
     			t2 = text(/*secondPart*/ ctx[1]);
     			attr_dev(span, "class", "font-semibold text-cyan-us");
-    			add_location(span, file$2, 7, 2, 195);
-    			attr_dev(h1, "class", "sm:mt-20 sm:mb-5 mb-12 leading-tight sm:text-3xl text-4xl text-white-us font-raleway text-center");
+    			add_location(span, file$2, 7, 2, 200);
+    			attr_dev(h1, "class", "sm:mt-20 sm:mb-5 mt-16 mb-6 leading-tight sm:text-3xl text-4xl text-white-us font-raleway text-center");
     			add_location(h1, file$2, 5, 0, 69);
     		},
     		l: function claim(nodes) {
@@ -752,13 +752,12 @@ var app = (function () {
 
     const file$4 = "src/components/WeekInfo.svelte";
 
-    // (25:4) {:else}
+    // (28:4) {:else}
     function create_else_block(ctx) {
     	let t0;
-    	let t1;
     	let span;
+    	let t2;
     	let t3;
-    	let t4;
 
     	function select_block_type_1(ctx, dirty) {
     		if (/*daysRemaining*/ ctx[1] > 1) return create_if_block_2;
@@ -778,35 +777,32 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			t0 = text("⏳\n      ");
     			if_block0.c();
-    			t1 = space();
+    			t0 = space();
     			span = element("span");
     			span.textContent = `${/*daysRemaining*/ ctx[1]}`;
-    			t3 = space();
+    			t2 = space();
     			if_block1.c();
-    			t4 = text("\n      para la próxima semana.");
+    			t3 = text("\n      para la próxima semana.");
     			attr_dev(span, "class", "font-medium");
-    			add_location(span, file$4, 27, 6, 836);
+    			add_location(span, file$4, 29, 6, 888);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, t0, anchor);
     			if_block0.m(target, anchor);
-    			insert_dev(target, t1, anchor);
+    			insert_dev(target, t0, anchor);
     			insert_dev(target, span, anchor);
-    			insert_dev(target, t3, anchor);
+    			insert_dev(target, t2, anchor);
     			if_block1.m(target, anchor);
-    			insert_dev(target, t4, anchor);
+    			insert_dev(target, t3, anchor);
     		},
     		p: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(t0);
     			if_block0.d(detaching);
-    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(span);
-    			if (detaching) detach_dev(t3);
+    			if (detaching) detach_dev(t2);
     			if_block1.d(detaching);
-    			if (detaching) detach_dev(t4);
+    			if (detaching) detach_dev(t3);
     		}
     	};
 
@@ -814,14 +810,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(25:4) {:else}",
+    		source: "(28:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (22:4) {#if daysRemaining === 0}
+    // (25:4) {#if daysRemaining === 0}
     function create_if_block(ctx) {
     	let t0;
     	let span;
@@ -831,12 +827,12 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			t0 = text("⌛️ Ya estamos en la semana\n      ");
+    			t0 = text("Ya estamos en la semana\n      ");
     			span = element("span");
     			t1 = text(t1_value);
     			t2 = text(".");
     			attr_dev(span, "class", "font-medium");
-    			add_location(span, file$4, 23, 6, 701);
+    			add_location(span, file$4, 26, 6, 761);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t0, anchor);
@@ -857,14 +853,14 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(22:4) {#if daysRemaining === 0}",
+    		source: "(25:4) {#if daysRemaining === 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (27:35) {:else}
+    // (29:35) {:else}
     function create_else_block_2(ctx) {
     	let t;
 
@@ -884,14 +880,14 @@ var app = (function () {
     		block,
     		id: create_else_block_2.name,
     		type: "else",
-    		source: "(27:35) {:else}",
+    		source: "(29:35) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (27:6) {#if daysRemaining > 1}
+    // (29:6) {#if daysRemaining > 1}
     function create_if_block_2(ctx) {
     	let t;
 
@@ -911,14 +907,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(27:6) {#if daysRemaining > 1}",
+    		source: "(29:6) {#if daysRemaining > 1}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (29:33) {:else}
+    // (31:33) {:else}
     function create_else_block_1(ctx) {
     	let t;
 
@@ -938,14 +934,14 @@ var app = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(29:33) {:else}",
+    		source: "(31:33) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (29:6) {#if daysRemaining > 1}
+    // (31:6) {#if daysRemaining > 1}
     function create_if_block_1(ctx) {
     	let t;
 
@@ -965,7 +961,7 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(29:6) {#if daysRemaining > 1}",
+    		source: "(31:6) {#if daysRemaining > 1}",
     		ctx
     	});
 
@@ -974,11 +970,11 @@ var app = (function () {
 
     function create_fragment$4(ctx) {
     	let div;
-    	let span;
+    	let p0;
     	let t0;
     	let t1;
     	let t2;
-    	let p;
+    	let p1;
 
     	function select_block_type(ctx, dirty) {
     		if (/*daysRemaining*/ ctx[1] === 0) return create_if_block;
@@ -991,16 +987,16 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			div = element("div");
-    			span = element("span");
+    			p0 = element("p");
     			t0 = text("Semana ");
     			t1 = text(/*weekNumber*/ ctx[0]);
     			t2 = space();
-    			p = element("p");
+    			p1 = element("p");
     			if_block.c();
-    			attr_dev(span, "class", "block text-gray-700 font-semibold text-xl -mb-1");
-    			add_location(span, file$4, 19, 2, 491);
-    			attr_dev(p, "class", "font-light text-sm text-light-gray-us");
-    			add_location(p, file$4, 20, 2, 582);
+    			attr_dev(p0, "class", "text-gray-700 font-semibold text-xl -mb-1");
+    			add_location(p0, file$4, 19, 2, 491);
+    			attr_dev(p1, "class", "font-light text-sm text-light-gray-us");
+    			add_location(p1, file$4, 23, 2, 645);
     			attr_dev(div, "class", "mb-4");
     			add_location(div, file$4, 18, 0, 470);
     		},
@@ -1009,12 +1005,12 @@ var app = (function () {
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
-    			append_dev(div, span);
-    			append_dev(span, t0);
-    			append_dev(span, t1);
+    			append_dev(div, p0);
+    			append_dev(p0, t0);
+    			append_dev(p0, t1);
     			append_dev(div, t2);
-    			append_dev(div, p);
-    			if_block.m(p, null);
+    			append_dev(div, p1);
+    			if_block.m(p1, null);
     		},
     		p: function update(ctx, dirty) {
     			if (dirty[0] & /*weekNumber*/ 1) set_data_dev(t1, /*weekNumber*/ ctx[0]);
@@ -1401,8 +1397,8 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Node";
     			attr_dev(span, "class", "inline-block border-1 border-green-700 rounded px-2 py-1 text-xs text-green-700 bg-green-300 font-semibold\n    opacity-75");
-    			add_location(span, file$7, 5, 2, 79);
-    			attr_dev(div, "class", div_class_value = "" + ((/*mr*/ ctx[0] ? /*mr*/ ctx[0] : "") + " -mt-1 mb-4"));
+    			add_location(span, file$7, 5, 2, 85);
+    			attr_dev(div, "class", div_class_value = "" + ((/*mr*/ ctx[0] ? /*mr*/ ctx[0] : "") + " -mt-1 -mr-1 mb-4"));
     			add_location(div, file$7, 4, 0, 37);
     		},
     		l: function claim(nodes) {
@@ -1413,7 +1409,7 @@ var app = (function () {
     			append_dev(div, span);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*mr*/ 1 && div_class_value !== (div_class_value = "" + ((/*mr*/ ctx[0] ? /*mr*/ ctx[0] : "") + " -mt-1 mb-4"))) {
+    			if (dirty[0] & /*mr*/ 1 && div_class_value !== (div_class_value = "" + ((/*mr*/ ctx[0] ? /*mr*/ ctx[0] : "") + " -mt-1 -mr-1 mb-4"))) {
     				attr_dev(div, "class", div_class_value);
     			}
     		},
@@ -1494,6 +1490,7 @@ var app = (function () {
     function create_fragment$8(ctx) {
     	let div;
     	let span;
+    	let div_class_value;
 
     	const block = {
     		c: function create() {
@@ -1501,9 +1498,9 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Express";
     			attr_dev(span, "class", "inline-block border-1 border-gray-ddd rounded px-2 py-1 text-xs text-gray-444 bg-gray-eee font-semibold\n    opacity-75");
-    			add_location(span, file$8, 1, 2, 33);
-    			attr_dev(div, "class", "-mt-1 -mr-1 mb-4");
-    			add_location(div, file$8, 0, 0, 0);
+    			add_location(span, file$8, 5, 2, 85);
+    			attr_dev(div, "class", div_class_value = "" + ((/*mr*/ ctx[0] ? /*mr*/ ctx[0] : "") + " -mt-1 -mr-1 mb-4"));
+    			add_location(div, file$8, 4, 0, 37);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1512,7 +1509,11 @@ var app = (function () {
     			insert_dev(target, div, anchor);
     			append_dev(div, span);
     		},
-    		p: noop,
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*mr*/ 1 && div_class_value !== (div_class_value = "" + ((/*mr*/ ctx[0] ? /*mr*/ ctx[0] : "") + " -mt-1 -mr-1 mb-4"))) {
+    				attr_dev(div, "class", div_class_value);
+    			}
+    		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
@@ -1531,10 +1532,33 @@ var app = (function () {
     	return block;
     }
 
+    function instance$6($$self, $$props, $$invalidate) {
+    	let { mr } = $$props;
+    	const writable_props = ["mr"];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<ExpressTag> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ("mr" in $$props) $$invalidate(0, mr = $$props.mr);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { mr };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ("mr" in $$props) $$invalidate(0, mr = $$props.mr);
+    	};
+
+    	return [mr];
+    }
+
     class ExpressTag extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, null, create_fragment$8, safe_not_equal, {});
+    		init(this, options, instance$6, create_fragment$8, safe_not_equal, { mr: 0 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -1542,6 +1566,21 @@ var app = (function () {
     			options,
     			id: create_fragment$8.name
     		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || ({});
+
+    		if (/*mr*/ ctx[0] === undefined && !("mr" in props)) {
+    			console.warn("<ExpressTag> was created without expected prop 'mr'");
+    		}
+    	}
+
+    	get mr() {
+    		throw new Error("<ExpressTag>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set mr(value) {
+    		throw new Error("<ExpressTag>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
 
@@ -1779,26 +1818,26 @@ var app = (function () {
     	let main;
     	let t0;
     	let t1;
-    	let div10;
-    	let div9;
+    	let div15;
+    	let div14;
     	let t2;
-    	let div8;
+    	let div13;
     	let t3;
     	let t4;
     	let t5;
-    	let div7;
-    	let div6;
+    	let div12;
+    	let div5;
     	let div0;
     	let t6;
-    	let t7;
-    	let div5;
+    	let div4;
     	let div1;
     	let label0;
     	let input0;
     	let input0_checked_value;
-    	let t8;
+    	let t7;
     	let span1;
     	let span0;
+    	let t9;
     	let t10;
     	let span1_class_value;
     	let label0_class_value;
@@ -1811,32 +1850,63 @@ var app = (function () {
     	let span3;
     	let span2;
     	let t14;
+    	let t15;
     	let span3_class_value;
     	let label1_class_value;
-    	let t15;
+    	let t16;
     	let div3;
     	let label2;
     	let input2;
     	let input2_checked_value;
-    	let t16;
+    	let t17;
     	let span5;
     	let span4;
-    	let t18;
+    	let t19;
+    	let t20;
     	let span5_class_value;
     	let label2_class_value;
-    	let t19;
-    	let div4;
+    	let t21;
+    	let div11;
+    	let div6;
+    	let t22;
+    	let div10;
+    	let div7;
     	let label3;
     	let input3;
     	let input3_checked_value;
-    	let t20;
+    	let t23;
     	let span7;
     	let span6;
-    	let t22;
+    	let t25;
+    	let t26;
     	let span7_class_value;
     	let label3_class_value;
-    	let t23;
-    	let t24;
+    	let t27;
+    	let div8;
+    	let label4;
+    	let input4;
+    	let input4_checked_value;
+    	let t28;
+    	let span9;
+    	let span8;
+    	let t30;
+    	let t31;
+    	let span9_class_value;
+    	let label4_class_value;
+    	let t32;
+    	let div9;
+    	let label5;
+    	let input5;
+    	let input5_checked_value;
+    	let t33;
+    	let span11;
+    	let span10;
+    	let t35;
+    	let t36;
+    	let span11_class_value;
+    	let label5_class_value;
+    	let t37;
+    	let t38;
     	let current;
     	let dispose;
     	const navbar = new Navbar({ $$inline: true });
@@ -1880,10 +1950,35 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	const nodetag = new NodeTag({ props: { mr: "mr-1" }, $$inline: true });
-    	const expresstag = new ExpressTag({ $$inline: true });
+    	const nodetag = new NodeTag({ $$inline: true });
 
     	const tasklink0 = new TaskLink({
+    			props: {
+    				name: "How to Use __dirname in Node.js",
+    				src: "https://alligator.io/nodejs/how-to-use__dirname/"
+    			},
+    			$$inline: true
+    		});
+
+    	const tasklink1 = new TaskLink({
+    			props: {
+    				name: "ejercicios de Node",
+    				src: "https://github.com/undefinedschool/notes-nodejs/blob/master/README.md#ejercicios-1"
+    			},
+    			$$inline: true
+    		});
+
+    	const tasklink2 = new TaskLink({
+    			props: {
+    				name: "Proyecto 4: Node Jokes",
+    				src: "https://github.com/undefinedschool/project-4-node-jokes"
+    			},
+    			$$inline: true
+    		});
+
+    	const expresstag = new ExpressTag({ $$inline: true });
+
+    	const tasklink3 = new TaskLink({
     			props: {
     				name: "Introduction to Express.js",
     				src: "https://www.rithmschool.com/courses/node-express-fundamentals/introduction-to-express"
@@ -1891,7 +1986,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	const tasklink1 = new TaskLink({
+    	const tasklink4 = new TaskLink({
     			props: {
     				name: "Serving JSON with Express.js",
     				src: "https://www.rithmschool.com/courses/node-express-fundamentals/json-with-express"
@@ -1899,15 +1994,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	const tasklink2 = new TaskLink({
-    			props: {
-    				name: `How to Use __dirname in Node.js`,
-    				src: "https://alligator.io/nodejs/how-to-use__dirname/"
-    			},
-    			$$inline: true
-    		});
-
-    	const tasklink3 = new TaskLink({
+    	const tasklink5 = new TaskLink({
     			props: {
     				name: "Notas sobre ExpressJS",
     				src: "https://github.com/undefinedschool/notes-expressjs/"
@@ -1925,34 +2012,33 @@ var app = (function () {
     			t0 = space();
     			create_component(title.$$.fragment);
     			t1 = space();
-    			div10 = element("div");
-    			div9 = element("div");
+    			div15 = element("div");
+    			div14 = element("div");
     			create_component(fullcalendarlink.$$.fragment);
     			t2 = space();
-    			div8 = element("div");
+    			div13 = element("div");
     			create_component(weekinfo.$$.fragment);
     			t3 = space();
     			create_component(progressbar.$$.fragment);
     			t4 = space();
     			create_component(completedtasks.$$.fragment);
     			t5 = space();
-    			div7 = element("div");
-    			div6 = element("div");
+    			div12 = element("div");
+    			div5 = element("div");
     			div0 = element("div");
     			create_component(nodetag.$$.fragment);
     			t6 = space();
-    			create_component(expresstag.$$.fragment);
-    			t7 = space();
-    			div5 = element("div");
+    			div4 = element("div");
     			div1 = element("div");
     			label0 = element("label");
     			input0 = element("input");
-    			t8 = space();
+    			t7 = space();
     			span1 = element("span");
     			span0 = element("span");
-    			span0.textContent = "📚🏃 Completar el capítulo";
-    			t10 = space();
+    			span0.textContent = "Ver";
+    			t9 = space();
     			create_component(tasklink0.$$.fragment);
+    			t10 = text("\n                    🏃");
     			t11 = space();
     			div2 = element("div");
     			label1 = element("label");
@@ -1960,102 +2046,164 @@ var app = (function () {
     			t12 = space();
     			span3 = element("span");
     			span2 = element("span");
-    			span2.textContent = "📚🏃 Completar el capítulo";
+    			span2.textContent = "Completar los";
     			t14 = space();
     			create_component(tasklink1.$$.fragment);
-    			t15 = space();
+    			t15 = text("\n                    🏃");
+    			t16 = space();
     			div3 = element("div");
     			label2 = element("label");
     			input2 = element("input");
-    			t16 = space();
+    			t17 = space();
     			span5 = element("span");
     			span4 = element("span");
-    			span4.textContent = "🏃 Ver";
-    			t18 = space();
-    			create_component(tasklink2.$$.fragment);
+    			span4.textContent = "Completar el";
     			t19 = space();
-    			div4 = element("div");
+    			create_component(tasklink2.$$.fragment);
+    			t20 = text("\n                    👷");
+    			t21 = space();
+    			div11 = element("div");
+    			div6 = element("div");
+    			create_component(expresstag.$$.fragment);
+    			t22 = space();
+    			div10 = element("div");
+    			div7 = element("div");
     			label3 = element("label");
     			input3 = element("input");
-    			t20 = space();
+    			t23 = space();
     			span7 = element("span");
     			span6 = element("span");
-    			span6.textContent = "📚🏃 Ver";
-    			t22 = space();
+    			span6.textContent = "Completar el capítulo";
+    			t25 = space();
     			create_component(tasklink3.$$.fragment);
-    			t23 = space();
+    			t26 = text("\n                    📚🏃");
+    			t27 = space();
+    			div8 = element("div");
+    			label4 = element("label");
+    			input4 = element("input");
+    			t28 = space();
+    			span9 = element("span");
+    			span8 = element("span");
+    			span8.textContent = "Completar el capítulo";
+    			t30 = space();
+    			create_component(tasklink4.$$.fragment);
+    			t31 = text("\n                    📚🏃");
+    			t32 = space();
+    			div9 = element("div");
+    			label5 = element("label");
+    			input5 = element("input");
+    			t33 = space();
+    			span11 = element("span");
+    			span10 = element("span");
+    			span10.textContent = "Ver";
+    			t35 = space();
+    			create_component(tasklink5.$$.fragment);
+    			t36 = text("\n                    📚🏃");
+    			t37 = space();
     			create_component(references.$$.fragment);
-    			t24 = space();
+    			t38 = space();
     			create_component(referenceslink.$$.fragment);
-    			attr_dev(div0, "class", "flex justify-end");
-    			add_location(div0, file$b, 69, 12, 2535);
+    			attr_dev(div0, "class", "flex justify-end mb-2");
+    			add_location(div0, file$b, 69, 12, 2548);
     			attr_dev(input0, "type", "checkbox");
     			attr_dev(input0, "class", "form-checkbox text-cyan-us transition-all-4");
     			input0.checked = input0_checked_value = /*items*/ ctx[0][0] ? true : false;
-    			add_location(input0, file$b, 78, 18, 2859);
+    			add_location(input0, file$b, 76, 18, 2832);
     			attr_dev(span0, "class", "font-light");
-    			add_location(span0, file$b, 84, 20, 3184);
+    			add_location(span0, file$b, 82, 20, 3157);
     			attr_dev(span1, "class", span1_class_value = "" + ((/*items*/ ctx[0][0] ? "opacity-50" : "") + " ml-2 text-sm"));
-    			add_location(span1, file$b, 83, 18, 3105);
+    			add_location(span1, file$b, 81, 18, 3078);
     			attr_dev(label0, "class", label0_class_value = "" + ((/*items*/ ctx[0][0] ? "line-through" : "") + " inline-flex items-center"));
-    			add_location(label0, file$b, 77, 16, 2767);
+    			add_location(label0, file$b, 75, 16, 2740);
     			attr_dev(div1, "class", "task mb-2");
-    			add_location(div1, file$b, 76, 14, 2727);
+    			add_location(div1, file$b, 74, 14, 2700);
     			attr_dev(input1, "type", "checkbox");
     			attr_dev(input1, "class", "form-checkbox text-cyan-us transition-all-4");
     			input1.checked = input1_checked_value = /*items*/ ctx[0][1] ? true : false;
-    			add_location(input1, file$b, 94, 18, 3673);
+    			add_location(input1, file$b, 93, 18, 3614);
     			attr_dev(span2, "class", "font-light");
-    			add_location(span2, file$b, 100, 20, 3998);
+    			add_location(span2, file$b, 99, 20, 3939);
     			attr_dev(span3, "class", span3_class_value = "" + ((/*items*/ ctx[0][1] ? "opacity-50" : "") + " ml-2 text-sm"));
-    			add_location(span3, file$b, 99, 18, 3919);
+    			add_location(span3, file$b, 98, 18, 3860);
     			attr_dev(label1, "class", label1_class_value = "" + ((/*items*/ ctx[0][1] ? "line-through" : "") + " inline-flex items-center"));
-    			add_location(label1, file$b, 93, 16, 3581);
+    			add_location(label1, file$b, 92, 16, 3522);
     			attr_dev(div2, "class", "task mb-2");
-    			add_location(div2, file$b, 92, 14, 3541);
+    			add_location(div2, file$b, 91, 14, 3482);
     			attr_dev(input2, "type", "checkbox");
     			attr_dev(input2, "class", "form-checkbox text-cyan-us transition-all-4");
     			input2.checked = input2_checked_value = /*items*/ ctx[0][2] ? true : false;
-    			add_location(input2, file$b, 110, 18, 4483);
+    			add_location(input2, file$b, 110, 18, 4422);
     			attr_dev(span4, "class", "font-light");
-    			add_location(span4, file$b, 116, 20, 4808);
+    			add_location(span4, file$b, 116, 20, 4747);
     			attr_dev(span5, "class", span5_class_value = "" + ((/*items*/ ctx[0][2] ? "opacity-50" : "") + " ml-2 text-sm"));
-    			add_location(span5, file$b, 115, 18, 4729);
+    			add_location(span5, file$b, 115, 18, 4668);
     			attr_dev(label2, "class", label2_class_value = "" + ((/*items*/ ctx[0][2] ? "line-through" : "") + " inline-flex items-center"));
-    			add_location(label2, file$b, 109, 16, 4391);
-    			attr_dev(div3, "class", "task mb-2");
-    			add_location(div3, file$b, 108, 14, 4351);
+    			add_location(label2, file$b, 109, 16, 4330);
+    			attr_dev(div3, "class", "task");
+    			add_location(div3, file$b, 108, 14, 4295);
+    			attr_dev(div4, "class", "sm:leading-snug leading-tight");
+    			add_location(div4, file$b, 73, 12, 2642);
+    			attr_dev(div5, "class", "border-1 rounded p-3 mb-1");
+    			add_location(div5, file$b, 68, 10, 2496);
+    			attr_dev(div6, "class", "flex justify-end mb-2");
+    			add_location(div6, file$b, 128, 12, 5158);
     			attr_dev(input3, "type", "checkbox");
     			attr_dev(input3, "class", "form-checkbox text-cyan-us transition-all-4");
     			input3.checked = input3_checked_value = /*items*/ ctx[0][3] ? true : false;
-    			add_location(input3, file$b, 126, 18, 5240);
+    			add_location(input3, file$b, 136, 18, 5446);
     			attr_dev(span6, "class", "font-light");
-    			add_location(span6, file$b, 132, 20, 5565);
+    			add_location(span6, file$b, 142, 20, 5771);
     			attr_dev(span7, "class", span7_class_value = "" + ((/*items*/ ctx[0][3] ? "opacity-50" : "") + " ml-2 text-sm"));
-    			add_location(span7, file$b, 131, 18, 5486);
+    			add_location(span7, file$b, 141, 18, 5692);
     			attr_dev(label3, "class", label3_class_value = "" + ((/*items*/ ctx[0][3] ? "line-through" : "") + " inline-flex items-center"));
-    			add_location(label3, file$b, 125, 16, 5148);
-    			attr_dev(div4, "class", "task");
-    			add_location(div4, file$b, 124, 14, 5113);
-    			attr_dev(div5, "class", "sm: leading-snug leading-tight");
-    			add_location(div5, file$b, 74, 12, 2667);
-    			attr_dev(div6, "class", "border-1 rounded p-3");
-    			add_location(div6, file$b, 67, 10, 2487);
-    			attr_dev(div7, "class", "sm:h-64 h-auto overflow-scroll");
-    			add_location(div7, file$b, 66, 8, 2432);
-    			add_location(div8, file$b, 59, 6, 2259);
-    			attr_dev(div9, "class", "shadow-md border-2 border-solid border-blue-us rounded p-3 bg-white-us");
-    			add_location(div9, file$b, 55, 4, 2117);
-    			attr_dev(div10, "class", "max-w-3xl");
-    			add_location(div10, file$b, 54, 2, 2089);
+    			add_location(label3, file$b, 135, 16, 5354);
+    			attr_dev(div7, "class", "task mb-2");
+    			add_location(div7, file$b, 134, 14, 5314);
+    			attr_dev(input4, "type", "checkbox");
+    			attr_dev(input4, "class", "form-checkbox text-cyan-us transition-all-4");
+    			input4.checked = input4_checked_value = /*items*/ ctx[0][4] ? true : false;
+    			add_location(input4, file$b, 153, 18, 6280);
+    			attr_dev(span8, "class", "font-light");
+    			add_location(span8, file$b, 159, 20, 6605);
+    			attr_dev(span9, "class", span9_class_value = "" + ((/*items*/ ctx[0][4] ? "opacity-50" : "") + " ml-2 text-sm"));
+    			add_location(span9, file$b, 158, 18, 6526);
+    			attr_dev(label4, "class", label4_class_value = "" + ((/*items*/ ctx[0][4] ? "line-through" : "") + " inline-flex items-center"));
+    			add_location(label4, file$b, 152, 16, 6188);
+    			attr_dev(div8, "class", "task mb-2");
+    			add_location(div8, file$b, 151, 14, 6148);
+    			attr_dev(input5, "type", "checkbox");
+    			attr_dev(input5, "class", "form-checkbox text-cyan-us transition-all-4");
+    			input5.checked = input5_checked_value = /*items*/ ctx[0][5] ? true : false;
+    			add_location(input5, file$b, 170, 18, 7105);
+    			attr_dev(span10, "class", "font-light");
+    			add_location(span10, file$b, 176, 20, 7430);
+    			attr_dev(span11, "class", span11_class_value = "" + ((/*items*/ ctx[0][5] ? "opacity-50" : "") + " ml-2 text-sm"));
+    			add_location(span11, file$b, 175, 18, 7351);
+    			attr_dev(label5, "class", label5_class_value = "" + ((/*items*/ ctx[0][5] ? "line-through" : "") + " inline-flex items-center"));
+    			add_location(label5, file$b, 169, 16, 7013);
+    			attr_dev(div9, "class", "task");
+    			add_location(div9, file$b, 168, 14, 6978);
+    			attr_dev(div10, "class", "sm:leading-snug leading-tight");
+    			add_location(div10, file$b, 132, 12, 5255);
+    			attr_dev(div11, "class", "border-1 rounded p-3");
+    			add_location(div11, file$b, 127, 10, 5111);
+    			attr_dev(div12, "class", "sm:h-64 h-auto overflow-scroll");
+    			add_location(div12, file$b, 66, 8, 2440);
+    			add_location(div13, file$b, 59, 6, 2267);
+    			attr_dev(div14, "class", "shadow-md border-2 border-solid border-blue-us rounded p-3 bg-white-us");
+    			add_location(div14, file$b, 55, 4, 2125);
+    			attr_dev(div15, "class", "max-w-3xl");
+    			add_location(div15, file$b, 54, 2, 2097);
     			attr_dev(main, "class", "flex flex-col h-screen justify-center items-center p-3 bg-black-us");
-    			add_location(main, file$b, 48, 0, 1924);
+    			add_location(main, file$b, 48, 0, 1932);
 
     			dispose = [
     				listen_dev(input0, "click", /*click_handler*/ ctx[10], false, false, false),
     				listen_dev(input1, "click", /*click_handler_1*/ ctx[11], false, false, false),
     				listen_dev(input2, "click", /*click_handler_2*/ ctx[12], false, false, false),
-    				listen_dev(input3, "click", /*click_handler_3*/ ctx[13], false, false, false)
+    				listen_dev(input3, "click", /*click_handler_3*/ ctx[13], false, false, false),
+    				listen_dev(input4, "click", /*click_handler_4*/ ctx[14], false, false, false),
+    				listen_dev(input5, "click", /*click_handler_5*/ ctx[15], false, false, false)
     			];
     		},
     		l: function claim(nodes) {
@@ -2067,35 +2215,34 @@ var app = (function () {
     			append_dev(main, t0);
     			mount_component(title, main, null);
     			append_dev(main, t1);
-    			append_dev(main, div10);
-    			append_dev(div10, div9);
-    			mount_component(fullcalendarlink, div9, null);
-    			append_dev(div9, t2);
-    			append_dev(div9, div8);
-    			mount_component(weekinfo, div8, null);
-    			append_dev(div8, t3);
-    			mount_component(progressbar, div8, null);
-    			append_dev(div8, t4);
-    			mount_component(completedtasks, div8, null);
-    			append_dev(div8, t5);
-    			append_dev(div8, div7);
-    			append_dev(div7, div6);
-    			append_dev(div6, div0);
+    			append_dev(main, div15);
+    			append_dev(div15, div14);
+    			mount_component(fullcalendarlink, div14, null);
+    			append_dev(div14, t2);
+    			append_dev(div14, div13);
+    			mount_component(weekinfo, div13, null);
+    			append_dev(div13, t3);
+    			mount_component(progressbar, div13, null);
+    			append_dev(div13, t4);
+    			mount_component(completedtasks, div13, null);
+    			append_dev(div13, t5);
+    			append_dev(div13, div12);
+    			append_dev(div12, div5);
+    			append_dev(div5, div0);
     			mount_component(nodetag, div0, null);
-    			append_dev(div0, t6);
-    			mount_component(expresstag, div0, null);
-    			append_dev(div6, t7);
-    			append_dev(div6, div5);
-    			append_dev(div5, div1);
+    			append_dev(div5, t6);
+    			append_dev(div5, div4);
+    			append_dev(div4, div1);
     			append_dev(div1, label0);
     			append_dev(label0, input0);
-    			append_dev(label0, t8);
+    			append_dev(label0, t7);
     			append_dev(label0, span1);
     			append_dev(span1, span0);
-    			append_dev(span1, t10);
+    			append_dev(span1, t9);
     			mount_component(tasklink0, span1, null);
-    			append_dev(div5, t11);
-    			append_dev(div5, div2);
+    			append_dev(span1, t10);
+    			append_dev(div4, t11);
+    			append_dev(div4, div2);
     			append_dev(div2, label1);
     			append_dev(label1, input1);
     			append_dev(label1, t12);
@@ -2103,28 +2250,56 @@ var app = (function () {
     			append_dev(span3, span2);
     			append_dev(span3, t14);
     			mount_component(tasklink1, span3, null);
-    			append_dev(div5, t15);
-    			append_dev(div5, div3);
+    			append_dev(span3, t15);
+    			append_dev(div4, t16);
+    			append_dev(div4, div3);
     			append_dev(div3, label2);
     			append_dev(label2, input2);
-    			append_dev(label2, t16);
+    			append_dev(label2, t17);
     			append_dev(label2, span5);
     			append_dev(span5, span4);
-    			append_dev(span5, t18);
+    			append_dev(span5, t19);
     			mount_component(tasklink2, span5, null);
-    			append_dev(div5, t19);
-    			append_dev(div5, div4);
-    			append_dev(div4, label3);
+    			append_dev(span5, t20);
+    			append_dev(div12, t21);
+    			append_dev(div12, div11);
+    			append_dev(div11, div6);
+    			mount_component(expresstag, div6, null);
+    			append_dev(div11, t22);
+    			append_dev(div11, div10);
+    			append_dev(div10, div7);
+    			append_dev(div7, label3);
     			append_dev(label3, input3);
-    			append_dev(label3, t20);
+    			append_dev(label3, t23);
     			append_dev(label3, span7);
     			append_dev(span7, span6);
-    			append_dev(span7, t22);
+    			append_dev(span7, t25);
     			mount_component(tasklink3, span7, null);
-    			append_dev(div10, t23);
-    			mount_component(references, div10, null);
-    			append_dev(div10, t24);
-    			mount_component(referenceslink, div10, null);
+    			append_dev(span7, t26);
+    			append_dev(div10, t27);
+    			append_dev(div10, div8);
+    			append_dev(div8, label4);
+    			append_dev(label4, input4);
+    			append_dev(label4, t28);
+    			append_dev(label4, span9);
+    			append_dev(span9, span8);
+    			append_dev(span9, t30);
+    			mount_component(tasklink4, span9, null);
+    			append_dev(span9, t31);
+    			append_dev(div10, t32);
+    			append_dev(div10, div9);
+    			append_dev(div9, label5);
+    			append_dev(label5, input5);
+    			append_dev(label5, t33);
+    			append_dev(label5, span11);
+    			append_dev(span11, span10);
+    			append_dev(span11, t35);
+    			mount_component(tasklink5, span11, null);
+    			append_dev(span11, t36);
+    			append_dev(div15, t37);
+    			mount_component(references, div15, null);
+    			append_dev(div15, t38);
+    			mount_component(referenceslink, div15, null);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
@@ -2191,6 +2366,30 @@ var app = (function () {
     			if (!current || dirty[0] & /*items*/ 1 && label3_class_value !== (label3_class_value = "" + ((/*items*/ ctx[0][3] ? "line-through" : "") + " inline-flex items-center"))) {
     				attr_dev(label3, "class", label3_class_value);
     			}
+
+    			if (!current || dirty[0] & /*items*/ 1 && input4_checked_value !== (input4_checked_value = /*items*/ ctx[0][4] ? true : false)) {
+    				prop_dev(input4, "checked", input4_checked_value);
+    			}
+
+    			if (!current || dirty[0] & /*items*/ 1 && span9_class_value !== (span9_class_value = "" + ((/*items*/ ctx[0][4] ? "opacity-50" : "") + " ml-2 text-sm"))) {
+    				attr_dev(span9, "class", span9_class_value);
+    			}
+
+    			if (!current || dirty[0] & /*items*/ 1 && label4_class_value !== (label4_class_value = "" + ((/*items*/ ctx[0][4] ? "line-through" : "") + " inline-flex items-center"))) {
+    				attr_dev(label4, "class", label4_class_value);
+    			}
+
+    			if (!current || dirty[0] & /*items*/ 1 && input5_checked_value !== (input5_checked_value = /*items*/ ctx[0][5] ? true : false)) {
+    				prop_dev(input5, "checked", input5_checked_value);
+    			}
+
+    			if (!current || dirty[0] & /*items*/ 1 && span11_class_value !== (span11_class_value = "" + ((/*items*/ ctx[0][5] ? "opacity-50" : "") + " ml-2 text-sm"))) {
+    				attr_dev(span11, "class", span11_class_value);
+    			}
+
+    			if (!current || dirty[0] & /*items*/ 1 && label5_class_value !== (label5_class_value = "" + ((/*items*/ ctx[0][5] ? "line-through" : "") + " inline-flex items-center"))) {
+    				attr_dev(label5, "class", label5_class_value);
+    			}
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -2201,11 +2400,13 @@ var app = (function () {
     			transition_in(progressbar.$$.fragment, local);
     			transition_in(completedtasks.$$.fragment, local);
     			transition_in(nodetag.$$.fragment, local);
-    			transition_in(expresstag.$$.fragment, local);
     			transition_in(tasklink0.$$.fragment, local);
     			transition_in(tasklink1.$$.fragment, local);
     			transition_in(tasklink2.$$.fragment, local);
+    			transition_in(expresstag.$$.fragment, local);
     			transition_in(tasklink3.$$.fragment, local);
+    			transition_in(tasklink4.$$.fragment, local);
+    			transition_in(tasklink5.$$.fragment, local);
     			transition_in(references.$$.fragment, local);
     			transition_in(referenceslink.$$.fragment, local);
     			current = true;
@@ -2218,11 +2419,13 @@ var app = (function () {
     			transition_out(progressbar.$$.fragment, local);
     			transition_out(completedtasks.$$.fragment, local);
     			transition_out(nodetag.$$.fragment, local);
-    			transition_out(expresstag.$$.fragment, local);
     			transition_out(tasklink0.$$.fragment, local);
     			transition_out(tasklink1.$$.fragment, local);
     			transition_out(tasklink2.$$.fragment, local);
+    			transition_out(expresstag.$$.fragment, local);
     			transition_out(tasklink3.$$.fragment, local);
+    			transition_out(tasklink4.$$.fragment, local);
+    			transition_out(tasklink5.$$.fragment, local);
     			transition_out(references.$$.fragment, local);
     			transition_out(referenceslink.$$.fragment, local);
     			current = false;
@@ -2236,11 +2439,13 @@ var app = (function () {
     			destroy_component(progressbar);
     			destroy_component(completedtasks);
     			destroy_component(nodetag);
-    			destroy_component(expresstag);
     			destroy_component(tasklink0);
     			destroy_component(tasklink1);
     			destroy_component(tasklink2);
+    			destroy_component(expresstag);
     			destroy_component(tasklink3);
+    			destroy_component(tasklink4);
+    			destroy_component(tasklink5);
     			destroy_component(references);
     			destroy_component(referenceslink);
     			run_all(dispose);
@@ -2261,11 +2466,11 @@ var app = (function () {
     const LOCAL_STORAGE_ITEMS_KEY = "items";
     const LOCAL_STORAGE_COMPLETED_KEY = "completed";
 
-    function instance$6($$self, $$props, $$invalidate) {
+    function instance$7($$self, $$props, $$invalidate) {
     	let { today } = $$props;
     	let { nextWeek } = $$props;
     	let { weekNumber } = $$props;
-    	let { items = JSON.parse(localStorage.getItem(LOCAL_STORAGE_ITEMS_KEY)) || [0, 0, 0, 0] } = $$props;
+    	let { items = JSON.parse(localStorage.getItem(LOCAL_STORAGE_ITEMS_KEY)) || new Array(6).fill(0) } = $$props;
     	let taskPercentage = parseFloat((100 / items.length).toFixed(2));
     	let completedPercentage = JSON.parse(localStorage.getItem(LOCAL_STORAGE_COMPLETED_KEY)) || 0;
 
@@ -2303,6 +2508,8 @@ var app = (function () {
     	const click_handler_1 = () => handleClick(1);
     	const click_handler_2 = () => handleClick(2);
     	const click_handler_3 = () => handleClick(3);
+    	const click_handler_4 = () => handleClick(4);
+    	const click_handler_5 = () => handleClick(5);
 
     	$$self.$set = $$props => {
     		if ("today" in $$props) $$invalidate(1, today = $$props.today);
@@ -2345,7 +2552,9 @@ var app = (function () {
     		click_handler,
     		click_handler_1,
     		click_handler_2,
-    		click_handler_3
+    		click_handler_3,
+    		click_handler_4,
+    		click_handler_5
     	];
     }
 
@@ -2353,7 +2562,7 @@ var app = (function () {
     	constructor(options) {
     		super(options);
 
-    		init(this, options, instance$6, create_fragment$b, safe_not_equal, {
+    		init(this, options, instance$7, create_fragment$b, safe_not_equal, {
     			today: 1,
     			nextWeek: 2,
     			weekNumber: 3,

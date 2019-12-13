@@ -20,7 +20,7 @@
   // const tasksNumber = () => document.querySelectorAll('.task').length;
   // const tasks = new Array(tasksNumber()).fill(0);
 
-  export let items = JSON.parse(localStorage.getItem(LOCAL_STORAGE_ITEMS_KEY)) || [0, 0, 0, 0];
+  export let items = JSON.parse(localStorage.getItem(LOCAL_STORAGE_ITEMS_KEY)) || new Array(6).fill(0);
   let taskPercentage = parseFloat((100 / items.length).toFixed(2));
   let completedPercentage = JSON.parse(localStorage.getItem(LOCAL_STORAGE_COMPLETED_KEY)) || 0;
 
@@ -65,15 +65,13 @@
         <CompletedTasks {items} {completedPercentage} />
 
         <div class="sm:h-64 h-auto overflow-scroll">
-          <div class="border-1 rounded p-3">
 
-            <div class="flex justify-end">
-              <NodeTag mr="{'mr-1'}" />
-              <ExpressTag />
+          <div class="border-1 rounded p-3 mb-1">
+            <div class="flex justify-end mb-2">
+              <NodeTag />
             </div>
 
-            <div class="sm: leading-snug leading-tight">
-
+            <div class="sm:leading-snug leading-tight">
               <div class="task mb-2">
                 <label class="{items[0] ? 'line-through' : ''} inline-flex items-center">
                   <input
@@ -82,10 +80,11 @@
                     on:click="{() => handleClick(0)}"
                     checked="{items[0] ? true : false}" />
                   <span class="{items[0] ? 'opacity-50' : ''} ml-2 text-sm">
-                    <span class="font-light">📚🏃 Completar el capítulo</span>
+                    <span class="font-light">Ver</span>
                     <TaskLink
-                      name="{'Introduction to Express.js'}"
-                      src="{'https://www.rithmschool.com/courses/node-express-fundamentals/introduction-to-express'}" />
+                      name="{'How to Use __dirname in Node.js'}"
+                      src="{'https://alligator.io/nodejs/how-to-use__dirname/'}" />
+                    🏃
                   </span>
                 </label>
               </div>
@@ -98,15 +97,16 @@
                     on:click="{() => handleClick(1)}"
                     checked="{items[1] ? true : false}" />
                   <span class="{items[1] ? 'opacity-50' : ''} ml-2 text-sm">
-                    <span class="font-light">📚🏃 Completar el capítulo</span>
+                    <span class="font-light">Completar los</span>
                     <TaskLink
-                      name="{'Serving JSON with Express.js'}"
-                      src="{'https://www.rithmschool.com/courses/node-express-fundamentals/json-with-express'}" />
+                      name="{'ejercicios de Node'}"
+                      src="{'https://github.com/undefinedschool/notes-nodejs/blob/master/README.md#ejercicios-1'}" />
+                    🏃
                   </span>
                 </label>
               </div>
 
-              <div class="task mb-2">
+              <div class="task">
                 <label class="{items[2] ? 'line-through' : ''} inline-flex items-center">
                   <input
                     type="checkbox"
@@ -114,15 +114,25 @@
                     on:click="{() => handleClick(2)}"
                     checked="{items[2] ? true : false}" />
                   <span class="{items[2] ? 'opacity-50' : ''} ml-2 text-sm">
-                    <span class="font-light">🏃 Ver</span>
+                    <span class="font-light">Completar el</span>
                     <TaskLink
-                      name="{`How to Use __dirname in Node.js`}"
-                      src="{'https://alligator.io/nodejs/how-to-use__dirname/'}" />
+                      name="{'Proyecto 4: Node Jokes'}"
+                      src="{'https://github.com/undefinedschool/project-4-node-jokes'}" />
+                    👷
                   </span>
                 </label>
               </div>
+            </div>
+          </div>
 
-              <div class="task">
+          <div class="border-1 rounded p-3">
+            <div class="flex justify-end mb-2">
+              <ExpressTag />
+            </div>
+
+            <div class="sm:leading-snug leading-tight">
+
+              <div class="task mb-2">
                 <label class="{items[3] ? 'line-through' : ''} inline-flex items-center">
                   <input
                     type="checkbox"
@@ -130,16 +140,51 @@
                     on:click="{() => handleClick(3)}"
                     checked="{items[3] ? true : false}" />
                   <span class="{items[3] ? 'opacity-50' : ''} ml-2 text-sm">
-                    <span class="font-light">📚🏃 Ver</span>
+                    <span class="font-light">Completar el capítulo</span>
                     <TaskLink
-                      name="{'Notas sobre ExpressJS'}"
-                      src="{'https://github.com/undefinedschool/notes-expressjs/'}" />
+                      name="{'Introduction to Express.js'}"
+                      src="{'https://www.rithmschool.com/courses/node-express-fundamentals/introduction-to-express'}" />
+                    📚🏃
                   </span>
                 </label>
               </div>
 
+              <div class="task mb-2">
+                <label class="{items[4] ? 'line-through' : ''} inline-flex items-center">
+                  <input
+                    type="checkbox"
+                    class="form-checkbox text-cyan-us transition-all-4"
+                    on:click="{() => handleClick(4)}"
+                    checked="{items[4] ? true : false}" />
+                  <span class="{items[4] ? 'opacity-50' : ''} ml-2 text-sm">
+                    <span class="font-light">Completar el capítulo</span>
+                    <TaskLink
+                      name="{'Serving JSON with Express.js'}"
+                      src="{'https://www.rithmschool.com/courses/node-express-fundamentals/json-with-express'}" />
+                    📚🏃
+                  </span>
+                </label>
+              </div>
+
+              <div class="task">
+                <label class="{items[5] ? 'line-through' : ''} inline-flex items-center">
+                  <input
+                    type="checkbox"
+                    class="form-checkbox text-cyan-us transition-all-4"
+                    on:click="{() => handleClick(5)}"
+                    checked="{items[5] ? true : false}" />
+                  <span class="{items[5] ? 'opacity-50' : ''} ml-2 text-sm">
+                    <span class="font-light">Ver</span>
+                    <TaskLink
+                      name="{'Notas sobre ExpressJS'}"
+                      src="{'https://github.com/undefinedschool/notes-expressjs/'}" />
+                    📚🏃
+                  </span>
+                </label>
+              </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>

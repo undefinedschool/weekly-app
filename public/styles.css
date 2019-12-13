@@ -11767,6 +11767,11 @@ html {
           animation: blinker 0.95s linear infinite;
 }
 
+.blink-5 {
+  -webkit-animation: blinker 5s linear infinite;
+          animation: blinker 5s linear infinite;
+}
+
 @-webkit-keyframes blinker {
   50% {
     opacity: 0;

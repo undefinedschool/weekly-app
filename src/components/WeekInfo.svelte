@@ -17,13 +17,15 @@
 </script>
 
 <div class="mb-4">
-  <span class="block text-gray-700 font-semibold text-xl -mb-1">Semana {weekNumber}</span>
+  <p class="text-gray-700 font-semibold text-xl -mb-1">
+    <!-- <button class="blink-5 text-lg opacity-75">❮</button> -->
+    Semana {weekNumber}
+  </p>
   <p class="font-light text-sm text-light-gray-us">
     {#if daysRemaining === 0}
-      ⌛️ Ya estamos en la semana
+      Ya estamos en la semana
       <span class="font-medium">{weekNumber + 1}.</span>
     {:else}
-      ⏳
       {#if daysRemaining > 1}Faltan{:else}Sólo falta{/if}
       <span class="font-medium">{daysRemaining}</span>
       {#if daysRemaining > 1}días{:else}día{/if}
