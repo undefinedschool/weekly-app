@@ -41,6 +41,10 @@
   background-color: #1f2327;
 }
 
+.bg-black-us-80 {
+  background-color: #1f2327cc;
+}
+
 /* border color */
 .border-light-gray-us {
   border-color: #aca9bb;
@@ -69,4 +73,28 @@
 /* transition */
 .transition-all-4 {
   transition: all 0.4s;
+}
+
+/* margin */
+.mt-26 {
+  margin-top: 2.6em;
+}
+
+.mb-06 {
+  margin-bottom: 0.6em;
+}
+
+/* padding */
+.pl-1em {
+  padding-left: 1em;
+}
+
+/* top */
+.top-50 {
+  top: 50%;
+}
+
+/* left */
+.left-50 {
+  left: 50%;
 }

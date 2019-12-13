@@ -8,8 +8,8 @@
   import TaskLink from './components/TaskLink.svelte';
   import NodeTag from './components/Tags/NodeTag.svelte';
   import ExpressTag from './components/Tags/ExpressTag.svelte';
-
   import References from './components/References.svelte';
+  import ReferencesLink from './components/ReferencesLink.svelte';
 
   export let today;
   export let nextWeek;
@@ -50,98 +50,102 @@
 
   <Navbar />
 
-  <References />
-
   <Title firstPart="{'Calendario'}" secondPart="{'semanal.'}" />
 
-  <div class="shadow-md border-2 border-solid border-blue-us rounded h-auto max-w-3xl p-4 bg-white-us">
+  <div class="max-w-3xl">
+    <div class="shadow-md border-2 border-solid border-blue-us rounded p-3 bg-white-us">
 
-    <FullCalendarLink {completedPercentage} />
+      <FullCalendarLink {completedPercentage} />
 
-    <div>
-      <WeekInfo {weekNumber} {today} {nextWeek} />
+      <div>
+        <WeekInfo {weekNumber} {today} {nextWeek} />
 
-      <ProgressBar {completedPercentage} />
+        <ProgressBar {completedPercentage} />
 
-      <CompletedTasks {items} {completedPercentage} />
+        <CompletedTasks {items} {completedPercentage} />
 
-      <div class="sm:h-64 h-auto overflow-scroll">
-        <div class="border-1 rounded p-3">
+        <div class="sm:h-64 h-auto overflow-scroll">
+          <div class="border-1 rounded p-3">
 
-          <div class="flex justify-end">
-            <NodeTag mr="{'mr-1'}" />
-            <ExpressTag />
-          </div>
-
-          <div class="sm: leading-snug leading-tight">
-
-            <div class="task mb-2">
-              <label class="{items[0] ? 'line-through' : ''} inline-flex items-center">
-                <input
-                  type="checkbox"
-                  class="form-checkbox text-cyan-us transition-all-4"
-                  on:click="{() => handleClick(0)}"
-                  checked="{items[0] ? true : false}" />
-                <span class="{items[0] ? 'opacity-50' : ''} ml-2 text-sm">
-                  <span class="font-light">📚🏃Completar el capítulo</span>
-                  <TaskLink
-                    name="{'Introduction to Express.js'}"
-                    src="{'https://www.rithmschool.com/courses/node-express-fundamentals/introduction-to-express'}" />
-                </span>
-              </label>
+            <div class="flex justify-end">
+              <NodeTag mr="{'mr-1'}" />
+              <ExpressTag />
             </div>
 
-            <div class="task mb-2">
-              <label class="{items[1] ? 'line-through' : ''} inline-flex items-center">
-                <input
-                  type="checkbox"
-                  class="form-checkbox text-cyan-us transition-all-4"
-                  on:click="{() => handleClick(1)}"
-                  checked="{items[1] ? true : false}" />
-                <span class="{items[1] ? 'opacity-50' : ''} ml-2 text-sm">
-                  <span class="font-light">📚🏃Completar el capítulo</span>
-                  <TaskLink
-                    name="{'Serving JSON with Express.js'}"
-                    src="{'https://www.rithmschool.com/courses/node-express-fundamentals/json-with-express'}" />
-                </span>
-              </label>
-            </div>
+            <div class="sm: leading-snug leading-tight">
 
-            <div class="task mb-2">
-              <label class="{items[2] ? 'line-through' : ''} inline-flex items-center">
-                <input
-                  type="checkbox"
-                  class="form-checkbox text-cyan-us transition-all-4"
-                  on:click="{() => handleClick(2)}"
-                  checked="{items[2] ? true : false}" />
-                <span class="{items[2] ? 'opacity-50' : ''} ml-2 text-sm">
-                  <span class="font-light">🏃Ver</span>
-                  <TaskLink
-                    name="{`How to Use __dirname in Node.js`}"
-                    src="{'https://alligator.io/nodejs/how-to-use__dirname/'}" />
-                </span>
-              </label>
-            </div>
+              <div class="task mb-2">
+                <label class="{items[0] ? 'line-through' : ''} inline-flex items-center">
+                  <input
+                    type="checkbox"
+                    class="form-checkbox text-cyan-us transition-all-4"
+                    on:click="{() => handleClick(0)}"
+                    checked="{items[0] ? true : false}" />
+                  <span class="{items[0] ? 'opacity-50' : ''} ml-2 text-sm">
+                    <span class="font-light">📚🏃 Completar el capítulo</span>
+                    <TaskLink
+                      name="{'Introduction to Express.js'}"
+                      src="{'https://www.rithmschool.com/courses/node-express-fundamentals/introduction-to-express'}" />
+                  </span>
+                </label>
+              </div>
 
-            <div class="task">
-              <label class="{items[3] ? 'line-through' : ''} inline-flex items-center">
-                <input
-                  type="checkbox"
-                  class="form-checkbox text-cyan-us transition-all-4"
-                  on:click="{() => handleClick(3)}"
-                  checked="{items[3] ? true : false}" />
-                <span class="{items[3] ? 'opacity-50' : ''} ml-2 text-sm">
-                  <span class="font-light">📚🏃Ver</span>
-                  <TaskLink
-                    name="{'Notas sobre ExpressJS'}"
-                    src="{'https://github.com/undefinedschool/notes-expressjs/'}" />
-                </span>
-              </label>
-            </div>
+              <div class="task mb-2">
+                <label class="{items[1] ? 'line-through' : ''} inline-flex items-center">
+                  <input
+                    type="checkbox"
+                    class="form-checkbox text-cyan-us transition-all-4"
+                    on:click="{() => handleClick(1)}"
+                    checked="{items[1] ? true : false}" />
+                  <span class="{items[1] ? 'opacity-50' : ''} ml-2 text-sm">
+                    <span class="font-light">📚🏃 Completar el capítulo</span>
+                    <TaskLink
+                      name="{'Serving JSON with Express.js'}"
+                      src="{'https://www.rithmschool.com/courses/node-express-fundamentals/json-with-express'}" />
+                  </span>
+                </label>
+              </div>
 
+              <div class="task mb-2">
+                <label class="{items[2] ? 'line-through' : ''} inline-flex items-center">
+                  <input
+                    type="checkbox"
+                    class="form-checkbox text-cyan-us transition-all-4"
+                    on:click="{() => handleClick(2)}"
+                    checked="{items[2] ? true : false}" />
+                  <span class="{items[2] ? 'opacity-50' : ''} ml-2 text-sm">
+                    <span class="font-light">🏃 Ver</span>
+                    <TaskLink
+                      name="{`How to Use __dirname in Node.js`}"
+                      src="{'https://alligator.io/nodejs/how-to-use__dirname/'}" />
+                  </span>
+                </label>
+              </div>
+
+              <div class="task">
+                <label class="{items[3] ? 'line-through' : ''} inline-flex items-center">
+                  <input
+                    type="checkbox"
+                    class="form-checkbox text-cyan-us transition-all-4"
+                    on:click="{() => handleClick(3)}"
+                    checked="{items[3] ? true : false}" />
+                  <span class="{items[3] ? 'opacity-50' : ''} ml-2 text-sm">
+                    <span class="font-light">📚🏃 Ver</span>
+                    <TaskLink
+                      name="{'Notas sobre ExpressJS'}"
+                      src="{'https://github.com/undefinedschool/notes-expressjs/'}" />
+                  </span>
+                </label>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
     </div>
+
+    <References />
+    <ReferencesLink />
+
   </div>
 </main>

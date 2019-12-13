@@ -10,7 +10,10 @@
     return remainingDays;
   }
 
+  const aDay = 1000 * 60 * 60 * 24;
   const daysRemaining = getDaysRemainingToNextWeek(today, nextWeek);
+
+  setInterval(getDaysRemainingToNextWeek(today, nextWeek), aDay);
 </script>
 
 <div class="mb-4">

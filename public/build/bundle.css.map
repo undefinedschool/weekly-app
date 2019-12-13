@@ -1,8 +1,12 @@
 {
   "version": 3,
   "file": "bundle.css",
-  "sources": [],
-  "sourcesContent": [],
+  "sources": [
+    "../../src/components/References.svelte"
+  ],
+  "sourcesContent": [
+    "<style>\n  .modal-window:target {\n    visibility: visible;\n    opacity: 1;\n    pointer-events: auto;\n  }\n  .modal-window > div {\n    transform: translate(-50%, -50%);\n  }\n</style>\n\n<div\n  id=\"open-modal\"\n  class=\"modal-window invisible top-0 right-0 bottom-0 left-0 opacity-0 fixed z-10 pointer-events-none transition-all-4\n  bg-black-us-80\">\n  <div class=\"max-w-xs p-3 rounded shadow absolute bg-white-us w-full top-50 left-50\">\n    <div class=\"mb-10\">\n      <a\n        href=\"#\"\n        title=\"Close\"\n        class=\"text-sm font-light text-light-gray-us link text-center top-0 right-0 p-2 absolute no-underline w-16\">\n        Cerrar\n      </a>\n    </div>\n    <h1 class=\"text-gray-700 font-semibold text-lg mb-2\">Referencias</h1>\n    <div>\n      <ul class=\"pl-1em text-sm font-light list-none\">\n        <li>📝 Técnicas de estudio</li>\n        <li>💻 Setup</li>\n        <li>📚 Teoría</li>\n        <li>🏃 Ejercicios</li>\n        <li>🚧 Mini-proyecto</li>\n        <li>👫 Soft Skills / Metodologías Ágiles</li>\n        <li>👷 Proyecto</li>\n        <li>📹 Charla</li>\n        <li>📻 Podcast</li>\n      </ul>\n    </div>\n  </div>\n</div>\n"
+  ],
   "names": [],
-  "mappings": ""
+  "mappings": "AACE,2BAAa,OAAO,AAAC,CAAC,AACpB,UAAU,CAAE,OAAO,CACnB,OAAO,CAAE,CAAC,CACV,cAAc,CAAE,IAAI,AACtB,CAAC,AACD,2BAAa,CAAG,GAAG,cAAC,CAAC,AACnB,SAAS,CAAE,UAAU,IAAI,CAAC,CAAC,IAAI,CAAC,AAClC,CAAC"
 }

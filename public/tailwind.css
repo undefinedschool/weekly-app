@@ -10,8 +10,6 @@ html {
 }
 
 .blink {
-  color: #00c6b3;
-  font-weight: 400;
   animation: blinker 0.95s linear infinite;
 }
 
@@ -19,4 +17,13 @@ html {
   50% {
     opacity: 0;
   }
+}
+
+.modal-window:target {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-window > div {
+  transform: translate(-50%, -50%);
 }
