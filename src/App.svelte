@@ -11,14 +11,10 @@
   import References from './components/References.svelte';
   import ReferencesLink from './components/ReferencesLink.svelte';
 
-  export let today;
   export let nextWeek;
-  export let weekNumber;
 
   const LOCAL_STORAGE_ITEMS_KEY = 'items';
   const LOCAL_STORAGE_COMPLETED_KEY = 'completed';
-  // const tasksNumber = () => document.querySelectorAll('.task').length;
-  // const tasks = new Array(tasksNumber()).fill(0);
 
   export let items = JSON.parse(localStorage.getItem(LOCAL_STORAGE_ITEMS_KEY)) || new Array(6).fill(0);
   let taskPercentage = parseFloat((100 / items.length).toFixed(2));
@@ -58,13 +54,13 @@
       <FullCalendarLink {completedPercentage} />
 
       <div>
-        <WeekInfo {weekNumber} {today} {nextWeek} />
+        <WeekInfo {completedPercentage} {nextWeek} />
 
         <ProgressBar {completedPercentage} />
 
-        <CompletedTasks {items} {completedPercentage} />
+        <CompletedTasks {items} />
 
-        <div class="sm:h-64 h-auto overflow-scroll">
+        <div class="sm:h-64 h-auto overflow-auto">
 
           <div class="border-1 rounded p-3 mb-1">
             <div class="flex justify-end mb-2">

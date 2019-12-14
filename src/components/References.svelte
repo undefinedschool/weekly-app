@@ -3,7 +3,7 @@
   class="modal-window invisible top-0 right-0 bottom-0 left-0 opacity-0 fixed z-10 pointer-events-none transition-all-4
   bg-black-us-80">
   <div class="max-w-xs p-3 rounded shadow absolute bg-white-us w-full top-50 left-50">
-    <div class="mb-10">
+    <div class="mb-8">
       <a
         href="#"
         title="Close"
