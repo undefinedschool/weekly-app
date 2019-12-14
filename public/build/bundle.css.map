@@ -1,8 +1,12 @@
 {
   "version": 3,
   "file": "bundle.css",
-  "sources": [],
-  "sourcesContent": [],
+  "sources": [
+    "../../src/components/WeekInfo.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n  export let nextWeek;\n  export let completedPercentage;\n\n  function getDaysRemainingToNextWeek(today, nextWeek) {\n    const diffTime = Math.abs(today - nextWeek);\n    const remainingDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));\n\n    return remainingDays;\n  }\n\n  const today = new Date().setHours(18);\n  const aDay = 1000 * 60 * 60 * 24;\n  let daysRemaining = getDaysRemainingToNextWeek(today, nextWeek);\n\n  setInterval(() => {\n    daysRemaining = getDaysRemainingToNextWeek(today, nextWeek);\n    console.log(daysRemaining);\n  }, aDay);\n</script>\n\n<style>\n  .border-b-gray-200 {\n    border-bottom: 1px solid #edf2f7;\n  }\n\n  .bg-gray-50 {\n    background-color: #edf2f780;\n  }\n</style>\n\n<div>\n  <p\n    class=\"text-gray-700 font-semibold text-xl mb-6 -ml-3 -mr-3 -mt-3 py-4 px-3 border-b-gray-200 bg-gray-50 rounded\n    rounded-b-none\">\n    <!-- <button class=\"blink-5 text-lg opacity-75\">❮</button> -->\n    Próxima clase\n  </p>\n  <p class=\"font-light text-sm text-light-gray-us\">\n    {#if daysRemaining > 0 && Math.round(completedPercentage) === 100}\n      <p>\n        <span class=\"font-medium\">¡Excelente!</span>\n        Estás al día 💪\n      </p>\n    {:else if daysRemaining > 1}\n      <p>\n        Te quedan\n        <span class=\"font-medium\">{daysRemaining}</span>\n        días para completar estas tareas\n      </p>\n    {:else if daysRemaining === 1}\n      <p class=\"text-red-500\">\n        Te queda\n        <span class=\"font-medium\">{daysRemaining}</span>\n        día para completar estas tareas\n      </p>\n    {:else}\n      <p>\n        Ya estamos en la\n        <span class=\"font-medium\">clase siguiente.</span>\n      </p>\n    {/if}\n  </p>\n</div>\n"
+  ],
   "names": [],
-  "mappings": ""
+  "mappings": "AAsBE,kBAAkB,cAAC,CAAC,AAClB,aAAa,CAAE,GAAG,CAAC,KAAK,CAAC,OAAO,AAClC,CAAC,AAED,WAAW,cAAC,CAAC,AACX,gBAAgB,CAAE,SAAS,AAC7B,CAAC"
 }

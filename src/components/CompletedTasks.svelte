@@ -2,6 +2,9 @@
   export let items;
 </script>
 
-<p class="text-light-gray-us font-light text-sm mb-2">
-  Tareas completadas: {items.filter(item => item).length} de {items.length}
-</p>
+<div>
+  <p class="text-light-gray-us font-light text-xs mb-1">
+    <span class="font-medium">{items.filter(item => item).length}</span>
+    de {items.length} tareas completadas
+  </p>
+</div>

@@ -51,8 +51,6 @@
   <div class="max-w-lg">
     <div class="shadow-md border-2 border-solid border-blue-us rounded p-3 bg-white-us">
 
-      <FullCalendarLink {completedPercentage} />
-
       <div>
         <WeekInfo {completedPercentage} {nextWeek} />
 
@@ -62,7 +60,7 @@
 
         <div class="sm:h-64 h-auto overflow-auto">
 
-          <div class="border-1 rounded p-3 mb-1">
+          <div class="border-1 rounded p-3 mb-3 shadow bg-white">
             <div class="flex justify-end mb-2">
               <NodeTag />
             </div>
@@ -121,7 +119,7 @@
             </div>
           </div>
 
-          <div class="border-1 rounded p-3">
+          <div class="border-1 rounded p-3 shadow mb-1 bg-white">
             <div class="flex justify-end mb-2">
               <ExpressTag />
             </div>

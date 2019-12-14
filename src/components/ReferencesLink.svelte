@@ -1,6 +1,9 @@
-<p class="font-light text-sm text-right p-3 -mt-2 mb-4 text-white-us link">
-  <a href="#references">
-    Ver
-    <span class="font-medium">referencias</span>
-  </a>
-</p>
+<div class="font-light text-xs text-right p-3 -mt-2 mb-4 text-white-us">
+  <span class="link">
+    <a href="#references">Referencias</a>
+  </span>
+  |
+  <span class="link font-normal">
+    <a href="https://trello.com/b/mUf0huXz/undefined-school">Clases anteriores</a>
+  </span>
+</div>

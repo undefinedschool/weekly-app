@@ -3,7 +3,7 @@
 </script>
 
 <div
-  class="bg-gray-200 mt-4 mb-8 text-3xl {Math.round(completedPercentage) === 100 ? 'font-semibold' : ''} text-center
+  class="bg-gray-300 mt-2 mb-8 text-2xl {Math.round(completedPercentage) === 100 ? 'font-semibold' : ''} text-center
   rounded-lg">
   <div
     style="width:{Math.round(completedPercentage)}%"

@@ -19,8 +19,20 @@
   }, aDay);
 </script>
 
-<div class="mb-4">
-  <p class="text-gray-700 font-semibold text-xl -mb-1">
+<style>
+  .border-b-gray-200 {
+    border-bottom: 1px solid #edf2f7;
+  }
+
+  .bg-gray-50 {
+    background-color: #edf2f780;
+  }
+</style>
+
+<div>
+  <p
+    class="text-gray-700 font-semibold text-xl mb-6 -ml-3 -mr-3 -mt-3 py-4 px-3 border-b-gray-200 bg-gray-50 rounded
+    rounded-b-none">
     <!-- <button class="blink-5 text-lg opacity-75">❮</button> -->
     Próxima clase
   </p>
