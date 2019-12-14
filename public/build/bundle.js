@@ -1044,7 +1044,7 @@ var app = (function () {
     			t3 = text(" tareas completadas");
     			attr_dev(span, "class", "font-medium");
     			add_location(span, file$4, 6, 4, 107);
-    			attr_dev(p, "class", "text-light-gray-us font-light text-xs mb-1");
+    			attr_dev(p, "class", "text-light-gray-us font-light text-xs mb-2");
     			add_location(p, file$4, 5, 2, 48);
     			add_location(div, file$4, 4, 0, 40);
     		},
@@ -1916,7 +1916,7 @@ var app = (function () {
     			add_location(div3, file$a, 102, 14, 4065);
     			attr_dev(div4, "class", "sm:leading-snug leading-tight");
     			add_location(div4, file$a, 67, 12, 2412);
-    			attr_dev(div5, "class", "border-1 rounded p-3 mb-3 shadow bg-white");
+    			attr_dev(div5, "class", "border-1 rounded p-3 mb-2 shadow bg-white");
     			add_location(div5, file$a, 62, 10, 2250);
     			attr_dev(div6, "class", "flex justify-end mb-2");
     			add_location(div6, file$a, 122, 12, 4949);

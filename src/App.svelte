@@ -60,7 +60,7 @@
 
         <div class="sm:h-64 h-auto overflow-auto">
 
-          <div class="border-1 rounded p-3 mb-3 shadow bg-white">
+          <div class="border-1 rounded p-3 mb-2 shadow bg-white">
             <div class="flex justify-end mb-2">
               <NodeTag />
             </div>

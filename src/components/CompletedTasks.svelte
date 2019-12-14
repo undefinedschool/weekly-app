@@ -3,7 +3,7 @@
 </script>
 
 <div>
-  <p class="text-light-gray-us font-light text-xs mb-1">
+  <p class="text-light-gray-us font-light text-xs mb-2">
     <span class="font-medium">{items.filter(item => item).length}</span>
     de {items.length} tareas completadas
   </p>
