@@ -54,6 +54,10 @@
   border-color: #2f4252;
 }
 
+.border-cyan-us {
+  border-color: #00c6b3;
+}
+
 .border-gray-ddd {
   border-color: #ddd;
 }
@@ -102,4 +106,9 @@
 /* width */
 .w-128 {
   width: 32rem;
+}
+
+/* height */
+.h-128 {
+  height: 32rem;
 }

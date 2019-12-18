@@ -1,6 +1,7 @@
 <script>
   export let nextWeek;
   export let completedPercentage;
+  export let isCurrentWeek;
 
   function getDaysRemainingToNextWeek(today, nextWeek) {
     const diffTime = Math.abs(today - nextWeek);
@@ -10,13 +11,11 @@
   }
 
   const today = new Date().setHours(18);
-  const aDay = 1000 * 60 * 60 * 24;
   let daysRemaining = getDaysRemainingToNextWeek(today, nextWeek);
 
   setInterval(() => {
     daysRemaining = getDaysRemainingToNextWeek(today, nextWeek);
-    console.log(daysRemaining);
-  }, aDay);
+  }, 1000 * 60);
 </script>
 
 <style>
@@ -30,11 +29,9 @@
 </style>
 
 <div>
-  <p
-    class="text-gray-700 font-semibold text-xl mb-6 -ml-3 -mr-3 -mt-3 py-4 px-3 border-b-gray-200 bg-gray-50 rounded
-    rounded-b-none">
+  <p class="text-gray-700 font-semibold text-xl mb-6 -ml-3 -mr-3 -mt-3 py-4 px-3 bg-gray-50 border-b-gray-200">
     <!-- <button class="blink-5 text-lg opacity-75">❮</button> -->
-    Próxima clase
+    {isCurrentWeek ? 'Esta' : 'Próxima'} semana
   </p>
   <p class="font-light text-sm text-light-gray-us">
     {#if daysRemaining > 0 && Math.round(completedPercentage) === 100}

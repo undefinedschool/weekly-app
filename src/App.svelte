@@ -2,7 +2,6 @@
   import ProgressBar from './components/ProgressBar.svelte';
   import Navbar from './components/Navbar.svelte';
   import Title from './components/Title.svelte';
-  import FullCalendarLink from './components/FullCalendarLink.svelte';
   import WeekInfo from './components/WeekInfo.svelte';
   import CompletedTasks from './components/CompletedTasks.svelte';
   import TaskLink from './components/TaskLink.svelte';
@@ -11,10 +10,13 @@
   import References from './components/References.svelte';
   import ReferencesLink from './components/ReferencesLink.svelte';
 
+  import Task from './components/Task.svelte';
+
   export let nextWeek;
 
   const LOCAL_STORAGE_ITEMS_KEY = 'items';
   const LOCAL_STORAGE_COMPLETED_KEY = 'completed';
+  const keys = [LOCAL_STORAGE_ITEMS_KEY, LOCAL_STORAGE_COMPLETED_KEY];
 
   export let items = JSON.parse(localStorage.getItem(LOCAL_STORAGE_ITEMS_KEY)) || new Array(6).fill(0);
   let taskPercentage = parseFloat((100 / items.length).toFixed(2));
@@ -40,6 +42,10 @@
     updateItems(index);
     items[index] ? addCompletedPercentage() : substractCompletedPercentage();
   }
+
+  if (new Date('12/16/2019, 16:14')) {
+    keys.forEach(key => localStorage.removeItem(key));
+  }
 </script>
 
 <main class="flex flex-col h-screen justify-center items-center p-3 bg-black-us">
@@ -48,17 +54,17 @@
 
   <Title firstPart="{'Calendario'}" secondPart="{'semanal.'}" />
 
-  <div class="max-w-lg">
-    <div class="shadow-md border-2 border-solid border-blue-us rounded p-3 bg-white-us">
+  <div class="max-w-5xl">
+    <div class="shadow-md border-2 border-solid border-blue-us rounded p-3 bg-white-us z-10">
 
       <div>
-        <WeekInfo {completedPercentage} {nextWeek} />
+        <WeekInfo {completedPercentage} {nextWeek} isCurrentWeek="{true}" />
 
         <ProgressBar {completedPercentage} />
 
         <CompletedTasks {items} />
 
-        <div class="sm:h-64 h-auto overflow-auto">
+        <div class="h-64 overflow-y-auto">
 
           <div class="border-1 rounded p-3 mb-2 shadow bg-white">
             <div class="flex justify-end mb-2">
@@ -66,14 +72,15 @@
             </div>
 
             <div class="sm:leading-snug leading-tight">
+
               <div class="task mb-2">
-                <label class="{items[0] ? 'line-through' : ''} inline-flex items-center">
+                <label class="{items[0] ? 'line-through text-gray-us' : ''} inline-flex items-center">
                   <input
                     type="checkbox"
                     class="form-checkbox text-cyan-us transition-all-4"
                     on:click="{() => handleClick(0)}"
                     checked="{items[0] ? true : false}" />
-                  <span class="{items[0] ? 'opacity-50' : ''} ml-2 text-sm">
+                  <span class="{items[0] ? 'opacity-50' : ''} ml-2 text-sm text-gray-us">
                     <span class="font-light">Ver</span>
                     <TaskLink
                       name="{'How to Use __dirname in Node.js'}"
@@ -84,13 +91,13 @@
               </div>
 
               <div class="task mb-2">
-                <label class="{items[1] ? 'line-through' : ''} inline-flex items-center">
+                <label class="{items[1] ? 'line-through text-gray-us' : ''} inline-flex items-center">
                   <input
                     type="checkbox"
                     class="form-checkbox text-cyan-us transition-all-4"
                     on:click="{() => handleClick(1)}"
                     checked="{items[1] ? true : false}" />
-                  <span class="{items[1] ? 'opacity-50' : ''} ml-2 text-sm">
+                  <span class="{items[1] ? 'opacity-50' : ''} ml-2 text-sm text-gray-us">
                     <span class="font-light">Completar los</span>
                     <TaskLink
                       name="{'ejercicios de Node'}"
@@ -101,13 +108,13 @@
               </div>
 
               <div class="task">
-                <label class="{items[2] ? 'line-through' : ''} inline-flex items-center">
+                <label class="{items[2] ? 'line-through text-gray-us' : ''} inline-flex items-center">
                   <input
                     type="checkbox"
                     class="form-checkbox text-cyan-us transition-all-4"
                     on:click="{() => handleClick(2)}"
                     checked="{items[2] ? true : false}" />
-                  <span class="{items[2] ? 'opacity-50' : ''} ml-2 text-sm">
+                  <span class="{items[2] ? 'opacity-50' : ''} ml-2 text-sm text-gray-us">
                     <span class="font-light">Completar el</span>
                     <TaskLink
                       name="{'Proyecto 4: Node Jokes'}"
@@ -127,13 +134,13 @@
             <div class="sm:leading-snug leading-tight">
 
               <div class="task mb-2">
-                <label class="{items[3] ? 'line-through' : ''} inline-flex items-center">
+                <label class="{items[3] ? 'line-through text-gray-us' : ''} inline-flex items-center">
                   <input
                     type="checkbox"
                     class="form-checkbox text-cyan-us transition-all-4"
                     on:click="{() => handleClick(3)}"
                     checked="{items[3] ? true : false}" />
-                  <span class="{items[3] ? 'opacity-50' : ''} ml-2 text-sm">
+                  <span class="{items[3] ? 'opacity-50' : ''} ml-2 text-sm text-gray-us">
                     <span class="font-light">Completar el capítulo</span>
                     <TaskLink
                       name="{'Introduction to Express.js'}"
@@ -144,13 +151,13 @@
               </div>
 
               <div class="task mb-2">
-                <label class="{items[4] ? 'line-through' : ''} inline-flex items-center">
+                <label class="{items[4] ? 'line-through text-gray-us' : ''} inline-flex items-center">
                   <input
                     type="checkbox"
                     class="form-checkbox text-cyan-us transition-all-4"
                     on:click="{() => handleClick(4)}"
                     checked="{items[4] ? true : false}" />
-                  <span class="{items[4] ? 'opacity-50' : ''} ml-2 text-sm">
+                  <span class="{items[4] ? 'opacity-50' : ''} ml-2 text-sm text-gray-us">
                     <span class="font-light">Completar el capítulo</span>
                     <TaskLink
                       name="{'Serving JSON with Express.js'}"
@@ -161,13 +168,13 @@
               </div>
 
               <div class="task">
-                <label class="{items[5] ? 'line-through' : ''} inline-flex items-center">
+                <label class="{items[5] ? 'line-through text-gray-us' : ''} inline-flex items-center">
                   <input
                     type="checkbox"
                     class="form-checkbox text-cyan-us transition-all-4"
                     on:click="{() => handleClick(5)}"
                     checked="{items[5] ? true : false}" />
-                  <span class="{items[5] ? 'opacity-50' : ''} ml-2 text-sm">
+                  <span class="{items[5] ? 'opacity-50' : ''} ml-2 text-sm text-gray-us">
                     <span class="font-light">Ver</span>
                     <TaskLink
                       name="{'Notas sobre ExpressJS'}"
