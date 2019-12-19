@@ -7,5 +7,3 @@
     <a href="https://trello.com/b/mUf0huXz/undefined-school" target="_blank" rel="noopener">Clases anteriores</a>
   </span>
 </div>
-
-<!-- <span class="font-light text-xs text-light-gray-us inline opacity-75">🕔 23 de Diciembre</span> -->

@@ -1,5 +1,5 @@
 <script>
-  export let completedPercentage;
+  export let completedPercentage = 0;
 </script>
 
 <div

@@ -361,13 +361,13 @@ var app = (function () {
     				? "text-yellow-600"
     				: "text-red-700"));
 
-    			add_location(div0, file, 7, 2, 197);
+    			add_location(div0, file, 7, 2, 201);
 
     			attr_dev(div1, "class", div1_class_value = "bg-gray-200 mt-2 mb-8 mb-0 text-xl " + (Math.round(/*completedPercentage*/ ctx[0]) === 100
     			? "font-semibold"
     			: "") + " text-center\n  rounded-lg");
 
-    			add_location(div1, file, 4, 0, 54);
+    			add_location(div1, file, 4, 0, 58);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -427,7 +427,7 @@ var app = (function () {
     }
 
     function instance($$self, $$props, $$invalidate) {
-    	let { completedPercentage } = $$props;
+    	let { completedPercentage = 0 } = $$props;
     	const writable_props = ["completedPercentage"];
 
     	Object.keys($$props).forEach(key => {
@@ -460,13 +460,6 @@ var app = (function () {
     			options,
     			id: create_fragment.name
     		});
-
-    		const { ctx } = this.$$;
-    		const props = options.props || ({});
-
-    		if (/*completedPercentage*/ ctx[0] === undefined && !("completedPercentage" in props)) {
-    			console.warn("<ProgressBar> was created without expected prop 'completedPercentage'");
-    		}
     	}
 
     	get completedPercentage() {
@@ -1913,98 +1906,98 @@ var app = (function () {
     			t37 = space();
     			create_component(referenceslink.$$.fragment);
     			attr_dev(div0, "class", "flex justify-end mb-2");
-    			add_location(div0, file$a, 69, 12, 2486);
+    			add_location(div0, file$a, 69, 12, 2495);
     			attr_dev(input0, "type", "checkbox");
     			attr_dev(input0, "class", "form-checkbox text-cyan-us transition-all-4");
     			input0.checked = input0_checked_value = /*items*/ ctx[0][0] ? true : false;
-    			add_location(input0, file$a, 77, 18, 2784);
+    			add_location(input0, file$a, 77, 18, 2793);
     			attr_dev(span0, "class", "font-light");
-    			add_location(span0, file$a, 83, 20, 3122);
+    			add_location(span0, file$a, 83, 20, 3131);
     			attr_dev(span1, "class", span1_class_value = "" + ((/*items*/ ctx[0][0] ? "opacity-50" : "") + " ml-2 text-sm text-gray-us"));
-    			add_location(span1, file$a, 82, 18, 3030);
+    			add_location(span1, file$a, 82, 18, 3039);
     			attr_dev(label0, "class", label0_class_value = "" + ((/*items*/ ctx[0][0] ? "line-through text-gray-us" : "") + " inline-flex items-center"));
-    			add_location(label0, file$a, 76, 16, 2679);
+    			add_location(label0, file$a, 76, 16, 2688);
     			attr_dev(div1, "class", "task mb-2");
-    			add_location(div1, file$a, 75, 14, 2639);
+    			add_location(div1, file$a, 75, 14, 2648);
     			attr_dev(input1, "type", "checkbox");
     			attr_dev(input1, "class", "form-checkbox text-cyan-us transition-all-4");
     			input1.checked = input1_checked_value = /*items*/ ctx[0][1] ? true : false;
-    			add_location(input1, file$a, 94, 18, 3592);
+    			add_location(input1, file$a, 94, 18, 3601);
     			attr_dev(span2, "class", "font-light");
-    			add_location(span2, file$a, 100, 20, 3930);
+    			add_location(span2, file$a, 100, 20, 3939);
     			attr_dev(span3, "class", span3_class_value = "" + ((/*items*/ ctx[0][1] ? "opacity-50" : "") + " ml-2 text-sm text-gray-us"));
-    			add_location(span3, file$a, 99, 18, 3838);
+    			add_location(span3, file$a, 99, 18, 3847);
     			attr_dev(label1, "class", label1_class_value = "" + ((/*items*/ ctx[0][1] ? "line-through text-gray-us" : "") + " inline-flex items-center"));
-    			add_location(label1, file$a, 93, 16, 3487);
+    			add_location(label1, file$a, 93, 16, 3496);
     			attr_dev(div2, "class", "task mb-2");
-    			add_location(div2, file$a, 92, 14, 3447);
+    			add_location(div2, file$a, 92, 14, 3456);
     			attr_dev(input2, "type", "checkbox");
     			attr_dev(input2, "class", "form-checkbox text-cyan-us transition-all-4");
     			input2.checked = input2_checked_value = /*items*/ ctx[0][2] ? true : false;
-    			add_location(input2, file$a, 111, 18, 4426);
+    			add_location(input2, file$a, 111, 18, 4435);
     			attr_dev(span4, "class", "font-light");
-    			add_location(span4, file$a, 117, 20, 4764);
+    			add_location(span4, file$a, 117, 20, 4773);
     			attr_dev(span5, "class", span5_class_value = "" + ((/*items*/ ctx[0][2] ? "opacity-50" : "") + " ml-2 text-sm text-gray-us"));
-    			add_location(span5, file$a, 116, 18, 4672);
+    			add_location(span5, file$a, 116, 18, 4681);
     			attr_dev(label2, "class", label2_class_value = "" + ((/*items*/ ctx[0][2] ? "line-through text-gray-us" : "") + " inline-flex items-center"));
-    			add_location(label2, file$a, 110, 16, 4321);
+    			add_location(label2, file$a, 110, 16, 4330);
     			attr_dev(div3, "class", "task");
-    			add_location(div3, file$a, 109, 14, 4286);
+    			add_location(div3, file$a, 109, 14, 4295);
     			attr_dev(div4, "class", "sm:leading-snug leading-tight");
-    			add_location(div4, file$a, 73, 12, 2580);
+    			add_location(div4, file$a, 73, 12, 2589);
     			attr_dev(div5, "class", "border-1 rounded p-3 mb-2 shadow bg-white");
-    			add_location(div5, file$a, 68, 10, 2418);
+    			add_location(div5, file$a, 68, 10, 2427);
     			attr_dev(div6, "class", "flex justify-end mb-2");
-    			add_location(div6, file$a, 129, 12, 5196);
+    			add_location(div6, file$a, 129, 12, 5205);
     			attr_dev(input3, "type", "checkbox");
     			attr_dev(input3, "class", "form-checkbox text-cyan-us transition-all-4");
     			input3.checked = input3_checked_value = /*items*/ ctx[0][3] ? true : false;
-    			add_location(input3, file$a, 137, 18, 5497);
+    			add_location(input3, file$a, 137, 18, 5506);
     			attr_dev(span6, "class", "font-light");
-    			add_location(span6, file$a, 143, 20, 5835);
+    			add_location(span6, file$a, 143, 20, 5844);
     			attr_dev(span7, "class", span7_class_value = "" + ((/*items*/ ctx[0][3] ? "opacity-50" : "") + " ml-2 text-sm text-gray-us"));
-    			add_location(span7, file$a, 142, 18, 5743);
+    			add_location(span7, file$a, 142, 18, 5752);
     			attr_dev(label3, "class", label3_class_value = "" + ((/*items*/ ctx[0][3] ? "line-through text-gray-us" : "") + " inline-flex items-center"));
-    			add_location(label3, file$a, 136, 16, 5392);
+    			add_location(label3, file$a, 136, 16, 5401);
     			attr_dev(div7, "class", "task mb-2");
-    			add_location(div7, file$a, 135, 14, 5352);
+    			add_location(div7, file$a, 135, 14, 5361);
     			attr_dev(input4, "type", "checkbox");
     			attr_dev(input4, "class", "form-checkbox text-cyan-us transition-all-4");
     			input4.checked = input4_checked_value = /*items*/ ctx[0][4] ? true : false;
-    			add_location(input4, file$a, 154, 18, 6357);
+    			add_location(input4, file$a, 154, 18, 6366);
     			attr_dev(span8, "class", "font-light");
-    			add_location(span8, file$a, 160, 20, 6695);
+    			add_location(span8, file$a, 160, 20, 6704);
     			attr_dev(span9, "class", span9_class_value = "" + ((/*items*/ ctx[0][4] ? "opacity-50" : "") + " ml-2 text-sm text-gray-us"));
-    			add_location(span9, file$a, 159, 18, 6603);
+    			add_location(span9, file$a, 159, 18, 6612);
     			attr_dev(label4, "class", label4_class_value = "" + ((/*items*/ ctx[0][4] ? "line-through text-gray-us" : "") + " inline-flex items-center"));
-    			add_location(label4, file$a, 153, 16, 6252);
+    			add_location(label4, file$a, 153, 16, 6261);
     			attr_dev(div8, "class", "task mb-2");
-    			add_location(div8, file$a, 152, 14, 6212);
+    			add_location(div8, file$a, 152, 14, 6221);
     			attr_dev(input5, "type", "checkbox");
     			attr_dev(input5, "class", "form-checkbox text-cyan-us transition-all-4");
     			input5.checked = input5_checked_value = /*items*/ ctx[0][5] ? true : false;
-    			add_location(input5, file$a, 171, 18, 7208);
+    			add_location(input5, file$a, 171, 18, 7217);
     			attr_dev(span10, "class", "font-light");
-    			add_location(span10, file$a, 177, 20, 7546);
+    			add_location(span10, file$a, 177, 20, 7555);
     			attr_dev(span11, "class", span11_class_value = "" + ((/*items*/ ctx[0][5] ? "opacity-50" : "") + " ml-2 text-sm text-gray-us"));
-    			add_location(span11, file$a, 176, 18, 7454);
+    			add_location(span11, file$a, 176, 18, 7463);
     			attr_dev(label5, "class", label5_class_value = "" + ((/*items*/ ctx[0][5] ? "line-through text-gray-us" : "") + " inline-flex items-center"));
-    			add_location(label5, file$a, 170, 16, 7103);
+    			add_location(label5, file$a, 170, 16, 7112);
     			attr_dev(div9, "class", "task");
-    			add_location(div9, file$a, 169, 14, 7068);
+    			add_location(div9, file$a, 169, 14, 7077);
     			attr_dev(div10, "class", "sm:leading-snug leading-tight");
-    			add_location(div10, file$a, 133, 12, 5293);
+    			add_location(div10, file$a, 133, 12, 5302);
     			attr_dev(div11, "class", "border-1 rounded p-3 shadow mb-1 bg-white");
-    			add_location(div11, file$a, 128, 10, 5128);
+    			add_location(div11, file$a, 128, 10, 5137);
     			attr_dev(div12, "class", "h-64 overflow-y-auto");
-    			add_location(div12, file$a, 66, 8, 2372);
-    			add_location(div13, file$a, 59, 6, 2197);
+    			add_location(div12, file$a, 66, 8, 2381);
+    			add_location(div13, file$a, 59, 6, 2206);
     			attr_dev(div14, "class", "shadow-md border-2 border-solid border-blue-us rounded p-3 bg-white-us z-10");
-    			add_location(div14, file$a, 57, 4, 2100);
+    			add_location(div14, file$a, 57, 4, 2109);
     			attr_dev(div15, "class", "max-w-5xl");
-    			add_location(div15, file$a, 56, 2, 2072);
+    			add_location(div15, file$a, 56, 2, 2081);
     			attr_dev(main, "class", "flex flex-col h-screen justify-center items-center p-3 bg-black-us");
-    			add_location(main, file$a, 50, 0, 1907);
+    			add_location(main, file$a, 50, 0, 1916);
 
     			dispose = [
     				listen_dev(input0, "click", /*click_handler*/ ctx[9], false, false, false),
@@ -2294,10 +2287,6 @@ var app = (function () {
     		items[index]
     		? addCompletedPercentage()
     		: substractCompletedPercentage();
-    	}
-
-    	if (new Date("12/16/2019, 16:14")) {
-    		keys.forEach(key => localStorage.removeItem(key));
     	}
 
     	const writable_props = ["nextWeek", "items"];

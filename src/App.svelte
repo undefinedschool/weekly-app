@@ -43,9 +43,9 @@
     items[index] ? addCompletedPercentage() : substractCompletedPercentage();
   }
 
-  if (new Date('12/16/2019, 16:14')) {
-    keys.forEach(key => localStorage.removeItem(key));
-  }
+  // if (new Date('12/16/2019, 16:14')) {
+  //   keys.forEach(key => localStorage.removeItem(key));
+  // }
 </script>
 
 <main class="flex flex-col h-screen justify-center items-center p-3 bg-black-us">
