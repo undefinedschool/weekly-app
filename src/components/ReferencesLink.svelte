@@ -4,7 +4,7 @@
   </span>
   |
   <span class="link font-medium">
-    <a href="https://trello.com/b/mUf0huXz/undefined-school">Clases anteriores</a>
+    <a href="https://trello.com/b/mUf0huXz/undefined-school" target="_blank" rel="noopener">Clases anteriores</a>
   </span>
 </div>
 

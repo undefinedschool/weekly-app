@@ -1581,6 +1581,8 @@ var app = (function () {
     			attr_dev(span0, "class", "link");
     			add_location(span0, file$9, 1, 2, 75);
     			attr_dev(a1, "href", "https://trello.com/b/mUf0huXz/undefined-school");
+    			attr_dev(a1, "target", "_blank");
+    			attr_dev(a1, "rel", "noopener");
     			add_location(a1, file$9, 6, 4, 189);
     			attr_dev(span1, "class", "link font-medium");
     			add_location(span1, file$9, 5, 2, 153);
