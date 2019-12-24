@@ -1,5 +1,5 @@
 .DS_Store
-public/build/*
+public/build/
 
 # Logs
 logs
