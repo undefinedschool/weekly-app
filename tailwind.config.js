@@ -4,6 +4,7 @@ module.exports = {
       fontFamily: {
         raleway: ['Raleway', 'sans-serif'],
         worksans: ['Work Sans', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
       },
     },
     customForms: theme => ({

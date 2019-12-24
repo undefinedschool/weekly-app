@@ -33,6 +33,10 @@
   background-color: #fafafa;
 }
 
+.bg-gray-50 {
+  background-color: #edf2f780;
+}
+
 .bg-gray-eee {
   background-color: #eee;
 }
@@ -60,6 +64,10 @@
 
 .border-gray-ddd {
   border-color: #ddd;
+}
+
+.border-b-gray-200 {
+  border-bottom: 1px solid #edf2f7;
 }
 
 /* hover */

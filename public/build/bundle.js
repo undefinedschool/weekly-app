@@ -333,11 +333,6 @@ var app = (function () {
     	let t0_value = Math.round(/*completedPercentage*/ ctx[0]) + "";
     	let t0;
     	let t1;
-
-    	let t2_value = (Math.round(/*completedPercentage*/ ctx[0]) === 100
-    	? "🎉"
-    	: "") + "";
-
     	let t2;
     	let div0_class_value;
     	let div1_class_value;
@@ -348,26 +343,12 @@ var app = (function () {
     			div0 = element("div");
     			t0 = text(t0_value);
     			t1 = text("% ");
-    			t2 = text(t2_value);
+    			t2 = text(/*completed*/ ctx[4]);
     			set_style(div0, "width", Math.round(/*completedPercentage*/ ctx[0]) + "%");
-
-    			attr_dev(div0, "class", div0_class_value = "transition-all-4 " + (/*completedPercentage*/ ctx[0] > 67
-    			? "bg-green-200"
-    			: /*completedPercentage*/ ctx[0] > 34
-    				? "bg-yellow-200"
-    				: "bg-red-200") + "\n    rounded-lg p-1 " + (/*completedPercentage*/ ctx[0] > 67
-    			? "text-green-700"
-    			: /*completedPercentage*/ ctx[0] > 34
-    				? "text-yellow-600"
-    				: "text-red-700"));
-
-    			add_location(div0, file, 7, 2, 197);
-
-    			attr_dev(div1, "class", div1_class_value = "bg-gray-200 mt-2 mb-8 mb-0 text-xl " + (Math.round(/*completedPercentage*/ ctx[0]) === 100
-    			? "font-semibold"
-    			: "") + " text-center\n  rounded-lg");
-
-    			add_location(div1, file, 4, 0, 54);
+    			attr_dev(div0, "class", div0_class_value = "transition-all-4 " + /*progressBackgroundColor*/ ctx[2] + " rounded-lg p-1 " + /*progressTextColor*/ ctx[3]);
+    			add_location(div0, file, 12, 2, 564);
+    			attr_dev(div1, "class", div1_class_value = "bg-gray-200 mt-2 mb-8 mb-0 text-xl " + /*fullBar*/ ctx[1] + " text-center rounded-lg");
+    			add_location(div1, file, 11, 0, 480);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -381,30 +362,17 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			if (dirty[0] & /*completedPercentage*/ 1 && t0_value !== (t0_value = Math.round(/*completedPercentage*/ ctx[0]) + "")) set_data_dev(t0, t0_value);
-
-    			if (dirty[0] & /*completedPercentage*/ 1 && t2_value !== (t2_value = (Math.round(/*completedPercentage*/ ctx[0]) === 100
-    			? "🎉"
-    			: "") + "")) set_data_dev(t2, t2_value);
+    			if (dirty[0] & /*completed*/ 16) set_data_dev(t2, /*completed*/ ctx[4]);
 
     			if (dirty[0] & /*completedPercentage*/ 1) {
     				set_style(div0, "width", Math.round(/*completedPercentage*/ ctx[0]) + "%");
     			}
 
-    			if (dirty[0] & /*completedPercentage*/ 1 && div0_class_value !== (div0_class_value = "transition-all-4 " + (/*completedPercentage*/ ctx[0] > 67
-    			? "bg-green-200"
-    			: /*completedPercentage*/ ctx[0] > 34
-    				? "bg-yellow-200"
-    				: "bg-red-200") + "\n    rounded-lg p-1 " + (/*completedPercentage*/ ctx[0] > 67
-    			? "text-green-700"
-    			: /*completedPercentage*/ ctx[0] > 34
-    				? "text-yellow-600"
-    				: "text-red-700"))) {
+    			if (dirty[0] & /*progressBackgroundColor, progressTextColor*/ 12 && div0_class_value !== (div0_class_value = "transition-all-4 " + /*progressBackgroundColor*/ ctx[2] + " rounded-lg p-1 " + /*progressTextColor*/ ctx[3])) {
     				attr_dev(div0, "class", div0_class_value);
     			}
 
-    			if (dirty[0] & /*completedPercentage*/ 1 && div1_class_value !== (div1_class_value = "bg-gray-200 mt-2 mb-8 mb-0 text-xl " + (Math.round(/*completedPercentage*/ ctx[0]) === 100
-    			? "font-semibold"
-    			: "") + " text-center\n  rounded-lg")) {
+    			if (dirty[0] & /*fullBar*/ 2 && div1_class_value !== (div1_class_value = "bg-gray-200 mt-2 mb-8 mb-0 text-xl " + /*fullBar*/ ctx[1] + " text-center rounded-lg")) {
     				attr_dev(div1, "class", div1_class_value);
     			}
     		},
@@ -439,14 +407,63 @@ var app = (function () {
     	};
 
     	$$self.$capture_state = () => {
-    		return { completedPercentage };
+    		return {
+    			completedPercentage,
+    			fullBar,
+    			progressBackgroundColor,
+    			progressTextColor,
+    			completed
+    		};
     	};
 
     	$$self.$inject_state = $$props => {
     		if ("completedPercentage" in $$props) $$invalidate(0, completedPercentage = $$props.completedPercentage);
+    		if ("fullBar" in $$props) $$invalidate(1, fullBar = $$props.fullBar);
+    		if ("progressBackgroundColor" in $$props) $$invalidate(2, progressBackgroundColor = $$props.progressBackgroundColor);
+    		if ("progressTextColor" in $$props) $$invalidate(3, progressTextColor = $$props.progressTextColor);
+    		if ("completed" in $$props) $$invalidate(4, completed = $$props.completed);
     	};
 
-    	return [completedPercentage];
+    	let fullBar;
+    	let progressBackgroundColor;
+    	let progressTextColor;
+    	let completed;
+
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty[0] & /*completedPercentage*/ 1) {
+    			 $$invalidate(1, fullBar = Math.round(completedPercentage) === 100
+    			? "font-semibold"
+    			: "");
+    		}
+
+    		if ($$self.$$.dirty[0] & /*completedPercentage*/ 1) {
+    			 $$invalidate(2, progressBackgroundColor = completedPercentage > 67
+    			? "bg-green-200"
+    			: completedPercentage > 34
+    				? "bg-yellow-200"
+    				: "bg-red-200");
+    		}
+
+    		if ($$self.$$.dirty[0] & /*completedPercentage*/ 1) {
+    			 $$invalidate(3, progressTextColor = completedPercentage > 67
+    			? "text-green-700"
+    			: completedPercentage > 34
+    				? "text-yellow-600"
+    				: "text-red-700");
+    		}
+
+    		if ($$self.$$.dirty[0] & /*completedPercentage*/ 1) {
+    			 $$invalidate(4, completed = Math.round(completedPercentage) === 100 ? "🎉" : "");
+    		}
+    	};
+
+    	return [
+    		completedPercentage,
+    		fullBar,
+    		progressBackgroundColor,
+    		progressTextColor,
+    		completed
+    	];
     }
 
     class ProgressBar extends SvelteComponentDev {
@@ -578,7 +595,7 @@ var app = (function () {
     			t2 = text(/*secondPart*/ ctx[1]);
     			attr_dev(span, "class", "font-semibold text-cyan-us");
     			add_location(span, file$2, 7, 2, 191);
-    			attr_dev(h1, "class", "mt-24 sm:mb-4 mb-6 leading-tight sm:text-3xl text-4xl text-white-us font-raleway text-center");
+    			attr_dev(h1, "class", "mt-20 sm:mb-4 mb-6 leading-tight sm:text-3xl text-4xl text-white-us font-raleway text-center");
     			add_location(h1, file$2, 5, 0, 69);
     		},
     		l: function claim(nodes) {
@@ -684,7 +701,7 @@ var app = (function () {
 
     const file$3 = "src/components/WeekInfo.svelte";
 
-    // (54:4) {:else}
+    // (47:4) {:else}
     function create_else_block(ctx) {
     	let p;
     	let t0;
@@ -697,8 +714,9 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "clase siguiente.";
     			attr_dev(span, "class", "font-medium");
-    			add_location(span, file$3, 56, 8, 1542);
-    			add_location(p, file$3, 54, 6, 1505);
+    			add_location(span, file$3, 49, 8, 1460);
+    			attr_dev(p, "class", "text-teal-600");
+    			add_location(p, file$3, 47, 6, 1401);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -715,14 +733,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(54:4) {:else}",
+    		source: "(47:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (48:34) 
+    // (41:34) 
     function create_if_block_2(ctx) {
     	let p;
     	let t0;
@@ -735,12 +753,12 @@ var app = (function () {
     			p = element("p");
     			t0 = text("Te queda\n        ");
     			span = element("span");
-    			t1 = text(/*daysRemaining*/ ctx[2]);
+    			t1 = text(/*daysRemaining*/ ctx[1]);
     			t2 = text("\n        día para completar estas tareas");
     			attr_dev(span, "class", "font-medium");
-    			add_location(span, file$3, 50, 8, 1387);
+    			add_location(span, file$3, 43, 8, 1283);
     			attr_dev(p, "class", "text-red-500");
-    			add_location(p, file$3, 48, 6, 1337);
+    			add_location(p, file$3, 41, 6, 1233);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -750,7 +768,7 @@ var app = (function () {
     			append_dev(p, t2);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*daysRemaining*/ 4) set_data_dev(t1, /*daysRemaining*/ ctx[2]);
+    			if (dirty[0] & /*daysRemaining*/ 2) set_data_dev(t1, /*daysRemaining*/ ctx[1]);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(p);
@@ -761,14 +779,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(48:34) ",
+    		source: "(41:34) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (42:32) 
+    // (35:32) 
     function create_if_block_1(ctx) {
     	let p;
     	let t0;
@@ -781,11 +799,11 @@ var app = (function () {
     			p = element("p");
     			t0 = text("Te quedan\n        ");
     			span = element("span");
-    			t1 = text(/*daysRemaining*/ ctx[2]);
+    			t1 = text(/*daysRemaining*/ ctx[1]);
     			t2 = text("\n        días para completar estas tareas");
     			attr_dev(span, "class", "font-medium");
-    			add_location(span, file$3, 44, 8, 1195);
-    			add_location(p, file$3, 42, 6, 1165);
+    			add_location(span, file$3, 37, 8, 1091);
+    			add_location(p, file$3, 35, 6, 1061);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -795,7 +813,7 @@ var app = (function () {
     			append_dev(p, t2);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*daysRemaining*/ 4) set_data_dev(t1, /*daysRemaining*/ ctx[2]);
+    			if (dirty[0] & /*daysRemaining*/ 2) set_data_dev(t1, /*daysRemaining*/ ctx[1]);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(p);
@@ -806,14 +824,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(42:32) ",
+    		source: "(35:32) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (37:4) {#if daysRemaining > 0 && Math.round(completedPercentage) === 100}
+    // (30:4) {#if daysRemaining > 0 && Math.round(completedPercentage) === 100}
     function create_if_block(ctx) {
     	let p;
     	let span;
@@ -826,8 +844,8 @@ var app = (function () {
     			span.textContent = "¡Excelente!";
     			t1 = text("\n        Estás al día 💪");
     			attr_dev(span, "class", "font-medium");
-    			add_location(span, file$3, 38, 8, 1046);
-    			add_location(p, file$3, 37, 6, 1034);
+    			add_location(span, file$3, 31, 8, 942);
+    			add_location(p, file$3, 30, 6, 930);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -844,7 +862,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(37:4) {#if daysRemaining > 0 && Math.round(completedPercentage) === 100}",
+    		source: "(30:4) {#if daysRemaining > 0 && Math.round(completedPercentage) === 100}",
     		ctx
     	});
 
@@ -854,7 +872,6 @@ var app = (function () {
     function create_fragment$3(ctx) {
     	let div;
     	let p0;
-    	let t0_value = (/*isCurrentWeek*/ ctx[1] ? "Esta" : "Próxima") + "";
     	let t0;
     	let t1;
     	let t2;
@@ -862,10 +879,10 @@ var app = (function () {
     	let show_if;
 
     	function select_block_type(ctx, dirty) {
-    		if (show_if == null || dirty[0] & /*daysRemaining, completedPercentage*/ 5) show_if = !!(/*daysRemaining*/ ctx[2] > 0 && Math.round(/*completedPercentage*/ ctx[0]) === 100);
+    		if (show_if == null || dirty[0] & /*daysRemaining, completedPercentage*/ 3) show_if = !!(/*daysRemaining*/ ctx[1] > 0 && Math.round(/*completedPercentage*/ ctx[0]) === 100);
     		if (show_if) return create_if_block;
-    		if (/*daysRemaining*/ ctx[2] > 1) return create_if_block_1;
-    		if (/*daysRemaining*/ ctx[2] === 1) return create_if_block_2;
+    		if (/*daysRemaining*/ ctx[1] > 1) return create_if_block_1;
+    		if (/*daysRemaining*/ ctx[1] === 1) return create_if_block_2;
     		return create_else_block;
     	}
 
@@ -876,16 +893,16 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			p0 = element("p");
-    			t0 = text(t0_value);
+    			t0 = text(/*weekTitle*/ ctx[2]);
     			t1 = text(" semana");
     			t2 = space();
     			p1 = element("p");
     			if_block.c();
-    			attr_dev(p0, "class", "text-gray-700 font-semibold text-xl mb-6 -ml-3 -mr-3 -mt-3 py-4 px-3 bg-gray-50 border-b-gray-200 svelte-qm7n9i");
-    			add_location(p0, file$3, 31, 2, 673);
+    			attr_dev(p0, "class", "text-gray-700 font-semibold text-lg mb-6 -ml-3 -mr-3 -mt-3 py-4 px-3 bg-gray-50 rounded-t border-b-gray-200");
+    			add_location(p0, file$3, 23, 2, 580);
     			attr_dev(p1, "class", "font-light text-sm text-light-gray-us");
-    			add_location(p1, file$3, 35, 2, 907);
-    			add_location(div, file$3, 30, 0, 665);
+    			add_location(p1, file$3, 28, 2, 803);
+    			add_location(div, file$3, 22, 0, 572);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -900,7 +917,7 @@ var app = (function () {
     			if_block.m(p1, null);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*isCurrentWeek*/ 2 && t0_value !== (t0_value = (/*isCurrentWeek*/ ctx[1] ? "Esta" : "Próxima") + "")) set_data_dev(t0, t0_value);
+    			if (dirty[0] & /*weekTitle*/ 4) set_data_dev(t0, /*weekTitle*/ ctx[2]);
 
     			if (current_block_type === (current_block_type = select_block_type(ctx, dirty)) && if_block) {
     				if_block.p(ctx, dirty);
@@ -934,7 +951,7 @@ var app = (function () {
     }
 
     function getDaysRemainingToNextWeek(today, nextWeek) {
-    	const diffTime = Math.abs(today - nextWeek);
+    	const diffTime = nextWeek - today;
     	const remainingDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     	return remainingDays;
     }
@@ -948,7 +965,7 @@ var app = (function () {
 
     	setInterval(
     		() => {
-    			$$invalidate(2, daysRemaining = getDaysRemainingToNextWeek(today, nextWeek));
+    			$$invalidate(1, daysRemaining = getDaysRemainingToNextWeek(today, nextWeek));
     		},
     		1000 * 60
     	);
@@ -962,7 +979,7 @@ var app = (function () {
     	$$self.$set = $$props => {
     		if ("nextWeek" in $$props) $$invalidate(3, nextWeek = $$props.nextWeek);
     		if ("completedPercentage" in $$props) $$invalidate(0, completedPercentage = $$props.completedPercentage);
-    		if ("isCurrentWeek" in $$props) $$invalidate(1, isCurrentWeek = $$props.isCurrentWeek);
+    		if ("isCurrentWeek" in $$props) $$invalidate(4, isCurrentWeek = $$props.isCurrentWeek);
     	};
 
     	$$self.$capture_state = () => {
@@ -970,18 +987,28 @@ var app = (function () {
     			nextWeek,
     			completedPercentage,
     			isCurrentWeek,
-    			daysRemaining
+    			daysRemaining,
+    			weekTitle
     		};
     	};
 
     	$$self.$inject_state = $$props => {
     		if ("nextWeek" in $$props) $$invalidate(3, nextWeek = $$props.nextWeek);
     		if ("completedPercentage" in $$props) $$invalidate(0, completedPercentage = $$props.completedPercentage);
-    		if ("isCurrentWeek" in $$props) $$invalidate(1, isCurrentWeek = $$props.isCurrentWeek);
-    		if ("daysRemaining" in $$props) $$invalidate(2, daysRemaining = $$props.daysRemaining);
+    		if ("isCurrentWeek" in $$props) $$invalidate(4, isCurrentWeek = $$props.isCurrentWeek);
+    		if ("daysRemaining" in $$props) $$invalidate(1, daysRemaining = $$props.daysRemaining);
+    		if ("weekTitle" in $$props) $$invalidate(2, weekTitle = $$props.weekTitle);
     	};
 
-    	return [completedPercentage, isCurrentWeek, daysRemaining, nextWeek];
+    	let weekTitle;
+
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty[0] & /*isCurrentWeek*/ 16) {
+    			 $$invalidate(2, weekTitle = isCurrentWeek ? "Esta" : "Próxima");
+    		}
+    	};
+
+    	return [completedPercentage, daysRemaining, weekTitle, nextWeek, isCurrentWeek];
     }
 
     class WeekInfo extends SvelteComponentDev {
@@ -991,7 +1018,7 @@ var app = (function () {
     		init(this, options, instance$2, create_fragment$3, safe_not_equal, {
     			nextWeek: 3,
     			completedPercentage: 0,
-    			isCurrentWeek: 1
+    			isCurrentWeek: 4
     		});
 
     		dispatch_dev("SvelteRegisterComponent", {
@@ -1012,7 +1039,7 @@ var app = (function () {
     			console.warn("<WeekInfo> was created without expected prop 'completedPercentage'");
     		}
 
-    		if (/*isCurrentWeek*/ ctx[1] === undefined && !("isCurrentWeek" in props)) {
+    		if (/*isCurrentWeek*/ ctx[4] === undefined && !("isCurrentWeek" in props)) {
     			console.warn("<WeekInfo> was created without expected prop 'isCurrentWeek'");
     		}
     	}
@@ -1050,7 +1077,6 @@ var app = (function () {
     	let div;
     	let p;
     	let span0;
-    	let t0_value = /*items*/ ctx[0].filter(func).length + "";
     	let t0;
     	let t1;
     	let span1;
@@ -1064,7 +1090,7 @@ var app = (function () {
     			div = element("div");
     			p = element("p");
     			span0 = element("span");
-    			t0 = text(t0_value);
+    			t0 = text(/*numberOfCompletedTasks*/ ctx[1]);
     			t1 = space();
     			span1 = element("span");
     			span1.textContent = "/";
@@ -1072,12 +1098,12 @@ var app = (function () {
     			t4 = text(t4_value);
     			t5 = text(" tareas completadas");
     			attr_dev(span0, "class", "font-semibold");
-    			add_location(span0, file$4, 6, 4, 107);
+    			add_location(span0, file$4, 8, 4, 173);
     			attr_dev(span1, "class", "opacity-75");
-    			add_location(span1, file$4, 7, 4, 182);
+    			add_location(span1, file$4, 9, 4, 237);
     			attr_dev(p, "class", "text-light-gray-us font-light text-xs mb-1");
-    			add_location(p, file$4, 5, 2, 48);
-    			add_location(div, file$4, 4, 0, 40);
+    			add_location(p, file$4, 7, 2, 114);
+    			add_location(div, file$4, 6, 0, 106);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1094,7 +1120,7 @@ var app = (function () {
     			append_dev(p, t5);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*items*/ 1 && t0_value !== (t0_value = /*items*/ ctx[0].filter(func).length + "")) set_data_dev(t0, t0_value);
+    			if (dirty[0] & /*numberOfCompletedTasks*/ 2) set_data_dev(t0, /*numberOfCompletedTasks*/ ctx[1]);
     			if (dirty[0] & /*items*/ 1 && t4_value !== (t4_value = /*items*/ ctx[0].length + "")) set_data_dev(t4, t4_value);
     		},
     		i: noop,
@@ -1115,8 +1141,6 @@ var app = (function () {
     	return block;
     }
 
-    const func = item => item;
-
     function instance$3($$self, $$props, $$invalidate) {
     	let { items } = $$props;
     	const writable_props = ["items"];
@@ -1130,14 +1154,23 @@ var app = (function () {
     	};
 
     	$$self.$capture_state = () => {
-    		return { items };
+    		return { items, numberOfCompletedTasks };
     	};
 
     	$$self.$inject_state = $$props => {
     		if ("items" in $$props) $$invalidate(0, items = $$props.items);
+    		if ("numberOfCompletedTasks" in $$props) $$invalidate(1, numberOfCompletedTasks = $$props.numberOfCompletedTasks);
     	};
 
-    	return [items];
+    	let numberOfCompletedTasks;
+
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty[0] & /*items*/ 1) {
+    			 $$invalidate(1, numberOfCompletedTasks = items.filter(item => item).length);
+    		}
+    	};
+
+    	return [items, numberOfCompletedTasks];
     }
 
     class CompletedTasks extends SvelteComponentDev {
@@ -1181,7 +1214,7 @@ var app = (function () {
     		c: function create() {
     			a = element("a");
     			t = text(/*name*/ ctx[0]);
-    			attr_dev(a, "class", "font-normal text-teal-600 text-black-us link");
+    			attr_dev(a, "class", "font-medium link");
     			attr_dev(a, "href", /*src*/ ctx[1]);
     			attr_dev(a, "target", "_blank");
     			attr_dev(a, "rel", "noopener");
@@ -1474,22 +1507,22 @@ var app = (function () {
     			add_location(a, file$8, 6, 6, 295);
     			attr_dev(div0, "class", "mb-4 flex justify-end");
     			add_location(div0, file$8, 5, 4, 253);
-    			add_location(li0, file$8, 11, 8, 467);
-    			add_location(li1, file$8, 12, 8, 507);
-    			add_location(li2, file$8, 13, 8, 533);
-    			add_location(li3, file$8, 14, 8, 560);
-    			add_location(li4, file$8, 15, 8, 591);
-    			add_location(li5, file$8, 16, 8, 625);
-    			add_location(li6, file$8, 17, 8, 679);
-    			add_location(li7, file$8, 18, 8, 708);
-    			add_location(li8, file$8, 19, 8, 735);
+    			add_location(li0, file$8, 12, 8, 590);
+    			add_location(li1, file$8, 13, 8, 630);
+    			add_location(li2, file$8, 14, 8, 656);
+    			add_location(li3, file$8, 15, 8, 683);
+    			add_location(li4, file$8, 16, 8, 714);
+    			add_location(li5, file$8, 17, 8, 748);
+    			add_location(li6, file$8, 18, 8, 802);
+    			add_location(li7, file$8, 19, 8, 831);
+    			add_location(li8, file$8, 20, 8, 858);
     			attr_dev(ul, "class", "text-sm font-light list-none");
-    			add_location(ul, file$8, 10, 6, 417);
-    			add_location(div1, file$8, 9, 4, 405);
+    			add_location(ul, file$8, 11, 6, 540);
+    			add_location(div1, file$8, 10, 4, 528);
     			attr_dev(div2, "class", "max-w-xs p-3 rounded shadow absolute bg-white-us w-full top-50 left-50");
     			add_location(div2, file$8, 4, 2, 164);
     			attr_dev(div3, "id", "references");
-    			attr_dev(div3, "class", "modal-window invisible top-0 right-0 bottom-0 left-0 opacity-0 fixed z-10 pointer-events-none transition-all-4\n  bg-black-us-80");
+    			attr_dev(div3, "class", "invisible modal-window top-0 right-0 bottom-0 left-0 opacity-0 fixed z-10 pointer-events-none transition-all-4\n  bg-black-us-80");
     			add_location(div3, file$8, 0, 0, 0);
     		},
     		l: function claim(nodes) {
@@ -1813,8 +1846,8 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	const references = new References({ $$inline: true });
     	const referenceslink = new ReferencesLink({ $$inline: true });
+    	const references = new References({ $$inline: true });
 
     	const block = {
     		c: function create() {
@@ -1909,97 +1942,97 @@ var app = (function () {
     			create_component(tasklink5.$$.fragment);
     			t35 = text("\n                    📚🏃");
     			t36 = space();
-    			create_component(references.$$.fragment);
-    			t37 = space();
     			create_component(referenceslink.$$.fragment);
+    			t37 = space();
+    			create_component(references.$$.fragment);
     			attr_dev(div0, "class", "flex justify-end mb-2");
-    			add_location(div0, file$a, 69, 12, 2486);
+    			add_location(div0, file$a, 69, 12, 2449);
     			attr_dev(input0, "type", "checkbox");
     			attr_dev(input0, "class", "form-checkbox text-cyan-us transition-all-4");
     			input0.checked = input0_checked_value = /*items*/ ctx[0][0] ? true : false;
-    			add_location(input0, file$a, 77, 18, 2784);
+    			add_location(input0, file$a, 77, 18, 2747);
     			attr_dev(span0, "class", "font-light");
-    			add_location(span0, file$a, 83, 20, 3122);
+    			add_location(span0, file$a, 83, 20, 3085);
     			attr_dev(span1, "class", span1_class_value = "" + ((/*items*/ ctx[0][0] ? "opacity-50" : "") + " ml-2 text-sm text-gray-us"));
-    			add_location(span1, file$a, 82, 18, 3030);
+    			add_location(span1, file$a, 82, 18, 2993);
     			attr_dev(label0, "class", label0_class_value = "" + ((/*items*/ ctx[0][0] ? "line-through text-gray-us" : "") + " inline-flex items-center"));
-    			add_location(label0, file$a, 76, 16, 2679);
+    			add_location(label0, file$a, 76, 16, 2642);
     			attr_dev(div1, "class", "task mb-2");
-    			add_location(div1, file$a, 75, 14, 2639);
+    			add_location(div1, file$a, 75, 14, 2602);
     			attr_dev(input1, "type", "checkbox");
     			attr_dev(input1, "class", "form-checkbox text-cyan-us transition-all-4");
     			input1.checked = input1_checked_value = /*items*/ ctx[0][1] ? true : false;
-    			add_location(input1, file$a, 94, 18, 3592);
+    			add_location(input1, file$a, 94, 18, 3555);
     			attr_dev(span2, "class", "font-light");
-    			add_location(span2, file$a, 100, 20, 3930);
+    			add_location(span2, file$a, 100, 20, 3893);
     			attr_dev(span3, "class", span3_class_value = "" + ((/*items*/ ctx[0][1] ? "opacity-50" : "") + " ml-2 text-sm text-gray-us"));
-    			add_location(span3, file$a, 99, 18, 3838);
+    			add_location(span3, file$a, 99, 18, 3801);
     			attr_dev(label1, "class", label1_class_value = "" + ((/*items*/ ctx[0][1] ? "line-through text-gray-us" : "") + " inline-flex items-center"));
-    			add_location(label1, file$a, 93, 16, 3487);
+    			add_location(label1, file$a, 93, 16, 3450);
     			attr_dev(div2, "class", "task mb-2");
-    			add_location(div2, file$a, 92, 14, 3447);
+    			add_location(div2, file$a, 92, 14, 3410);
     			attr_dev(input2, "type", "checkbox");
     			attr_dev(input2, "class", "form-checkbox text-cyan-us transition-all-4");
     			input2.checked = input2_checked_value = /*items*/ ctx[0][2] ? true : false;
-    			add_location(input2, file$a, 111, 18, 4426);
+    			add_location(input2, file$a, 111, 18, 4389);
     			attr_dev(span4, "class", "font-light");
-    			add_location(span4, file$a, 117, 20, 4764);
+    			add_location(span4, file$a, 117, 20, 4727);
     			attr_dev(span5, "class", span5_class_value = "" + ((/*items*/ ctx[0][2] ? "opacity-50" : "") + " ml-2 text-sm text-gray-us"));
-    			add_location(span5, file$a, 116, 18, 4672);
+    			add_location(span5, file$a, 116, 18, 4635);
     			attr_dev(label2, "class", label2_class_value = "" + ((/*items*/ ctx[0][2] ? "line-through text-gray-us" : "") + " inline-flex items-center"));
-    			add_location(label2, file$a, 110, 16, 4321);
+    			add_location(label2, file$a, 110, 16, 4284);
     			attr_dev(div3, "class", "task");
-    			add_location(div3, file$a, 109, 14, 4286);
+    			add_location(div3, file$a, 109, 14, 4249);
     			attr_dev(div4, "class", "sm:leading-snug leading-tight");
-    			add_location(div4, file$a, 73, 12, 2580);
+    			add_location(div4, file$a, 73, 12, 2543);
     			attr_dev(div5, "class", "border-1 rounded p-3 mb-2 shadow bg-white");
-    			add_location(div5, file$a, 68, 10, 2418);
+    			add_location(div5, file$a, 68, 10, 2381);
     			attr_dev(div6, "class", "flex justify-end mb-2");
-    			add_location(div6, file$a, 129, 12, 5196);
+    			add_location(div6, file$a, 129, 12, 5159);
     			attr_dev(input3, "type", "checkbox");
     			attr_dev(input3, "class", "form-checkbox text-cyan-us transition-all-4");
     			input3.checked = input3_checked_value = /*items*/ ctx[0][3] ? true : false;
-    			add_location(input3, file$a, 137, 18, 5497);
+    			add_location(input3, file$a, 137, 18, 5460);
     			attr_dev(span6, "class", "font-light");
-    			add_location(span6, file$a, 143, 20, 5835);
+    			add_location(span6, file$a, 143, 20, 5798);
     			attr_dev(span7, "class", span7_class_value = "" + ((/*items*/ ctx[0][3] ? "opacity-50" : "") + " ml-2 text-sm text-gray-us"));
-    			add_location(span7, file$a, 142, 18, 5743);
+    			add_location(span7, file$a, 142, 18, 5706);
     			attr_dev(label3, "class", label3_class_value = "" + ((/*items*/ ctx[0][3] ? "line-through text-gray-us" : "") + " inline-flex items-center"));
-    			add_location(label3, file$a, 136, 16, 5392);
+    			add_location(label3, file$a, 136, 16, 5355);
     			attr_dev(div7, "class", "task mb-2");
-    			add_location(div7, file$a, 135, 14, 5352);
+    			add_location(div7, file$a, 135, 14, 5315);
     			attr_dev(input4, "type", "checkbox");
     			attr_dev(input4, "class", "form-checkbox text-cyan-us transition-all-4");
     			input4.checked = input4_checked_value = /*items*/ ctx[0][4] ? true : false;
-    			add_location(input4, file$a, 154, 18, 6357);
+    			add_location(input4, file$a, 154, 18, 6320);
     			attr_dev(span8, "class", "font-light");
-    			add_location(span8, file$a, 160, 20, 6695);
+    			add_location(span8, file$a, 160, 20, 6658);
     			attr_dev(span9, "class", span9_class_value = "" + ((/*items*/ ctx[0][4] ? "opacity-50" : "") + " ml-2 text-sm text-gray-us"));
-    			add_location(span9, file$a, 159, 18, 6603);
+    			add_location(span9, file$a, 159, 18, 6566);
     			attr_dev(label4, "class", label4_class_value = "" + ((/*items*/ ctx[0][4] ? "line-through text-gray-us" : "") + " inline-flex items-center"));
-    			add_location(label4, file$a, 153, 16, 6252);
+    			add_location(label4, file$a, 153, 16, 6215);
     			attr_dev(div8, "class", "task mb-2");
-    			add_location(div8, file$a, 152, 14, 6212);
+    			add_location(div8, file$a, 152, 14, 6175);
     			attr_dev(input5, "type", "checkbox");
     			attr_dev(input5, "class", "form-checkbox text-cyan-us transition-all-4");
     			input5.checked = input5_checked_value = /*items*/ ctx[0][5] ? true : false;
-    			add_location(input5, file$a, 171, 18, 7208);
+    			add_location(input5, file$a, 171, 18, 7171);
     			attr_dev(span10, "class", "font-light");
-    			add_location(span10, file$a, 177, 20, 7546);
+    			add_location(span10, file$a, 177, 20, 7509);
     			attr_dev(span11, "class", span11_class_value = "" + ((/*items*/ ctx[0][5] ? "opacity-50" : "") + " ml-2 text-sm text-gray-us"));
-    			add_location(span11, file$a, 176, 18, 7454);
+    			add_location(span11, file$a, 176, 18, 7417);
     			attr_dev(label5, "class", label5_class_value = "" + ((/*items*/ ctx[0][5] ? "line-through text-gray-us" : "") + " inline-flex items-center"));
-    			add_location(label5, file$a, 170, 16, 7103);
+    			add_location(label5, file$a, 170, 16, 7066);
     			attr_dev(div9, "class", "task");
-    			add_location(div9, file$a, 169, 14, 7068);
+    			add_location(div9, file$a, 169, 14, 7031);
     			attr_dev(div10, "class", "sm:leading-snug leading-tight");
-    			add_location(div10, file$a, 133, 12, 5293);
+    			add_location(div10, file$a, 133, 12, 5256);
     			attr_dev(div11, "class", "border-1 rounded p-3 shadow mb-1 bg-white");
-    			add_location(div11, file$a, 128, 10, 5128);
+    			add_location(div11, file$a, 128, 10, 5091);
     			attr_dev(div12, "class", "h-64 overflow-y-auto");
-    			add_location(div12, file$a, 66, 8, 2372);
-    			add_location(div13, file$a, 59, 6, 2197);
-    			attr_dev(div14, "class", "shadow-md border-2 border-solid border-blue-us rounded p-3 bg-white-us z-10");
+    			add_location(div12, file$a, 66, 8, 2335);
+    			add_location(div13, file$a, 59, 6, 2160);
+    			attr_dev(div14, "class", "shadow-md rounded p-3 bg-white-us z-10");
     			add_location(div14, file$a, 57, 4, 2100);
     			attr_dev(div15, "class", "max-w-5xl");
     			add_location(div15, file$a, 56, 2, 2072);
@@ -2104,9 +2137,9 @@ var app = (function () {
     			mount_component(tasklink5, span11, null);
     			append_dev(span11, t35);
     			append_dev(div15, t36);
-    			mount_component(references, div15, null);
-    			append_dev(div15, t37);
     			mount_component(referenceslink, div15, null);
+    			append_dev(div15, t37);
+    			mount_component(references, div15, null);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
@@ -2208,8 +2241,8 @@ var app = (function () {
     			transition_in(tasklink3.$$.fragment, local);
     			transition_in(tasklink4.$$.fragment, local);
     			transition_in(tasklink5.$$.fragment, local);
-    			transition_in(references.$$.fragment, local);
     			transition_in(referenceslink.$$.fragment, local);
+    			transition_in(references.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
@@ -2226,8 +2259,8 @@ var app = (function () {
     			transition_out(tasklink3.$$.fragment, local);
     			transition_out(tasklink4.$$.fragment, local);
     			transition_out(tasklink5.$$.fragment, local);
-    			transition_out(references.$$.fragment, local);
     			transition_out(referenceslink.$$.fragment, local);
+    			transition_out(references.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -2245,8 +2278,8 @@ var app = (function () {
     			destroy_component(tasklink3);
     			destroy_component(tasklink4);
     			destroy_component(tasklink5);
-    			destroy_component(references);
     			destroy_component(referenceslink);
+    			destroy_component(references);
     			run_all(dispose);
     		}
     	};

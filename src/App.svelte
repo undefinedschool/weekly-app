@@ -55,7 +55,7 @@
   <Title firstPart="{'Calendario'}" secondPart="{'semanal.'}" />
 
   <div class="max-w-5xl">
-    <div class="shadow-md border-2 border-solid border-blue-us rounded p-3 bg-white-us z-10">
+    <div class="shadow-md rounded p-3 bg-white-us z-10">
 
       <div>
         <WeekInfo {completedPercentage} {nextWeek} isCurrentWeek="{true}" />
@@ -190,8 +190,8 @@
       </div>
     </div>
 
-    <References />
     <ReferencesLink />
+    <References />
 
   </div>
 </main>

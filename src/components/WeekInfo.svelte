@@ -4,7 +4,7 @@
   export let isCurrentWeek;
 
   function getDaysRemainingToNextWeek(today, nextWeek) {
-    const diffTime = Math.abs(today - nextWeek);
+    const diffTime = nextWeek - today;
     const remainingDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
     return remainingDays;
@@ -16,22 +16,15 @@
   setInterval(() => {
     daysRemaining = getDaysRemainingToNextWeek(today, nextWeek);
   }, 1000 * 60);
+
+  $: weekTitle = isCurrentWeek ? 'Esta' : 'Próxima';
 </script>
 
-<style>
-  .border-b-gray-200 {
-    border-bottom: 1px solid #edf2f7;
-  }
-
-  .bg-gray-50 {
-    background-color: #edf2f780;
-  }
-</style>
-
 <div>
-  <p class="text-gray-700 font-semibold text-xl mb-6 -ml-3 -mr-3 -mt-3 py-4 px-3 bg-gray-50 border-b-gray-200">
+  <p
+    class="text-gray-700 font-semibold text-lg mb-6 -ml-3 -mr-3 -mt-3 py-4 px-3 bg-gray-50 rounded-t border-b-gray-200">
     <!-- <button class="blink-5 text-lg opacity-75">❮</button> -->
-    {isCurrentWeek ? 'Esta' : 'Próxima'} semana
+    {weekTitle} semana
   </p>
   <p class="font-light text-sm text-light-gray-us">
     {#if daysRemaining > 0 && Math.round(completedPercentage) === 100}
@@ -52,7 +45,7 @@
         día para completar estas tareas
       </p>
     {:else}
-      <p>
+      <p class="text-teal-600">
         Ya estamos en la
         <span class="font-medium">clase siguiente.</span>
       </p>
