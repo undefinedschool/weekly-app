@@ -10,51 +10,42 @@
   import References from './components/References.svelte';
   import ReferencesLink from './components/ReferencesLink.svelte';
 
-  import Task from './components/Task.svelte';
-
   export let nextWeek;
 
-  const LOCAL_STORAGE_ITEMS_KEY = 'items';
-  const LOCAL_STORAGE_COMPLETED_KEY = 'completed';
-  const keys = [LOCAL_STORAGE_ITEMS_KEY, LOCAL_STORAGE_COMPLETED_KEY];
+  const LS_ITEMS_KEY = 'items';
+  const LS_COMPLETED_KEY = 'completed';
 
-  export let items = JSON.parse(localStorage.getItem(LOCAL_STORAGE_ITEMS_KEY)) || new Array(6).fill(0);
+  export let items = JSON.parse(localStorage.getItem(LS_ITEMS_KEY)) || new Array(6).fill(0);
   let taskPercentage = parseFloat((100 / items.length).toFixed(2));
-  let completedPercentage = JSON.parse(localStorage.getItem(LOCAL_STORAGE_COMPLETED_KEY)) || 0;
+  let completedPercentage = JSON.parse(localStorage.getItem(LS_COMPLETED_KEY)) || 0;
 
   function updateItems(index) {
     const currentValue = items[index];
     items[index] = 1 - currentValue;
-    localStorage.setItem(LOCAL_STORAGE_ITEMS_KEY, JSON.stringify(items));
+    localStorage.setItem(LS_ITEMS_KEY, JSON.stringify(items));
   }
 
   function addCompletedPercentage() {
     completedPercentage += taskPercentage;
-    localStorage.setItem(LOCAL_STORAGE_COMPLETED_KEY, JSON.stringify(completedPercentage));
+    localStorage.setItem(LS_COMPLETED_KEY, JSON.stringify(completedPercentage));
   }
 
   function substractCompletedPercentage() {
     completedPercentage -= taskPercentage;
-    localStorage.setItem(LOCAL_STORAGE_COMPLETED_KEY, JSON.stringify(completedPercentage));
+    localStorage.setItem(LS_COMPLETED_KEY, JSON.stringify(completedPercentage));
   }
 
   export function handleClick(index) {
     updateItems(index);
     items[index] ? addCompletedPercentage() : substractCompletedPercentage();
   }
-
-  // if (new Date('12/16/2019, 16:14')) {
-  //   keys.forEach(key => localStorage.removeItem(key));
-  // }
-
-  // $: crossedText(taskId) = items[taskId] ? 'line-through text-gray-us' : '';
 </script>
 
 <main class="flex flex-col h-screen justify-center items-center p-3 bg-black-us">
 
   <Navbar />
 
-  <Title firstPart="{'Calendario'}" secondPart="{'semanal.'}" />
+  <Title firstPart="{'Progreso'}" secondPart="{'semanal'}" />
 
   <div class="max-w-5xl">
     <div class="shadow-md rounded p-3 bg-white-us z-10">
