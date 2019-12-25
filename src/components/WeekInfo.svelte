@@ -3,6 +3,9 @@
   export let completedPercentage;
   export let isCurrentWeek;
 
+  import { items } from '../store.js';
+  console.log($items);
+
   function getDaysRemainingToNextWeek(today, nextWeek) {
     const diffTime = nextWeek - today;
     const remainingDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
