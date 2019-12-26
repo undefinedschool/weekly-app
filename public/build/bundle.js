@@ -1804,14 +1804,14 @@ var app = (function () {
     			attr_dev(input, "type", "checkbox");
     			attr_dev(input, "class", "form-checkbox text-cyan-us transition-all-4");
     			input.checked = input_checked_value = /*isChecked*/ ctx[0] ? true : false;
-    			add_location(input, file$b, 12, 4, 287);
+    			add_location(input, file$b, 12, 4, 293);
     			attr_dev(span0, "class", "font-light");
-    			add_location(span0, file$b, 18, 6, 534);
+    			add_location(span0, file$b, 18, 6, 540);
     			attr_dev(span1, "class", span1_class_value = "" + ((/*isChecked*/ ctx[0] ? "opacity-50" : "") + " ml-2 text-sm text-gray-us"));
-    			add_location(span1, file$b, 17, 4, 455);
+    			add_location(span1, file$b, 17, 4, 461);
     			attr_dev(label, "class", label_class_value = "" + ((/*isChecked*/ ctx[0] ? "line-through text-gray-us" : "") + " inline-flex items-center"));
-    			add_location(label, file$b, 11, 2, 195);
-    			add_location(div, file$b, 10, 0, 187);
+    			add_location(label, file$b, 11, 2, 201);
+    			add_location(div, file$b, 10, 0, 193);
     			dispose = listen_dev(input, "click", /*handleClick*/ ctx[1], false, false, false);
     		},
     		l: function claim(nodes) {
@@ -1880,7 +1880,7 @@ var app = (function () {
     	let { handleClick } = $$props;
     	let { taskPre = "" } = $$props;
     	let { taskName } = $$props;
-    	let { taskSrc } = $$props;
+    	let { taskSrc = "#" } = $$props;
     	const writable_props = ["isChecked", "handleClick", "taskPre", "taskName", "taskSrc"];
 
     	Object.keys($$props).forEach(key => {
@@ -1948,10 +1948,6 @@ var app = (function () {
 
     		if (/*taskName*/ ctx[3] === undefined && !("taskName" in props)) {
     			console.warn("<Task> was created without expected prop 'taskName'");
-    		}
-
-    		if (/*taskSrc*/ ctx[4] === undefined && !("taskSrc" in props)) {
-    			console.warn("<Task> was created without expected prop 'taskSrc'");
     		}
     	}
 
@@ -2412,32 +2408,20 @@ var app = (function () {
     const file$d = "src/components/NextWeek.svelte";
 
     function create_fragment$d(ctx) {
-    	let div15;
+    	let div7;
     	let t0;
     	let t1;
     	let t2;
-    	let div14;
-    	let div4;
+    	let div6;
+    	let div5;
     	let div0;
     	let t3;
-    	let div3;
+    	let div4;
     	let div1;
     	let t4;
     	let div2;
     	let t5;
-    	let div9;
-    	let div5;
-    	let t6;
-    	let div8;
-    	let div6;
-    	let t7;
-    	let div7;
-    	let t8;
-    	let div13;
-    	let div10;
-    	let t9;
-    	let div12;
-    	let div11;
+    	let div3;
     	let current;
 
     	const weekinfo = new WeekInfo({
@@ -2460,15 +2444,15 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	const expresstag = new ExpressTag({ $$inline: true });
+    	const misctag = new MiscTag({ $$inline: true });
 
     	const task0 = new Task({
     			props: {
     				isChecked: /*nextWeekProgress*/ ctx[1][0],
     				handleClick: /*func*/ ctx[8],
-    				taskPre: "Completar el capítulo",
-    				taskName: "Express Router 🏃",
-    				taskSrc: "https://www.rithmschool.com/courses/node-express-fundamentals/express-router"
+    				taskPre: "Ver",
+    				taskName: "101 Tips For Being A Great Programmer (& Human) 👫",
+    				taskSrc: "https://dev.to/emmawedekind/101-tips-for-being-a-great-programmer-human-36nl"
     			},
     			$$inline: true
     		});
@@ -2477,159 +2461,88 @@ var app = (function () {
     			props: {
     				isChecked: /*nextWeekProgress*/ ctx[1][1],
     				handleClick: /*func_1*/ ctx[9],
-    				taskPre: "Completar el tutorial",
-    				taskName: "ExpressJS Project Structure 🏃",
-    				taskSrc: "https://www.brianemilius.com/expressjs-structure/"
+    				taskPre: "Ver",
+    				taskName: "LinkedIn Profile Top Tips 🏃",
+    				taskSrc: "https://dev.to/exampro/700-web-developers-asked-me-to-give-them-linkedin-profile-feedback-and-these-are-my-5-top-tips-5382"
     			},
     			$$inline: true
     		});
-
-    	const misctag = new MiscTag({ $$inline: true });
 
     	const task2 = new Task({
     			props: {
     				isChecked: /*nextWeekProgress*/ ctx[1][2],
     				handleClick: /*func_2*/ ctx[10],
-    				taskName: "Local Node Environment Variables with DotEnv 🏃",
-    				taskSrc: "https://www.youtube.com/watch?v=i14ekt_DAt0"
-    			},
-    			$$inline: true
-    		});
-
-    	const task3 = new Task({
-    			props: {
-    				isChecked: /*nextWeekProgress*/ ctx[1][3],
-    				handleClick: /*func_3*/ ctx[11],
-    				taskName: "How to Improve Your Developer Resume Bullets 🏃",
-    				taskSrc: "https://dev.to/stetsenko_me/how-to-improve-your-junior-developer-resume-bullets-34cm"
-    			},
-    			$$inline: true
-    		});
-
-    	const csstag = new CSSTag({ $$inline: true });
-
-    	const task4 = new Task({
-    			props: {
-    				isChecked: /*nextWeekProgress*/ ctx[1][4],
-    				handleClick: /*func_4*/ ctx[12],
-    				taskName: "Next-generation web styling (Chrome Dev Summit 2019) 📹",
-    				taskSrc: "https://www.youtube.com/watch?v=-oyeaIirVC0"
+    				taskPre: "Llegar al",
+    				taskName: "2020 ⭐️",
+    				taskSrc: ""
     			},
     			$$inline: true
     		});
 
     	const block = {
     		c: function create() {
-    			div15 = element("div");
+    			div7 = element("div");
     			create_component(weekinfo.$$.fragment);
     			t0 = space();
     			create_component(progressbar.$$.fragment);
     			t1 = space();
     			create_component(completedtasks.$$.fragment);
     			t2 = space();
-    			div14 = element("div");
-    			div4 = element("div");
+    			div6 = element("div");
+    			div5 = element("div");
     			div0 = element("div");
-    			create_component(expresstag.$$.fragment);
+    			create_component(misctag.$$.fragment);
     			t3 = space();
-    			div3 = element("div");
+    			div4 = element("div");
     			div1 = element("div");
     			create_component(task0.$$.fragment);
     			t4 = space();
     			div2 = element("div");
     			create_component(task1.$$.fragment);
     			t5 = space();
-    			div9 = element("div");
-    			div5 = element("div");
-    			create_component(misctag.$$.fragment);
-    			t6 = space();
-    			div8 = element("div");
-    			div6 = element("div");
+    			div3 = element("div");
     			create_component(task2.$$.fragment);
-    			t7 = space();
-    			div7 = element("div");
-    			create_component(task3.$$.fragment);
-    			t8 = space();
-    			div13 = element("div");
-    			div10 = element("div");
-    			create_component(csstag.$$.fragment);
-    			t9 = space();
-    			div12 = element("div");
-    			div11 = element("div");
-    			create_component(task4.$$.fragment);
     			attr_dev(div0, "class", "flex justify-end mb-2");
     			add_location(div0, file$d, 50, 6, 1834);
     			attr_dev(div1, "class", "task mb-2");
-    			add_location(div1, file$d, 55, 8, 1965);
+    			add_location(div1, file$d, 55, 8, 1962);
     			attr_dev(div2, "class", "task mb-2");
-    			add_location(div2, file$d, 64, 8, 2323);
-    			attr_dev(div3, "class", "sm:leading-snug leading-tight");
-    			add_location(div3, file$d, 54, 6, 1913);
-    			attr_dev(div4, "class", "border-1 rounded p-3 shadow mb-2 bg-white");
-    			add_location(div4, file$d, 49, 4, 1772);
-    			attr_dev(div5, "class", "flex justify-end mb-2");
-    			add_location(div5, file$d, 76, 6, 2749);
-    			attr_dev(div6, "class", "task mb-2");
-    			add_location(div6, file$d, 81, 8, 2877);
-    			attr_dev(div7, "class", "task mb-2");
-    			add_location(div7, file$d, 89, 8, 3184);
-    			attr_dev(div8, "class", "sm:leading-snug leading-tight");
-    			add_location(div8, file$d, 80, 6, 2825);
-    			attr_dev(div9, "class", "border-1 rounded p-3 shadow mb-1 bg-white");
-    			add_location(div9, file$d, 75, 4, 2687);
-    			attr_dev(div10, "class", "flex justify-end mb-2");
-    			add_location(div10, file$d, 100, 6, 3614);
-    			attr_dev(div11, "class", "task mb-2");
-    			add_location(div11, file$d, 105, 8, 3741);
-    			attr_dev(div12, "class", "sm:leading-snug leading-tight");
-    			add_location(div12, file$d, 104, 6, 3689);
-    			attr_dev(div13, "class", "border-1 rounded p-3 shadow mb-1 bg-white");
-    			add_location(div13, file$d, 99, 4, 3552);
-    			attr_dev(div14, "class", "h-64 overflow-y-auto");
-    			add_location(div14, file$d, 47, 2, 1732);
-    			add_location(div15, file$d, 40, 0, 1523);
+    			add_location(div2, file$d, 64, 8, 2335);
+    			attr_dev(div3, "class", "task mb-2");
+    			add_location(div3, file$d, 73, 8, 2732);
+    			attr_dev(div4, "class", "sm:leading-snug leading-tight");
+    			add_location(div4, file$d, 54, 6, 1910);
+    			attr_dev(div5, "class", "border-1 rounded p-3 shadow mb-2 bg-white");
+    			add_location(div5, file$d, 49, 4, 1772);
+    			attr_dev(div6, "class", "h-64 overflow-y-auto");
+    			add_location(div6, file$d, 47, 2, 1732);
+    			add_location(div7, file$d, 40, 0, 1523);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div15, anchor);
-    			mount_component(weekinfo, div15, null);
-    			append_dev(div15, t0);
-    			mount_component(progressbar, div15, null);
-    			append_dev(div15, t1);
-    			mount_component(completedtasks, div15, null);
-    			append_dev(div15, t2);
-    			append_dev(div15, div14);
-    			append_dev(div14, div4);
-    			append_dev(div4, div0);
-    			mount_component(expresstag, div0, null);
-    			append_dev(div4, t3);
-    			append_dev(div4, div3);
-    			append_dev(div3, div1);
+    			insert_dev(target, div7, anchor);
+    			mount_component(weekinfo, div7, null);
+    			append_dev(div7, t0);
+    			mount_component(progressbar, div7, null);
+    			append_dev(div7, t1);
+    			mount_component(completedtasks, div7, null);
+    			append_dev(div7, t2);
+    			append_dev(div7, div6);
+    			append_dev(div6, div5);
+    			append_dev(div5, div0);
+    			mount_component(misctag, div0, null);
+    			append_dev(div5, t3);
+    			append_dev(div5, div4);
+    			append_dev(div4, div1);
     			mount_component(task0, div1, null);
-    			append_dev(div3, t4);
-    			append_dev(div3, div2);
+    			append_dev(div4, t4);
+    			append_dev(div4, div2);
     			mount_component(task1, div2, null);
-    			append_dev(div14, t5);
-    			append_dev(div14, div9);
-    			append_dev(div9, div5);
-    			mount_component(misctag, div5, null);
-    			append_dev(div9, t6);
-    			append_dev(div9, div8);
-    			append_dev(div8, div6);
-    			mount_component(task2, div6, null);
-    			append_dev(div8, t7);
-    			append_dev(div8, div7);
-    			mount_component(task3, div7, null);
-    			append_dev(div14, t8);
-    			append_dev(div14, div13);
-    			append_dev(div13, div10);
-    			mount_component(csstag, div10, null);
-    			append_dev(div13, t9);
-    			append_dev(div13, div12);
-    			append_dev(div12, div11);
-    			mount_component(task4, div11, null);
+    			append_dev(div4, t5);
+    			append_dev(div4, div3);
+    			mount_component(task2, div3, null);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
@@ -2652,55 +2565,37 @@ var app = (function () {
     			const task2_changes = {};
     			if (dirty[0] & /*nextWeekProgress*/ 2) task2_changes.isChecked = /*nextWeekProgress*/ ctx[1][2];
     			task2.$set(task2_changes);
-    			const task3_changes = {};
-    			if (dirty[0] & /*nextWeekProgress*/ 2) task3_changes.isChecked = /*nextWeekProgress*/ ctx[1][3];
-    			task3.$set(task3_changes);
-    			const task4_changes = {};
-    			if (dirty[0] & /*nextWeekProgress*/ 2) task4_changes.isChecked = /*nextWeekProgress*/ ctx[1][4];
-    			task4.$set(task4_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
     			transition_in(weekinfo.$$.fragment, local);
     			transition_in(progressbar.$$.fragment, local);
     			transition_in(completedtasks.$$.fragment, local);
-    			transition_in(expresstag.$$.fragment, local);
+    			transition_in(misctag.$$.fragment, local);
     			transition_in(task0.$$.fragment, local);
     			transition_in(task1.$$.fragment, local);
-    			transition_in(misctag.$$.fragment, local);
     			transition_in(task2.$$.fragment, local);
-    			transition_in(task3.$$.fragment, local);
-    			transition_in(csstag.$$.fragment, local);
-    			transition_in(task4.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
     			transition_out(weekinfo.$$.fragment, local);
     			transition_out(progressbar.$$.fragment, local);
     			transition_out(completedtasks.$$.fragment, local);
-    			transition_out(expresstag.$$.fragment, local);
+    			transition_out(misctag.$$.fragment, local);
     			transition_out(task0.$$.fragment, local);
     			transition_out(task1.$$.fragment, local);
-    			transition_out(misctag.$$.fragment, local);
     			transition_out(task2.$$.fragment, local);
-    			transition_out(task3.$$.fragment, local);
-    			transition_out(csstag.$$.fragment, local);
-    			transition_out(task4.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div15);
+    			if (detaching) detach_dev(div7);
     			destroy_component(weekinfo);
     			destroy_component(progressbar);
     			destroy_component(completedtasks);
-    			destroy_component(expresstag);
+    			destroy_component(misctag);
     			destroy_component(task0);
     			destroy_component(task1);
-    			destroy_component(misctag);
     			destroy_component(task2);
-    			destroy_component(task3);
-    			destroy_component(csstag);
-    			destroy_component(task4);
     		}
     	};
 
@@ -2720,7 +2615,7 @@ var app = (function () {
 
     function instance$7($$self, $$props, $$invalidate) {
     	let { nextWeek } = $$props;
-    	const nextWeekProgress = JSON.parse(localStorage.getItem(LS_NEXT_WEEK_KEY)) || new Array(5).fill(0);
+    	const nextWeekProgress = JSON.parse(localStorage.getItem(LS_NEXT_WEEK_KEY)) || new Array(3).fill(0);
     	const taskPercentage = parseFloat((100 / nextWeekProgress.length).toFixed(2));
     	let nextCompletedPercentage = JSON.parse(localStorage.getItem(LS_NEXT_COMPLETED_KEY)) || 0;
 
@@ -2757,8 +2652,6 @@ var app = (function () {
     	const func = () => handleClick(0);
     	const func_1 = () => handleClick(1);
     	const func_2 = () => handleClick(2);
-    	const func_3 = () => handleClick(3);
-    	const func_4 = () => handleClick(4);
 
     	$$self.$set = $$props => {
     		if ("nextWeek" in $$props) $$invalidate(0, nextWeek = $$props.nextWeek);
@@ -2784,9 +2677,7 @@ var app = (function () {
     		substractCompletedPercentage,
     		func,
     		func_1,
-    		func_2,
-    		func_3,
-    		func_4
+    		func_2
     	];
     }
 

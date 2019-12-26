@@ -5,7 +5,7 @@
   export let handleClick;
   export let taskPre = '';
   export let taskName;
-  export let taskSrc;
+  export let taskSrc = '#';
 </script>
 
 <div>
