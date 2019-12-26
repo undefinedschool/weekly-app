@@ -871,7 +871,7 @@ var app = (function () {
     			div = element("div");
     			span = element("span");
     			span.textContent = "Misc";
-    			attr_dev(span, "class", "inline-block rounded px-2 py-1 text-xs text-teal-500 border-1 border-solid border-teal-200 bg-teal-100\n    font-semibold opacity-75");
+    			attr_dev(span, "class", "inline-block rounded px-2 py-1 text-xs text-teal-600 bg-teal-100 font-semibold opacity-75");
     			add_location(span, file$5, 1, 2, 33);
     			attr_dev(div, "class", "-mt-1 -mr-1 mb-4");
     			add_location(div, file$5, 0, 0, 0);
@@ -929,7 +929,7 @@ var app = (function () {
     			div = element("div");
     			span = element("span");
     			span.textContent = "CSS";
-    			attr_dev(span, "class", "inline-block border-1 rounded px-2 py-1 text-xs text-blue-500 bg-blue-200 font-semibold opacity-75");
+    			attr_dev(span, "class", "inline-block rounded px-2 py-1 text-xs text-blue-600 bg-blue-200 font-semibold opacity-75");
     			add_location(span, file$6, 1, 2, 33);
     			attr_dev(div, "class", "-mt-1 -mr-1 mb-4");
     			add_location(div, file$6, 0, 0, 0);
