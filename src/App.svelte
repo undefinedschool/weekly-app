@@ -16,12 +16,18 @@
   };
 </script>
 
+<style>
+  .container {
+    height: calc(100vh - 24px);
+  }
+</style>
+
 <div class="bg-black-us">
   <Navbar />
 
   <main class="p-3">
 
-    <div class="h-screen max-w-2xl flex flex-col justify-center items-center m-auto">
+    <div class="container max-w-2xl flex flex-col justify-center items-center m-auto">
 
       <Title {...titleProps} />
 

@@ -467,7 +467,7 @@ var app = (function () {
     			t2 = text(/*secondPart*/ ctx[1]);
     			attr_dev(span, "class", "font-semibold text-cyan-us");
     			add_location(span, file$1, 7, 2, 191);
-    			attr_dev(h1, "class", "mt-12 sm:mb-4 mb-6 leading-tight sm:text-3xl text-4xl text-white-us font-raleway text-center");
+    			attr_dev(h1, "class", "mt-16 sm:mb-4 mb-6 leading-tight sm:text-3xl text-4xl text-white-us font-raleway text-center");
     			add_location(h1, file$1, 5, 0, 69);
     		},
     		l: function claim(nodes) {
@@ -2880,19 +2880,19 @@ var app = (function () {
     			t4 = space();
     			create_component(references.$$.fragment);
     			attr_dev(div0, "class", "sm:w-11/12 w-2/3 shadow-md rounded p-3 bg-white-us z-10 mr-3 flex-none");
-    			add_location(div0, file$e, 28, 8, 727);
+    			add_location(div0, file$e, 34, 8, 797);
     			attr_dev(div1, "class", "sm:w-11/12 w-2/3 shadow-md rounded p-3 bg-white-us z-10 opacity-75 hover:opacity-100 flex-none");
-    			add_location(div1, file$e, 32, 8, 876);
+    			add_location(div1, file$e, 38, 8, 946);
     			attr_dev(div2, "class", "flex overflow-x-auto");
-    			add_location(div2, file$e, 27, 6, 684);
+    			add_location(div2, file$e, 33, 6, 754);
     			attr_dev(div3, "class", "ml-auto");
-    			add_location(div3, file$e, 37, 6, 1054);
-    			attr_dev(div4, "class", "h-screen max-w-2xl flex flex-col justify-center items-center m-auto");
-    			add_location(div4, file$e, 23, 4, 562);
+    			add_location(div3, file$e, 43, 6, 1124);
+    			attr_dev(div4, "class", "container max-w-2xl flex flex-col justify-center items-center m-auto svelte-1gaxcj4");
+    			add_location(div4, file$e, 29, 4, 631);
     			attr_dev(main, "class", "p-3");
-    			add_location(main, file$e, 21, 2, 538);
+    			add_location(main, file$e, 27, 2, 607);
     			attr_dev(div5, "class", "bg-black-us");
-    			add_location(div5, file$e, 18, 0, 496);
+    			add_location(div5, file$e, 24, 0, 565);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
