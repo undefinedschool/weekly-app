@@ -2160,7 +2160,7 @@ var app = (function () {
     			add_location(div7, file$c, 89, 8, 3291);
     			attr_dev(div8, "class", "sm:leading-snug leading-tight");
     			add_location(div8, file$c, 80, 6, 2929);
-    			attr_dev(div9, "class", "border-1 rounded p-3 shadow mb-1 bg-white");
+    			attr_dev(div9, "class", "border-1 rounded p-3 shadow mb-2 bg-white");
     			add_location(div9, file$c, 75, 4, 2791);
     			attr_dev(div10, "class", "flex justify-end mb-2");
     			add_location(div10, file$c, 100, 6, 3724);
@@ -2512,7 +2512,7 @@ var app = (function () {
     			add_location(div3, file$d, 73, 8, 2732);
     			attr_dev(div4, "class", "sm:leading-snug leading-tight");
     			add_location(div4, file$d, 54, 6, 1910);
-    			attr_dev(div5, "class", "border-1 rounded p-3 shadow mb-2 bg-white");
+    			attr_dev(div5, "class", "border-1 rounded p-3 shadow mb-1 bg-white");
     			add_location(div5, file$d, 49, 4, 1772);
     			attr_dev(div6, "class", "h-64 overflow-y-auto");
     			add_location(div6, file$d, 47, 2, 1732);

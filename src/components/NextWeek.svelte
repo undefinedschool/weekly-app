@@ -47,7 +47,7 @@
 
   <div class="h-64 overflow-y-auto">
 
-    <div class="border-1 rounded p-3 shadow mb-2 bg-white">
+    <div class="border-1 rounded p-3 shadow mb-1 bg-white">
       <div class="flex justify-end mb-2">
         <MiscTag />
       </div>
