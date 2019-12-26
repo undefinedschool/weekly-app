@@ -8,42 +8,42 @@
   import CompletedTasks from './CompletedTasks.svelte';
   import Task from './Task.svelte';
 
-  export let currentWeek;
+  export let nextWeek;
 
-  const LS_CURRENT_WEEK_KEY = 'currentWeekProgress';
-  const LS_CURRENT_COMPLETED_KEY = 'currentCompleted';
-  const currentWeekProgress = JSON.parse(localStorage.getItem(LS_CURRENT_WEEK_KEY)) || new Array(5).fill(0);
-  const taskPercentage = parseFloat((100 / currentWeekProgress.length).toFixed(2));
-  let currentCompletedPercentage = JSON.parse(localStorage.getItem(LS_CURRENT_COMPLETED_KEY)) || 0;
+  const LS_NEXT_WEEK_KEY = 'nextWeekProgress';
+  const LS_NEXT_COMPLETED_KEY = 'nextCompleted';
+  const nextWeekProgress = JSON.parse(localStorage.getItem(LS_NEXT_WEEK_KEY)) || new Array(5).fill(0);
+  const taskPercentage = parseFloat((100 / nextWeekProgress.length).toFixed(2));
+  let nextCompletedPercentage = JSON.parse(localStorage.getItem(LS_NEXT_COMPLETED_KEY)) || 0;
 
   function handleClick(index) {
     updateItems(index);
-    currentWeekProgress[index] ? addCompletedPercentage() : substractCompletedPercentage();
+    nextWeekProgress[index] ? addCompletedPercentage() : substractCompletedPercentage();
   }
 
   function updateItems(index) {
-    const currentValue = currentWeekProgress[index];
-    currentWeekProgress[index] = 1 - currentValue;
-    localStorage.setItem(LS_CURRENT_WEEK_KEY, JSON.stringify(currentWeekProgress));
+    const currentValue = nextWeekProgress[index];
+    nextWeekProgress[index] = 1 - currentValue;
+    localStorage.setItem(LS_NEXT_WEEK_KEY, JSON.stringify(nextWeekProgress));
   }
 
   function addCompletedPercentage() {
-    currentCompletedPercentage += taskPercentage;
-    localStorage.setItem(LS_CURRENT_COMPLETED_KEY, JSON.stringify(currentCompletedPercentage));
+    nextCompletedPercentage += taskPercentage;
+    localStorage.setItem(LS_NEXT_COMPLETED_KEY, JSON.stringify(nextCompletedPercentage));
   }
 
   function substractCompletedPercentage() {
-    currentCompletedPercentage -= taskPercentage;
-    localStorage.setItem(LS_CURRENT_COMPLETED_KEY, JSON.stringify(currentCompletedPercentage));
+    nextCompletedPercentage -= taskPercentage;
+    localStorage.setItem(LS_NEXT_COMPLETED_KEY, JSON.stringify(nextCompletedPercentage));
   }
 </script>
 
 <div>
-  <WeekInfo dueDate="{currentWeek}" completedPercentage="{currentCompletedPercentage}" isCurrentWeek="{true}" />
+  <WeekInfo dueDate="{nextWeek}" completedPercentage="{nextCompletedPercentage}" />
 
-  <ProgressBar completedPercentage="{currentCompletedPercentage}" />
+  <ProgressBar completedPercentage="{nextCompletedPercentage}" />
 
-  <CompletedTasks items="{currentWeekProgress}" />
+  <CompletedTasks items="{nextWeekProgress}" />
 
   <div class="h-64 overflow-y-auto">
 
@@ -55,7 +55,7 @@
       <div class="sm:leading-snug leading-tight">
         <div class="task mb-2">
           <Task
-            isChecked="{currentWeekProgress[0]}"
+            isChecked="{nextWeekProgress[0]}"
             handleClick="{() => handleClick(0)}"
             taskPre="{'Completar el capítulo'}"
             taskName="{'Express Router 🏃'}"
@@ -64,7 +64,7 @@
 
         <div class="task mb-2">
           <Task
-            isChecked="{currentWeekProgress[1]}"
+            isChecked="{nextWeekProgress[1]}"
             handleClick="{() => handleClick(1)}"
             taskPre="{'Completar el tutorial'}"
             taskName="{'ExpressJS Project Structure 🏃'}"
@@ -81,7 +81,7 @@
       <div class="sm:leading-snug leading-tight">
         <div class="task mb-2">
           <Task
-            isChecked="{currentWeekProgress[2]}"
+            isChecked="{nextWeekProgress[2]}"
             handleClick="{() => handleClick(2)}"
             taskName="{'Local Node Environment Variables with DotEnv 🏃'}"
             taskSrc="{'https://www.youtube.com/watch?v=i14ekt_DAt0'}" />
@@ -89,7 +89,7 @@
 
         <div class="task mb-2">
           <Task
-            isChecked="{currentWeekProgress[3]}"
+            isChecked="{nextWeekProgress[3]}"
             handleClick="{() => handleClick(3)}"
             taskName="{'How to Improve Your Developer Resume Bullets 🏃'}"
             taskSrc="{'https://dev.to/stetsenko_me/how-to-improve-your-junior-developer-resume-bullets-34cm'}" />
@@ -105,7 +105,7 @@
       <div class="sm:leading-snug leading-tight">
         <div class="task mb-2">
           <Task
-            isChecked="{currentWeekProgress[4]}"
+            isChecked="{nextWeekProgress[4]}"
             handleClick="{() => handleClick(4)}"
             taskName="{'Next-generation web styling (Chrome Dev Summit 2019) 📹'}"
             taskSrc="{'https://www.youtube.com/watch?v=-oyeaIirVC0'}" />
