@@ -1771,7 +1771,6 @@ var app = (function () {
     	let div;
     	let label;
     	let input;
-    	let input_checked_value;
     	let t0;
     	let span1;
     	let span0;
@@ -1803,15 +1802,15 @@ var app = (function () {
     			create_component(tasklink.$$.fragment);
     			attr_dev(input, "type", "checkbox");
     			attr_dev(input, "class", "form-checkbox text-cyan-us transition-all-4");
-    			input.checked = input_checked_value = /*isChecked*/ ctx[0] ? true : false;
-    			add_location(input, file$b, 12, 4, 293);
+    			input.checked = /*_isChecked*/ ctx[5];
+    			add_location(input, file$b, 15, 4, 386);
     			attr_dev(span0, "class", "font-light");
-    			add_location(span0, file$b, 18, 6, 540);
-    			attr_dev(span1, "class", span1_class_value = "" + ((/*isChecked*/ ctx[0] ? "opacity-50" : "") + " ml-2 text-sm text-gray-us"));
-    			add_location(span1, file$b, 17, 4, 461);
+    			add_location(span0, file$b, 21, 6, 599);
+    			attr_dev(span1, "class", span1_class_value = "" + (/*grayedOut*/ ctx[6] + " ml-2 text-sm text-gray-us"));
+    			add_location(span1, file$b, 20, 4, 540);
     			attr_dev(label, "class", label_class_value = "" + ((/*isChecked*/ ctx[0] ? "line-through text-gray-us" : "") + " inline-flex items-center"));
-    			add_location(label, file$b, 11, 2, 201);
-    			add_location(div, file$b, 10, 0, 193);
+    			add_location(label, file$b, 14, 2, 294);
+    			add_location(div, file$b, 13, 0, 286);
     			dispose = listen_dev(input, "click", /*handleClick*/ ctx[1], false, false, false);
     		},
     		l: function claim(nodes) {
@@ -1830,8 +1829,8 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (!current || dirty[0] & /*isChecked*/ 1 && input_checked_value !== (input_checked_value = /*isChecked*/ ctx[0] ? true : false)) {
-    				prop_dev(input, "checked", input_checked_value);
+    			if (!current || dirty[0] & /*_isChecked*/ 32) {
+    				prop_dev(input, "checked", /*_isChecked*/ ctx[5]);
     			}
 
     			if (!current || dirty[0] & /*taskPre*/ 4) set_data_dev(t1, /*taskPre*/ ctx[2]);
@@ -1840,7 +1839,7 @@ var app = (function () {
     			if (dirty[0] & /*taskSrc*/ 16) tasklink_changes.src = /*taskSrc*/ ctx[4];
     			tasklink.$set(tasklink_changes);
 
-    			if (!current || dirty[0] & /*isChecked*/ 1 && span1_class_value !== (span1_class_value = "" + ((/*isChecked*/ ctx[0] ? "opacity-50" : "") + " ml-2 text-sm text-gray-us"))) {
+    			if (!current || dirty[0] & /*grayedOut*/ 64 && span1_class_value !== (span1_class_value = "" + (/*grayedOut*/ ctx[6] + " ml-2 text-sm text-gray-us"))) {
     				attr_dev(span1, "class", span1_class_value);
     			}
 
@@ -1901,7 +1900,9 @@ var app = (function () {
     			handleClick,
     			taskPre,
     			taskName,
-    			taskSrc
+    			taskSrc,
+    			_isChecked,
+    			grayedOut
     		};
     	};
 
@@ -1911,9 +1912,24 @@ var app = (function () {
     		if ("taskPre" in $$props) $$invalidate(2, taskPre = $$props.taskPre);
     		if ("taskName" in $$props) $$invalidate(3, taskName = $$props.taskName);
     		if ("taskSrc" in $$props) $$invalidate(4, taskSrc = $$props.taskSrc);
+    		if ("_isChecked" in $$props) $$invalidate(5, _isChecked = $$props._isChecked);
+    		if ("grayedOut" in $$props) $$invalidate(6, grayedOut = $$props.grayedOut);
     	};
 
-    	return [isChecked, handleClick, taskPre, taskName, taskSrc];
+    	let _isChecked;
+    	let grayedOut;
+
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty[0] & /*isChecked*/ 1) {
+    			 $$invalidate(5, _isChecked = isChecked ? true : false);
+    		}
+
+    		if ($$self.$$.dirty[0] & /*isChecked*/ 1) {
+    			 $$invalidate(6, grayedOut = isChecked ? "opacity-50" : "");
+    		}
+    	};
+
+    	return [isChecked, handleClick, taskPre, taskName, taskSrc, _isChecked, grayedOut];
     }
 
     class Task extends SvelteComponentDev {

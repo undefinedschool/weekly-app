@@ -6,6 +6,9 @@
   export let taskPre = '';
   export let taskName;
   export let taskSrc = '#';
+
+  $: _isChecked = isChecked ? true : false;
+  $: grayedOut = isChecked ? 'opacity-50' : '';
 </script>
 
 <div>
@@ -14,8 +17,8 @@
       type="checkbox"
       class="form-checkbox text-cyan-us transition-all-4"
       on:click="{handleClick}"
-      checked="{isChecked ? true : false}" />
-    <span class="{isChecked ? 'opacity-50' : ''} ml-2 text-sm text-gray-us">
+      checked="{_isChecked}" />
+    <span class="{grayedOut} ml-2 text-sm text-gray-us">
       <span class="font-light">{taskPre}</span>
       <TaskLink name="{taskName}" src="{taskSrc}" />
     </span>
