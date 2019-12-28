@@ -11744,22 +11744,6 @@ video {
   transition: all 0.4s ease;
 }
 
-/* margin */
-
-.mt-26 {
-  margin-top: 2.6em;
-}
-
-.mb-06 {
-  margin-bottom: 0.6em;
-}
-
-/* padding */
-
-.pl-1em {
-  padding-left: 1em;
-}
-
 /* top */
 
 .top-50 {
@@ -11774,14 +11758,14 @@ video {
 
 /* width */
 
-.w-128 {
-  width: 32rem;
+.max-w-xxl {
+  max-width: 41rem;
 }
 
 /* height */
 
-.h-128 {
-  height: 32rem;
+.max-h-64 {
+  max-height: 14rem;
 }
 
 /* @import './components.css';  */

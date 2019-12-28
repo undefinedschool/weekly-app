@@ -27,7 +27,7 @@
 
   <main class="p-3">
 
-    <div class="container max-w-2xl flex flex-col justify-center items-center m-auto">
+    <div class="container max-w-xxl flex flex-col justify-center items-center m-auto">
 
       <Title {...titleProps} />
 

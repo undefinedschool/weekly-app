@@ -45,24 +45,23 @@
 
   <CompletedTasks items="{nextWeekProgress}" />
 
-  <div class="h-64 overflow-y-auto">
+  <div class="max-h-64 overflow-y-auto">
 
-    <div class="border-1 rounded p-3 shadow mb-1 bg-white">
+    <div class="border-1 rounded p-3 shadow bg-white">
       <div class="flex justify-end mb-2">
         <MiscTag />
       </div>
 
       <div class="sm:leading-snug leading-tight">
-        <div class="task mb-2">
+        <div class="task mb-3">
           <Task
             isChecked="{nextWeekProgress[0]}"
             handleClick="{() => handleClick(0)}"
-            taskPre="{'Ver'}"
             taskName="{'101 Tips For Being A Great Programmer (& Human) 👫'}"
             taskSrc="{'https://dev.to/emmawedekind/101-tips-for-being-a-great-programmer-human-36nl'}" />
         </div>
 
-        <div class="task mb-2">
+        <div class="task mb-3">
           <Task
             isChecked="{nextWeekProgress[1]}"
             handleClick="{() => handleClick(1)}"
@@ -71,7 +70,7 @@
             taskSrc="{'https://dev.to/exampro/700-web-developers-asked-me-to-give-them-linkedin-profile-feedback-and-these-are-my-5-top-tips-5382'}" />
         </div>
 
-        <div class="task mb-2">
+        <div class="task mb-3">
           <Task
             isChecked="{nextWeekProgress[2]}"
             handleClick="{() => handleClick(2)}"

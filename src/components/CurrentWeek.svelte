@@ -45,15 +45,15 @@
 
   <CompletedTasks items="{currentWeekProgress}" />
 
-  <div class="h-64 overflow-y-auto">
+  <div class="max-h-64 overflow-y-auto">
 
-    <div class="border-1 rounded p-3 shadow mb-2 bg-white">
+    <div class="border-1 rounded p-3 shadow mb-3 bg-white">
       <div class="flex justify-end mb-2">
         <ExpressTag />
       </div>
 
       <div class="sm:leading-snug leading-tight">
-        <div class="task mb-2">
+        <div class="task mb-3">
           <Task
             isChecked="{currentWeekProgress[0]}"
             handleClick="{() => handleClick(0)}"
@@ -62,7 +62,7 @@
             taskSrc="{'https://www.rithmschool.com/courses/node-express-fundamentals/express-router'}" />
         </div>
 
-        <div class="task mb-2">
+        <div class="task mb-3">
           <Task
             isChecked="{currentWeekProgress[1]}"
             handleClick="{() => handleClick(1)}"
@@ -73,13 +73,13 @@
       </div>
     </div>
 
-    <div class="border-1 rounded p-3 shadow mb-2 bg-white">
+    <div class="border-1 rounded p-3 shadow mb-3 bg-white">
       <div class="flex justify-end mb-2">
         <MiscTag />
       </div>
 
       <div class="sm:leading-snug leading-tight">
-        <div class="task mb-2">
+        <div class="task mb-3">
           <Task
             isChecked="{currentWeekProgress[2]}"
             handleClick="{() => handleClick(2)}"
@@ -87,7 +87,7 @@
             taskSrc="{'https://www.youtube.com/watch?v=i14ekt_DAt0'}" />
         </div>
 
-        <div class="task mb-2">
+        <div class="task mb-3">
           <Task
             isChecked="{currentWeekProgress[3]}"
             handleClick="{() => handleClick(3)}"
@@ -97,13 +97,13 @@
       </div>
     </div>
 
-    <div class="border-1 rounded p-3 shadow mb-1 bg-white">
+    <div class="border-1 rounded p-3 shadow bg-white">
       <div class="flex justify-end mb-2">
         <CSSTag />
       </div>
 
       <div class="sm:leading-snug leading-tight">
-        <div class="task mb-2">
+        <div class="task mb-3">
           <Task
             isChecked="{currentWeekProgress[4]}"
             handleClick="{() => handleClick(4)}"

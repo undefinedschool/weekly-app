@@ -2143,34 +2143,34 @@ var app = (function () {
     			div11 = element("div");
     			create_component(task4.$$.fragment);
     			attr_dev(div0, "class", "flex justify-end mb-2");
-    			add_location(div0, file$c, 50, 6, 1932);
-    			attr_dev(div1, "class", "task mb-2");
-    			add_location(div1, file$c, 55, 8, 2063);
-    			attr_dev(div2, "class", "task mb-2");
-    			add_location(div2, file$c, 64, 8, 2424);
+    			add_location(div0, file$c, 50, 6, 1936);
+    			attr_dev(div1, "class", "task mb-3");
+    			add_location(div1, file$c, 55, 8, 2067);
+    			attr_dev(div2, "class", "task mb-3");
+    			add_location(div2, file$c, 64, 8, 2428);
     			attr_dev(div3, "class", "sm:leading-snug leading-tight");
-    			add_location(div3, file$c, 54, 6, 2011);
-    			attr_dev(div4, "class", "border-1 rounded p-3 shadow mb-2 bg-white");
-    			add_location(div4, file$c, 49, 4, 1870);
+    			add_location(div3, file$c, 54, 6, 2015);
+    			attr_dev(div4, "class", "border-1 rounded p-3 shadow mb-3 bg-white");
+    			add_location(div4, file$c, 49, 4, 1874);
     			attr_dev(div5, "class", "flex justify-end mb-2");
-    			add_location(div5, file$c, 76, 6, 2853);
-    			attr_dev(div6, "class", "task mb-2");
-    			add_location(div6, file$c, 81, 8, 2981);
-    			attr_dev(div7, "class", "task mb-2");
-    			add_location(div7, file$c, 89, 8, 3291);
+    			add_location(div5, file$c, 76, 6, 2857);
+    			attr_dev(div6, "class", "task mb-3");
+    			add_location(div6, file$c, 81, 8, 2985);
+    			attr_dev(div7, "class", "task mb-3");
+    			add_location(div7, file$c, 89, 8, 3295);
     			attr_dev(div8, "class", "sm:leading-snug leading-tight");
-    			add_location(div8, file$c, 80, 6, 2929);
-    			attr_dev(div9, "class", "border-1 rounded p-3 shadow mb-2 bg-white");
-    			add_location(div9, file$c, 75, 4, 2791);
+    			add_location(div8, file$c, 80, 6, 2933);
+    			attr_dev(div9, "class", "border-1 rounded p-3 shadow mb-3 bg-white");
+    			add_location(div9, file$c, 75, 4, 2795);
     			attr_dev(div10, "class", "flex justify-end mb-2");
-    			add_location(div10, file$c, 100, 6, 3724);
-    			attr_dev(div11, "class", "task mb-2");
-    			add_location(div11, file$c, 105, 8, 3851);
+    			add_location(div10, file$c, 100, 6, 3723);
+    			attr_dev(div11, "class", "task mb-3");
+    			add_location(div11, file$c, 105, 8, 3850);
     			attr_dev(div12, "class", "sm:leading-snug leading-tight");
-    			add_location(div12, file$c, 104, 6, 3799);
-    			attr_dev(div13, "class", "border-1 rounded p-3 shadow mb-1 bg-white");
-    			add_location(div13, file$c, 99, 4, 3662);
-    			attr_dev(div14, "class", "h-64 overflow-y-auto");
+    			add_location(div12, file$c, 104, 6, 3798);
+    			attr_dev(div13, "class", "border-1 rounded p-3 shadow bg-white");
+    			add_location(div13, file$c, 99, 4, 3666);
+    			attr_dev(div14, "class", "max-h-64 overflow-y-auto");
     			add_location(div14, file$c, 47, 2, 1830);
     			add_location(div15, file$c, 40, 0, 1586);
     		},
@@ -2450,7 +2450,6 @@ var app = (function () {
     			props: {
     				isChecked: /*nextWeekProgress*/ ctx[1][0],
     				handleClick: /*func*/ ctx[8],
-    				taskPre: "Ver",
     				taskName: "101 Tips For Being A Great Programmer (& Human) 👫",
     				taskSrc: "https://dev.to/emmawedekind/101-tips-for-being-a-great-programmer-human-36nl"
     			},
@@ -2503,18 +2502,18 @@ var app = (function () {
     			div3 = element("div");
     			create_component(task2.$$.fragment);
     			attr_dev(div0, "class", "flex justify-end mb-2");
-    			add_location(div0, file$d, 50, 6, 1834);
-    			attr_dev(div1, "class", "task mb-2");
-    			add_location(div1, file$d, 55, 8, 1962);
-    			attr_dev(div2, "class", "task mb-2");
-    			add_location(div2, file$d, 64, 8, 2335);
-    			attr_dev(div3, "class", "task mb-2");
-    			add_location(div3, file$d, 73, 8, 2732);
+    			add_location(div0, file$d, 50, 6, 1833);
+    			attr_dev(div1, "class", "task mb-3");
+    			add_location(div1, file$d, 55, 8, 1961);
+    			attr_dev(div2, "class", "task mb-3");
+    			add_location(div2, file$d, 63, 8, 2304);
+    			attr_dev(div3, "class", "task mb-3");
+    			add_location(div3, file$d, 72, 8, 2701);
     			attr_dev(div4, "class", "sm:leading-snug leading-tight");
-    			add_location(div4, file$d, 54, 6, 1910);
-    			attr_dev(div5, "class", "border-1 rounded p-3 shadow mb-1 bg-white");
-    			add_location(div5, file$d, 49, 4, 1772);
-    			attr_dev(div6, "class", "h-64 overflow-y-auto");
+    			add_location(div4, file$d, 54, 6, 1909);
+    			attr_dev(div5, "class", "border-1 rounded p-3 shadow bg-white");
+    			add_location(div5, file$d, 49, 4, 1776);
+    			attr_dev(div6, "class", "max-h-64 overflow-y-auto");
     			add_location(div6, file$d, 47, 2, 1732);
     			add_location(div7, file$d, 40, 0, 1523);
     		},
@@ -2778,7 +2777,7 @@ var app = (function () {
     			add_location(div2, file$e, 33, 6, 754);
     			attr_dev(div3, "class", "ml-auto");
     			add_location(div3, file$e, 43, 6, 1124);
-    			attr_dev(div4, "class", "container max-w-2xl flex flex-col justify-center items-center m-auto svelte-1gaxcj4");
+    			attr_dev(div4, "class", "container max-w-xxl flex flex-col justify-center items-center m-auto svelte-1gaxcj4");
     			add_location(div4, file$e, 29, 4, 631);
     			attr_dev(main, "class", "p-3");
     			add_location(main, file$e, 27, 2, 607);
