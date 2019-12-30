@@ -17,7 +17,7 @@
 </script>
 
 <style>
-  .container {
+  .app-container {
     height: calc(100vh - 24px);
   }
 </style>
@@ -27,7 +27,7 @@
 
   <main class="p-3">
 
-    <div class="container max-w-xxl flex flex-col justify-center items-center m-auto">
+    <div class="app-container max-w-xxl flex flex-col justify-center items-center m-auto">
 
       <Title {...titleProps} />
 
