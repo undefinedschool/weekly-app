@@ -106,3 +106,8 @@
 .max-h-64 {
   max-height: 14rem;
 }
+
+/* app minus navbar height */
+.app-container {
+  height: calc(100vh - 24px);
+}

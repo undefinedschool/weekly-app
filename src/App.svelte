@@ -16,12 +16,6 @@
   };
 </script>
 
-<style>
-  .app-container {
-    height: calc(100vh - 24px);
-  }
-</style>
-
 <div class="bg-black-us">
   <Navbar />
 
