@@ -38,7 +38,7 @@
   }
 </script>
 
-<div>
+<section>
   <WeekInfo dueDate="{nextWeek}" completedPercentage="{nextCompletedPercentage}" />
 
   <ProgressBar completedPercentage="{nextCompletedPercentage}" />
@@ -81,4 +81,4 @@
       </div>
     </div>
   </div>
-</div>
+</section>

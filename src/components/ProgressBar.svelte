@@ -9,10 +9,10 @@
   $: completed = Math.round(completedPercentage) === 100 ? '🎉' : '';
 </script>
 
-<div class="bg-gray-200 mt-2 mb-8 mb-0 text-xl {fullBar} text-center rounded-lg">
+<section class="bg-gray-200 mt-2 mb-8 mb-0 text-xl {fullBar} text-center rounded-lg">
   <div
     style="width:{Math.round(completedPercentage)}%"
     class="transition-all-4 {progressBackgroundColor} rounded-lg p-1 {progressTextColor}">
     {Math.round(completedPercentage)}% {completed}
   </div>
-</div>
+</section>
