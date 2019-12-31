@@ -1,5 +1,7 @@
 {
-  "name": "svelte-app",
+  "name": "weekly-app",
+  "author": "Nicolás Quiroz",
+  "license": "MIT",
   "version": "1.0.0",
   "scripts": {
     "watch:tailwind": "postcss public/tailwind.css -o public/styles.css -w",
