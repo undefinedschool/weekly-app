@@ -53,7 +53,7 @@
       </div>
 
       <div class="sm:leading-snug leading-tight">
-        <div class="task mb-3">
+        <div class="task sm:mb-4 mb-3">
           <Task
             isChecked="{nextWeekProgress[0]}"
             handleClick="{() => handleClick(0)}"
@@ -61,7 +61,7 @@
             taskSrc="{'https://dev.to/emmawedekind/101-tips-for-being-a-great-programmer-human-36nl'}" />
         </div>
 
-        <div class="task mb-3">
+        <div class="task sm:mb-4 mb-3">
           <Task
             isChecked="{nextWeekProgress[1]}"
             handleClick="{() => handleClick(1)}"
@@ -70,7 +70,7 @@
             taskSrc="{'https://dev.to/exampro/700-web-developers-asked-me-to-give-them-linkedin-profile-feedback-and-these-are-my-5-top-tips-5382'}" />
         </div>
 
-        <div class="task mb-3">
+        <div class="task mb-1">
           <Task
             isChecked="{nextWeekProgress[2]}"
             handleClick="{() => handleClick(2)}"

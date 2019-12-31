@@ -53,7 +53,7 @@
       </div>
 
       <div class="sm:leading-snug leading-tight">
-        <div class="task mb-3">
+        <div class="task sm:mb-4 mb-3">
           <Task
             isChecked="{currentWeekProgress[0]}"
             handleClick="{() => handleClick(0)}"
@@ -62,7 +62,7 @@
             taskSrc="{'https://www.rithmschool.com/courses/node-express-fundamentals/express-router'}" />
         </div>
 
-        <div class="task mb-3">
+        <div class="task mb-1">
           <Task
             isChecked="{currentWeekProgress[1]}"
             handleClick="{() => handleClick(1)}"
@@ -79,7 +79,7 @@
       </div>
 
       <div class="sm:leading-snug leading-tight">
-        <div class="task mb-3">
+        <div class="task sm:mb-4 mb-3">
           <Task
             isChecked="{currentWeekProgress[2]}"
             handleClick="{() => handleClick(2)}"
@@ -87,7 +87,7 @@
             taskSrc="{'https://www.youtube.com/watch?v=i14ekt_DAt0'}" />
         </div>
 
-        <div class="task mb-3">
+        <div class="task mb-1">
           <Task
             isChecked="{currentWeekProgress[3]}"
             handleClick="{() => handleClick(3)}"
@@ -103,7 +103,7 @@
       </div>
 
       <div class="sm:leading-snug leading-tight">
-        <div class="task mb-3">
+        <div class="task mb-1">
           <Task
             isChecked="{currentWeekProgress[4]}"
             handleClick="{() => handleClick(4)}"

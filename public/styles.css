@@ -11774,6 +11774,13 @@ video {
   height: calc(100vh - 24px);
 }
 
+@media screen and (max-width: 415px) {
+  input.form-checkbox {
+    width: 21px;
+    height: 21px;
+  }
+}
+
 /* @import './components.css';  */
 
 html {
