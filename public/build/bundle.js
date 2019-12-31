@@ -378,6 +378,8 @@ var app = (function () {
     	let span0;
     	let t1;
     	let span1;
+    	let t3;
+    	let span2;
 
     	const block = {
     		c: function create() {
@@ -386,21 +388,26 @@ var app = (function () {
     			p = element("p");
     			span0 = element("span");
     			span0.textContent = "undefined";
-    			t1 = text("\n      sch001\n      ");
+    			t1 = space();
     			span1 = element("span");
-    			span1.textContent = "_";
+    			span1.textContent = "sch001";
+    			t3 = space();
+    			span2 = element("span");
+    			span2.textContent = "_";
     			attr_dev(span0, "class", "text-black-us");
-    			add_location(span0, file, 3, 6, 271);
-    			attr_dev(span1, "class", "blink font-normal text-cyan-us");
-    			add_location(span1, file, 5, 6, 335);
+    			add_location(span0, file, 3, 6, 257);
+    			attr_dev(span1, "class", "text-gray-600");
+    			add_location(span1, file, 4, 6, 308);
+    			attr_dev(span2, "class", "blink text-cyan-us -ml-1");
+    			add_location(span2, file, 5, 6, 356);
     			attr_dev(p, "class", "font-montserrat font-medium");
-    			add_location(p, file, 2, 4, 225);
+    			add_location(p, file, 2, 4, 211);
     			attr_dev(a, "href", "https://undefinedschool.io");
     			attr_dev(a, "target", "_blank");
     			attr_dev(a, "rel", "noopener");
-    			attr_dev(a, "class", "text-gray-600 text-s");
+    			attr_dev(a, "class", "text-s");
     			add_location(a, file, 1, 2, 123);
-    			attr_dev(div, "class", "bg-white-us fixed top-0 left-0 shadow-md p-2 w-full sm:text-right text-center sm:pr-4");
+    			attr_dev(div, "class", "bg-white-us fixed top-0 left-0 shadow-md p-2 w-full sm:text-right text-center sm:pr-3");
     			set_style(div, "height", "40px");
     			add_location(div, file, 0, 0, 0);
     		},
@@ -414,6 +421,8 @@ var app = (function () {
     			append_dev(p, span0);
     			append_dev(p, t1);
     			append_dev(p, span1);
+    			append_dev(p, t3);
+    			append_dev(p, span2);
     		},
     		p: noop,
     		i: noop,
