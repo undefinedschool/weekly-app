@@ -26,7 +26,7 @@
     <!-- <button class="blink-5 text-lg opacity-75">❮</button> -->
     {weekTitle} semana
   </p>
-  <p class="font-light text-sm text-light-gray-us">
+  <p class="font-light text-sm text-gray-600">
     {#if Math.round(completedPercentage) === 100 && daysRemaining > 0}
       <p>
         <span class="font-medium">¡Excelente!</span>

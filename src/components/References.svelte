@@ -4,7 +4,7 @@
   bg-black-us-80">
   <div class="max-w-xs p-3 rounded shadow absolute bg-white-us w-full top-50 left-50">
     <div class="mb-4 flex justify-end">
-      <a href="#" title="Close" class="text-xs text-light-gray-us link p-2 no-underline">Cerrar</a>
+      <a href="#" title="Close" class="text-xs text-gray-600 link p-2 no-underline">Cerrar</a>
       <!-- <button type="button" name="Close" class="text-xs text-light-gray-us link p-2 no-underline">Cerrar</button> -->
     </div>
 

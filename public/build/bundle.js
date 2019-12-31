@@ -390,15 +390,15 @@ var app = (function () {
     			span1 = element("span");
     			span1.textContent = "_";
     			attr_dev(span0, "class", "text-black-us");
-    			add_location(span0, file, 3, 6, 276);
+    			add_location(span0, file, 3, 6, 271);
     			attr_dev(span1, "class", "blink font-normal text-cyan-us");
-    			add_location(span1, file, 5, 6, 340);
+    			add_location(span1, file, 5, 6, 335);
     			attr_dev(p, "class", "font-montserrat font-medium");
-    			add_location(p, file, 2, 4, 230);
+    			add_location(p, file, 2, 4, 225);
     			attr_dev(a, "href", "https://undefinedschool.io");
     			attr_dev(a, "target", "_blank");
     			attr_dev(a, "rel", "noopener");
-    			attr_dev(a, "class", "text-light-gray-us text-s");
+    			attr_dev(a, "class", "text-gray-600 text-s");
     			add_location(a, file, 1, 2, 123);
     			attr_dev(div, "class", "bg-white-us fixed top-0 left-0 shadow-md p-2 w-full sm:text-right text-center sm:pr-4");
     			set_style(div, "height", "40px");
@@ -638,22 +638,22 @@ var app = (function () {
     			li8.textContent = "📻 Podcast";
     			attr_dev(a, "href", "#");
     			attr_dev(a, "title", "Close");
-    			attr_dev(a, "class", "text-xs text-light-gray-us link p-2 no-underline");
+    			attr_dev(a, "class", "text-xs text-gray-600 link p-2 no-underline");
     			add_location(a, file$2, 6, 6, 295);
     			attr_dev(div0, "class", "mb-4 flex justify-end");
     			add_location(div0, file$2, 5, 4, 253);
-    			add_location(li0, file$2, 12, 8, 590);
-    			add_location(li1, file$2, 13, 8, 630);
-    			add_location(li2, file$2, 14, 8, 656);
-    			add_location(li3, file$2, 15, 8, 683);
-    			add_location(li4, file$2, 16, 8, 714);
-    			add_location(li5, file$2, 17, 8, 748);
-    			add_location(li6, file$2, 18, 8, 802);
-    			add_location(li7, file$2, 19, 8, 831);
-    			add_location(li8, file$2, 20, 8, 858);
+    			add_location(li0, file$2, 12, 8, 585);
+    			add_location(li1, file$2, 13, 8, 625);
+    			add_location(li2, file$2, 14, 8, 651);
+    			add_location(li3, file$2, 15, 8, 678);
+    			add_location(li4, file$2, 16, 8, 709);
+    			add_location(li5, file$2, 17, 8, 743);
+    			add_location(li6, file$2, 18, 8, 797);
+    			add_location(li7, file$2, 19, 8, 826);
+    			add_location(li8, file$2, 20, 8, 853);
     			attr_dev(ul, "class", "text-sm font-light list-none");
-    			add_location(ul, file$2, 11, 6, 540);
-    			add_location(div1, file$2, 10, 4, 528);
+    			add_location(ul, file$2, 11, 6, 535);
+    			add_location(div1, file$2, 10, 4, 523);
     			attr_dev(div2, "class", "max-w-xs p-3 rounded shadow absolute bg-white-us w-full top-50 left-50");
     			add_location(div2, file$2, 4, 2, 164);
     			attr_dev(div3, "id", "references");
@@ -1109,9 +1109,9 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "clase siguiente.";
     			attr_dev(span, "class", "font-medium");
-    			add_location(span, file$8, 49, 8, 1463);
+    			add_location(span, file$8, 49, 8, 1458);
     			attr_dev(p, "class", "text-teal-600");
-    			add_location(p, file$8, 47, 6, 1404);
+    			add_location(p, file$8, 47, 6, 1399);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -1151,9 +1151,9 @@ var app = (function () {
     			t1 = text(/*daysRemaining*/ ctx[1]);
     			t2 = text("\n        día para completar estas tareas");
     			attr_dev(span, "class", "font-medium");
-    			add_location(span, file$8, 43, 8, 1286);
+    			add_location(span, file$8, 43, 8, 1281);
     			attr_dev(p, "class", "text-red-500");
-    			add_location(p, file$8, 41, 6, 1236);
+    			add_location(p, file$8, 41, 6, 1231);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -1197,8 +1197,8 @@ var app = (function () {
     			t1 = text(/*daysRemaining*/ ctx[1]);
     			t2 = text("\n        días para completar estas tareas");
     			attr_dev(span, "class", "font-medium");
-    			add_location(span, file$8, 37, 8, 1094);
-    			add_location(p, file$8, 35, 6, 1064);
+    			add_location(span, file$8, 37, 8, 1089);
+    			add_location(p, file$8, 35, 6, 1059);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -1239,8 +1239,8 @@ var app = (function () {
     			span.textContent = "¡Excelente!";
     			t1 = text("\n        Estás al día 💪");
     			attr_dev(span, "class", "font-medium");
-    			add_location(span, file$8, 31, 8, 945);
-    			add_location(p, file$8, 30, 6, 933);
+    			add_location(span, file$8, 31, 8, 940);
+    			add_location(p, file$8, 30, 6, 928);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -1295,7 +1295,7 @@ var app = (function () {
     			if_block.c();
     			attr_dev(p0, "class", "text-gray-700 font-semibold text-lg mb-6 -ml-3 -mr-3 -mt-3 py-4 px-3 bg-gray-50 rounded-t border-b-gray-200");
     			add_location(p0, file$8, 23, 2, 583);
-    			attr_dev(p1, "class", "font-light text-sm text-light-gray-us");
+    			attr_dev(p1, "class", "font-light text-sm text-gray-600");
     			add_location(p1, file$8, 28, 2, 806);
     			add_location(div, file$8, 22, 0, 575);
     		},
@@ -1661,10 +1661,10 @@ var app = (function () {
     			t4 = text(t4_value);
     			t5 = text(" tareas completadas");
     			attr_dev(span0, "class", "font-semibold");
-    			add_location(span0, file$a, 8, 4, 173);
+    			add_location(span0, file$a, 8, 4, 168);
     			attr_dev(span1, "class", "opacity-75");
-    			add_location(span1, file$a, 9, 4, 237);
-    			attr_dev(p, "class", "text-light-gray-us font-light text-xs mb-1");
+    			add_location(span1, file$a, 9, 4, 232);
+    			attr_dev(p, "class", "text-gray-600 font-light text-xs mb-1");
     			add_location(p, file$a, 7, 2, 114);
     			add_location(div, file$a, 6, 0, 106);
     		},
