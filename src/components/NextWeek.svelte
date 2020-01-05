@@ -12,7 +12,7 @@
 
   const LS_NEXT_WEEK_KEY = 'nextWeekProgress';
   const LS_NEXT_COMPLETED_KEY = 'nextCompleted';
-  const nextWeekProgress = JSON.parse(localStorage.getItem(LS_NEXT_WEEK_KEY)) || new Array(3).fill(0);
+  const nextWeekProgress = JSON.parse(localStorage.getItem(LS_NEXT_WEEK_KEY)) || new Array(2).fill(0);
   const taskPercentage = parseFloat((100 / nextWeekProgress.length).toFixed(2));
   let nextCompletedPercentage = JSON.parse(localStorage.getItem(LS_NEXT_COMPLETED_KEY)) || 0;
 
@@ -57,26 +57,18 @@
           <Task
             isChecked="{nextWeekProgress[0]}"
             handleClick="{() => handleClick(0)}"
-            taskName="{'101 Tips For Being A Great Programmer (& Human) 👫'}"
-            taskSrc="{'https://dev.to/emmawedekind/101-tips-for-being-a-great-programmer-human-36nl'}" />
+            taskPre="{'Ver'}"
+            taskName="{'Notas de Express 🏃'}"
+            taskSrc="{'https://github.com/undefinedschool/notes-expressjs/'}" />
         </div>
 
         <div class="task sm:mb-4 mb-3">
           <Task
             isChecked="{nextWeekProgress[1]}"
             handleClick="{() => handleClick(1)}"
-            taskPre="{'Ver'}"
-            taskName="{'LinkedIn Profile Top Tips 🏃'}"
-            taskSrc="{'https://dev.to/exampro/700-web-developers-asked-me-to-give-them-linkedin-profile-feedback-and-these-are-my-5-top-tips-5382'}" />
-        </div>
-
-        <div class="task mb-1">
-          <Task
-            isChecked="{nextWeekProgress[2]}"
-            handleClick="{() => handleClick(2)}"
-            taskPre="{'Llegar al'}"
-            taskName="{'2020 ⭐️'}"
-            taskSrc="{''}" />
+            taskPre="{'Completar el'}"
+            taskName="{'Express JS Crash Course 🏃'}"
+            taskSrc="{'https://www.youtube.com/watch?v=L72fhGm1tfE'}" />
         </div>
       </div>
     </div>
