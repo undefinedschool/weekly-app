@@ -27,12 +27,14 @@
 
       <Title {...titleProps} />
 
-      <section class="flex overflow-x-auto">
-        <div class="sm:w-11/12 w-2/3 shadow-md rounded p-3 bg-white-us z-10 mr-3 flex-none">
+      <section class="flex overflow-auto">
+        <div class="overflow-auto sm:w-11/12 w-2/3 shadow-md rounded p-3 bg-white-us z-10 mr-3 flex-none">
           <CurrentWeek {currentWeek} />
         </div>
 
-        <div class="sm:w-11/12 w-2/3 shadow-md rounded p-3 bg-white-us z-10 opacity-75 hover:opacity-100 flex-none">
+        <div
+          class="overflow-auto sm:w-11/12 w-2/3 shadow-md rounded p-3 bg-white-us z-10 opacity-75 hover:opacity-100
+          flex-none">
           <NextWeek {nextWeek} />
         </div>
       </section>

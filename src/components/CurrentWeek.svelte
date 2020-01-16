@@ -45,7 +45,7 @@
 
   <CompletedTasks items="{currentWeekProgress}" />
 
-  <div class="max-h-64 overflow-y-auto">
+  <div class="overflow-auto">
 
     <div class="border-1 rounded p-3 shadow mb-1 bg-white">
       <div class="flex justify-end mb-2">
